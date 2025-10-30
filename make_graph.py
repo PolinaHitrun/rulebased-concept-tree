@@ -173,7 +173,11 @@ def process_node(token_id, tokens, vertices, edges):
     if token["upos"].startswith("V"):
         # Process verb and find related nouns
         subj_ids, obj_ids = find_related_nouns(token_id, tokens)
+        # Build verb label including dependent prepositions
         verb_label = token["lemma"]
+        prep_forms = [tokens_map[child_id]["form"] for child_id in token["children"] if tokens_map[child_id]["deprel"] == "prep"]
+        if prep_forms:
+            verb_label += " " + " ".join(prep_forms)
         # Do not add verb as vertex; instead add edges from each subject conjunct to each object conjunct with verb label
         for subj_id in subj_ids:
             if subj_id not in vertices:

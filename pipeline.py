@@ -5,7 +5,7 @@ from make_graph import build_graph_from_conllu
 from graph.graph import visualize_graph
 
 if __name__ == "__main__":
-    sentence = "The girl plays with the ball and the kite"
+    sentence = "Polly and Bob went to the park and the museum."
     conll_data = prepare.sentence_to_conllx(sentence)
     input_path = os.path.abspath("input.conll")
 
