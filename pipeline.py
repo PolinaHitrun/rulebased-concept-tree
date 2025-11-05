@@ -7,7 +7,7 @@ from graph.graph import visualize_graph
 
 if __name__ == "__main__":
     # sentence = "The cat and the dog eat meat and fish"
-    sentence = "Кошка сидит на окне и смотрит на улицу."
+    sentence = "Кошка сидит на окне."
     lang = 'ru'
     conll_data = prepare.sentence_to_conllx(sentence, lang=lang)
     input_path = os.path.abspath("input.conll")

@@ -275,14 +275,19 @@ def process_node(token_id, tokens_map, vertices, edges):
     # если глагол — находим связанные субъекты и объекты и создаём рёбра subj -> obj с меткой глагола (+ предлоги)
     if is_verb(token):
         subj_ids, obj_ids = find_related_nouns_for_verb(token_id, tokens_map)
-        # строим метку глагола: лемма + зависимые предлоги/наречия/частицы отрицания (детектируем детей-предлоги и наречия)
+        # Новый способ построения метки глагола с предлогами и наречиями/отрицаниями
         verb_label = token.get("lemma") or token.get("form")
         prep_lemmas = []
+
         for cid in token["children"]:
             c = tokens_map[cid]
             c_xpos = (c.get("xpos") or "").upper()
-            if is_prep(c) or c_xpos.startswith("R") or c_xpos.startswith("Q"):  # R* — наречие, Q* — частица отрицания
+            # добавляем любой прямой предлог (xpos S*)
+            if c_xpos.startswith("S"):
                 prep_lemmas.append(c["lemma"])
+            elif c_xpos.startswith("R") or c_xpos.startswith("Q"):  # наречие или частица отрицания
+                prep_lemmas.append(c["lemma"])
+
         if prep_lemmas:
             verb_label = verb_label + " " + " ".join(prep_lemmas)
         # добавляем вершины для всех subj/obj и рёбра
