@@ -1,6 +1,9 @@
 1	Кошка	кошка	Ncfsny	Ncfsny	_	0	_	_	_
-2	увидела	увидеть	Vmis-sfa-p	Vmis-sfa-p	_	0	_	_	_
-3	мышку	мышка	Ncfsan	Ncfsan	_	0	_	_	_
-4	у	у	Sp-g	Sp-g	_	0	_	_	_
-5	двери	дверь	Ncfsgn	Ncfsgn	_	0	_	_	_
-6	.	.	SENT	SENT	_	0	_	_	_
+2	сидит	сидеть	Vmip3s-a-e	Vmip3s-a-e	_	0	_	_	_
+3	на	на	Sp-l	Sp-l	_	0	_	_	_
+4	окне	окно	Ncnsln	Ncnsln	_	0	_	_	_
+5	и	и	C	C	_	0	_	_	_
+6	смотрит	смотреть	Vmip3s-a-e	Vmip3s-a-e	_	0	_	_	_
+7	на	на	Sp-a	Sp-a	_	0	_	_	_
+8	улицу	улица	Ncfsan	Ncfsan	_	0	_	_	_
+9	.	.	SENT	SENT	_	0	_	_	_

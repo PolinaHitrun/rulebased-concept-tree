@@ -260,7 +260,7 @@ def build_edges(tokens):
     return edges
 
 
-def build_graph_from_conllu(conllu_text):
+def build_en_graph_from_conllu(conllu_text):
     """
     Build a NetworkX graph from a CoNLL-U formatted string.
     """
@@ -297,6 +297,5 @@ if __name__ == "__main__":
     f = open("output.conll", "r", encoding="utf-8")
     sample_conllu = f.read()
     f.close()
-    graph_res = build_graph_from_conllu(sample_conllu)
-    # Use the custom visualize_graph function, which should accept your Graph class
+    graph_res = build_en_graph_from_conllu(sample_conllu)
     visualize_graph(graph_res)
