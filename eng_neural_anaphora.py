@@ -54,7 +54,7 @@ class CoreferenceResolver:
         self.client = CoreNLPClient(
             properties=properties,
             endpoint=self.endpoint,
-            timeout=60000,
+            timeout=300000,
             memory=self.memory,
             be_quiet=True,
             max_char_length=100000,

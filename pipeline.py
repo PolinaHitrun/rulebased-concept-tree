@@ -6,13 +6,15 @@ from make_graph_ru import build_ru_graph_from_conllu
 from graph.graph import visualize_graph
 from eng_neural_anaphora import resolve_anaphora
 import nltk
+from nltk.tokenize import sent_tokenize
 
 
 if __name__ == "__main__":
     nltk.download("punkt_tab")
-    from nltk.tokenize import sent_tokenize
-
-    text = 'Alice looked at the stars. Bob sat on the chair. The dog slept under the table. Mary walked through the garden. The boy climbed into the tree.'
+    winnie = open('pg67098.txt', 'r', encoding='utf-8')
+    text = winnie.read().replace('\n', ' ')
+    winnie.close()
+    # text = 'Alice looked at the stars. Bob sat on the chair. The dog slept under the table. Mary walked through the garden. The boy climbed into the tree.'
     lang = 'en'
     resolved_text = resolve_anaphora(text)
     sentences = sent_tokenize(resolved_text)
