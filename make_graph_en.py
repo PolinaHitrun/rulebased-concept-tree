@@ -94,7 +94,7 @@ def find_related_nouns(verb_id, tokens):
             prep_chain = []
         token = tokens_map[token_id]
 
-        if token["deprel"] in {"obj", "dobj", "pobj", "advmod"} and token["upos"] in noun_upos_tags:
+        if token["deprel"] in {"obj", "dobj", "pobj", "advmod", "iobj"} and token["upos"] in noun_upos_tags:
             for obj_id in get_conjuncts(token_id, tokens_map):
                 object_ids_with_prep[obj_id] = " ".join(prep_chain)
                 for c_id in get_conjuncts(obj_id, tokens_map):
