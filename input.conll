@@ -1,11 +1,6 @@
-1	Polly	Polly	NP	NP	_	0	_	_	_
-2	and	and	CC	CC	_	0	_	_	_
+1	Alice	Alice	NP	NP	_	0	_	_	_
+2	gave	give	VBD	VBD	_	0	_	_	_
 3	Bob	Bob	NP	NP	_	0	_	_	_
-4	went	go	VBD	VBD	_	0	_	_	_
-5	to	to	TO	TO	_	0	_	_	_
-6	the	the	DT	DT	_	0	_	_	_
-7	park	park	NN	NN	_	0	_	_	_
-8	and	and	CC	CC	_	0	_	_	_
-9	the	the	DT	DT	_	0	_	_	_
-10	museum	museum	NN	NN	_	0	_	_	_
-11	.	.	SENT	SENT	_	0	_	_	_
+4	a	a	DT	DT	_	0	_	_	_
+5	book	book	NN	NN	_	0	_	_	_
+6	.	.	SENT	SENT	_	0	_	_	_

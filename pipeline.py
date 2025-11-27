@@ -6,7 +6,7 @@ from make_graph_ru import build_ru_graph_from_conllu
 from graph.graph import visualize_graph
 
 if __name__ == "__main__":
-    sentence = 'Polly and Bob went to the park and the museum.'
+    sentence = 'Alice gave Bob a book.'
     lang = 'en'
     conll_data = prepare.sentence_to_conllx(sentence, lang=lang)
     input_path = os.path.abspath("input.conll")
