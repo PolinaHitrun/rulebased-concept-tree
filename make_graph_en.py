@@ -91,76 +91,85 @@ def find_cc_label(token_id, tokens):
 
 def find_related_nouns(verb_id, tokens):
     """
-    Find subjects and objects related to the verb_id, traversing dep and conj chains.
-    Returns two sets: subject token ids and object token ids.
+    Find subjects and objects related to the verb_id, traversing dep, prep, and conj chains recursively.
+    Returns:
+        subject_ids (set of token ids)
+        object_ids_with_prep (dict mapping obj_id -> prep_chain as string)
+        None (for compatibility)
     """
-    noun_upos_tags = {"NN", "NNS", "NNP", "NNPS"}
-
-    # Collect all noun tokens in the subtree of the verb
-    subtree_tokens = set()
-    queue = deque([verb_id])
-    while queue:
-        current = queue.popleft()
-        subtree_tokens.add(current)
-        current_token = tokens_map[current]
-        for child_id in current_token["children"]:
-            queue.append(child_id)
-
-    # Find all noun tokens in subtree
-    noun_tokens_in_subtree = {tid for tid in subtree_tokens if tokens_map[tid]["upos"] in noun_upos_tags}
-
-    # Find objects: tokens that are direct objects (obj, dobj) or pobj of prepositions under the verb
-    object_tokens = set()
+    noun_upos_tags = {"NN", "NNS", "NNP", "NNPS", "NP"}
     verb_token = tokens_map[verb_id]
-    for child_id in verb_token["children"]:
-        child = tokens_map[child_id]
-        if child["deprel"] in {"obj", "dobj"} and child["upos"] in noun_upos_tags:
-            object_tokens.update(get_conjuncts(child_id, tokens_map))
-        elif child["deprel"] == "prep":
-            for gc_id in child["children"]:
-                gc = tokens_map[gc_id]
-                if gc["deprel"] == "pobj" and gc["upos"] in noun_upos_tags:
-                    object_tokens.update(get_conjuncts(gc_id, tokens_map))
 
-    # Subjects: include noun tokens found above the verb along the head chain until root
-    subject_candidates = set()
-    current_id = verb_id
-    while True:
-        current_token = tokens_map[current_id]
-        head_id = current_token["head"]
-        if head_id == 0 or head_id == "0" or head_id not in tokens_map:
-            break
-        head_token = tokens_map[head_id]
-        if head_token["upos"] in noun_upos_tags:
-            subject_candidates.add(head_id)
-        current_id = head_id
-
-    # Add noun tokens in subtree excluding objects and pobj tokens
-    pobj_tokens = set()
-    for child_id in verb_token["children"]:
-        child = tokens_map[child_id]
-        if child["deprel"] == "prep":
-            for gc_id in child["children"]:
-                gc = tokens_map[gc_id]
-                if gc["deprel"] == "pobj" and gc["upos"] in noun_upos_tags:
-                    pobj_tokens.add(gc_id)
-
-    subject_candidates.update(noun_tokens_in_subtree - object_tokens - pobj_tokens)
-
-    # For each subject token, add all conjuncts
+    # Collect subjects: direct nsubj + their conjuncts
     subject_ids = set()
-    for subj in subject_candidates:
-        subject_ids.update(get_conjuncts(subj, tokens_map))
+    for child_id in verb_token.get("children", []):
+        child = tokens_map[child_id]
+        if child["deprel"] == "nsubj" and child["upos"] in noun_upos_tags:
+            subject_ids.update(get_conjuncts(child_id, tokens_map))
 
-    # For each object token, add all conjuncts (already done above, but ensure)
-    object_ids = set()
-    for obj in object_tokens:
-        object_ids.update(get_conjuncts(obj, tokens_map))
+    object_ids_with_prep = {}
 
-    # Ensure subjects and objects are disjoint to prevent self-loops
-    subject_ids = subject_ids - object_ids
+    def collect_objects(token_id, prep_chain=None):
+        if prep_chain is None:
+            prep_chain = []
+        token = tokens_map[token_id]
 
-    return subject_ids, object_ids
+        # Direct object (obj, dobj, pobj)
+        if token["deprel"] in {"obj", "dobj", "pobj", "advmod"} and token["upos"] in noun_upos_tags:
+            for obj_id in get_conjuncts(token_id, tokens_map):
+                object_ids_with_prep[obj_id] = " ".join(prep_chain)
+                # Recursively include all conj descendants
+                for c_id in get_conjuncts(obj_id, tokens_map):
+                    object_ids_with_prep[c_id] = " ".join(prep_chain)
+
+        # Preposition: add to chain and continue recursion
+        if token["deprel"] == "prep":
+            new_prep_chain = prep_chain + [token["form"]]
+            for child_id in token.get("children", []):
+                collect_objects(child_id, new_prep_chain)
+
+        # Other children: recurse to capture nested objects/conj
+        for child_id in token.get("children", []):
+            child = tokens_map[child_id]
+            if child["deprel"] not in {"prep", "obj", "dobj", "pobj", "conj"}:
+                collect_objects(child_id, prep_chain)
+
+    # Apply to all children of the verb
+    for child_id in verb_token.get("children", []):
+        collect_objects(child_id)
+
+    # Fallback subjects if none found
+    if not subject_ids:
+        subject_candidates = set()
+        current_id = verb_id
+        while True:
+            current_token = tokens_map[current_id]
+            head_id = current_token["head"]
+            if head_id == 0 or head_id not in tokens_map:
+                break
+            head_token = tokens_map[head_id]
+            if head_token["upos"] in noun_upos_tags:
+                subject_candidates.add(head_id)
+            current_id = head_id
+
+        # Add noun tokens in subtree excluding objects
+        subtree_tokens = set()
+        queue = deque([verb_id])
+        while queue:
+            cur = queue.popleft()
+            subtree_tokens.add(cur)
+            for ch in tokens_map[cur].get("children", []):
+                queue.append(ch)
+        noun_tokens_in_subtree = {tid for tid in subtree_tokens if tokens_map[tid]["upos"] in noun_upos_tags}
+        subject_candidates.update(noun_tokens_in_subtree - set(object_ids_with_prep.keys()))
+
+        for subj in subject_candidates:
+            subject_ids.update(get_conjuncts(subj, tokens_map))
+
+    # Ensure subjects and objects are disjoint
+    subject_ids = subject_ids - set(object_ids_with_prep.keys())
+
+    return subject_ids, object_ids_with_prep, None
 
 
 def process_node(token_id, tokens, vertices, edges):
@@ -168,69 +177,64 @@ def process_node(token_id, tokens, vertices, edges):
     Recursive function to process tokens and build vertices and edges.
     """
     token = tokens_map[token_id]
+
     if token["upos"].startswith("V"):
-        # Process verb and find related nouns
-        subj_ids, obj_ids = find_related_nouns(token_id, tokens)
-        # Build verb label including dependent prepositions
-        verb_label = token["lemma"]
-        prep_forms = [tokens_map[child_id]["form"] for child_id in token["children"] if tokens_map[child_id]["deprel"] == "prep"]
-        if prep_forms:
-            verb_label += " " + " ".join(prep_forms)
-        # Do not add verb as vertex; instead add edges from each subject conjunct to each object conjunct with verb label
+        # Найти связанные существительные и цепочки предлогов
+        subj_ids, obj_ids_with_prep, _ = find_related_nouns(token_id, tokens)
+
+        # Создаём рёбра от каждого субъекта к каждому объекту
         for subj_id in subj_ids:
             if subj_id not in vertices:
                 subj_token = tokens_map[subj_id]
                 vertices[subj_id] = {"label": build_noun_concept(subj_token), "type": "noun"}
-            for obj_id in obj_ids:
+            for obj_id, prep_chain in obj_ids_with_prep.items():
                 if obj_id not in vertices:
                     obj_token = tokens_map[obj_id]
                     vertices[obj_id] = {"label": build_noun_concept(obj_token), "type": "noun"}
+                # Лейбл ребра: глагол + цепочка предлогов
+                verb_label = token["lemma"]
+                if prep_chain:
+                    verb_label = f"{verb_label} {prep_chain}"
                 edges.append((subj_id, obj_id, verb_label))
+
     elif token["upos"].startswith("N"):
-        # Noun token, add as vertex
         if token_id not in vertices:
             vertices[token_id] = {"label": build_noun_concept(token), "type": "noun"}
 
-    # Add conjunction edges between noun conjuncts
+    # Добавляем рёбра conj между существительными
     if token["upos"].startswith("N"):
         conjuncts = get_conjuncts(token_id, tokens_map)
-        conjuncts = list(conjuncts)
-        # Add vertices for all conjuncts if not present
         for cid in conjuncts:
             if cid not in vertices:
                 ctoken = tokens_map[cid]
                 vertices[cid] = {"label": build_noun_concept(ctoken), "type": "noun"}
-        # Sort conjuncts by depth or id to determine "head" noun
-        # We'll use the token with the smallest depth (distance from root) as head
+
+        # Сортируем конъюнкты по глубине
         def get_depth(tid):
             depth = 0
             current = tid
             while True:
                 head = tokens_map[current]["head"]
-                if head == 0 or head == "0" or head not in tokens_map:
+                if head == 0 or head not in tokens_map:
                     break
                 current = head
                 depth += 1
             return depth
+
         conjuncts_sorted = sorted(conjuncts, key=get_depth)
-        # For each pair, add edges with cc label from head noun
         for i in range(len(conjuncts_sorted)):
             for j in range(i + 1, len(conjuncts_sorted)):
                 n1 = conjuncts_sorted[i]
                 n2 = conjuncts_sorted[j]
-                # Determine which noun is more "head" (less depth)
                 depth1 = get_depth(n1)
                 depth2 = get_depth(n2)
-                if depth1 <= depth2:
-                    cc_label = find_cc_label(n1, tokens)
-                else:
-                    cc_label = find_cc_label(n2, tokens)
+                cc_label = find_cc_label(n1, tokens) if depth1 <= depth2 else find_cc_label(n2, tokens)
                 if cc_label is None:
                     cc_label = "conj"
                 edges.append((n1, n2, cc_label))
                 edges.append((n2, n1, cc_label))
 
-    # Process children recursively
+    # Рекурсивно обрабатываем детей
     for child_id in token["children"]:
         process_node(child_id, tokens, vertices, edges)
 
