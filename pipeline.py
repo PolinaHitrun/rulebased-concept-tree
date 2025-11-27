@@ -4,24 +4,39 @@ import os
 from make_graph_en import build_en_graph_from_conllu
 from make_graph_ru import build_ru_graph_from_conllu
 from graph.graph import visualize_graph
+from eng_neural_anaphora import resolve_anaphora
+import nltk
+
 
 if __name__ == "__main__":
-    sentence = 'Alice gave Bob a book.'
+    nltk.download("punkt_tab")
+    from nltk.tokenize import sent_tokenize
+
+    text = 'Alice went to the store. She bought milk.'
     lang = 'en'
-    conll_data = prepare.sentence_to_conllx(sentence, lang=lang)
+    resolved_text = resolve_anaphora(text)
+    sentences = sent_tokenize(resolved_text)
     input_path = os.path.abspath("input.conll")
 
     with open(input_path, "w") as f:
-        f.write(conll_data)
+        for sent in sentences:
+            f.write(f"# text = {sent}\n")
+            conll_data = prepare.sentence_to_conllx(sent, lang=lang)
+            f.write(conll_data)
+            f.write("\n")
 
+    # Run maltparser once over the full file
     run_maltparser.run_malt("input.conll", "output.conll", lang=lang)
-    f = open("output.conll", "r", encoding="utf-8")
-    conllu_example = f.read()
-    f.close()
+
+    with open("output.conll", "r", encoding="utf-8") as f:
+        conllu_example = f.read()
+
+    # Build graph depending on language
     if lang == 'en':
         g = build_en_graph_from_conllu(conllu_example)
     else:
         g = build_ru_graph_from_conllu(conllu_example)
+
     print("Graph edges:")
     for e in g.edges:
         print(f"{e.agent_1} --[{e.meaning}]--> {e.agent_2}")
