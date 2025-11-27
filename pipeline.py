@@ -12,7 +12,7 @@ if __name__ == "__main__":
     nltk.download("punkt_tab")
     from nltk.tokenize import sent_tokenize
 
-    text = 'Alice went to the store. She bought milk.'
+    text = 'Alice looked at the stars. Bob sat on the chair. The dog slept under the table. Mary walked through the garden. The boy climbed into the tree.'
     lang = 'en'
     resolved_text = resolve_anaphora(text)
     sentences = sent_tokenize(resolved_text)
