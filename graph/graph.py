@@ -7,6 +7,9 @@ from graph.vertex import Vertex
 import networkx as nx
 import matplotlib.pyplot as plt
 
+from pyvis.network import Network
+
+
 
 class Graph:
     """
@@ -159,3 +162,74 @@ def visualize_graph(graph: Graph) -> None:
     plt.axis("off")
     plt.tight_layout()
     plt.show()
+
+
+def visualize_graph_interactive(graph, output="graph.html"):
+    nodes = []
+    edges = []
+
+    # collect nodes
+    for concept in graph.vertices.keys():
+        nodes.append({"id": concept, "label": concept})
+
+    # collect edges
+    for edge in graph.edges:
+        edges.append({
+            "from": edge.agent_1,
+            "to": edge.agent_2,
+            "label": edge.meaning
+        })
+
+    html_content = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta charset="utf-8" />
+    <title>Interactive Graph</title>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #mynetwork {{
+        width: 100%;
+        height: 800px;
+        border: 1px solid lightgray;
+        }}
+    </style>
+    </head>
+    <body>
+    <div id="mynetwork"></div>
+
+    <script type="text/javascript">
+    var nodes = new vis.DataSet({nodes});
+    var edges = new vis.DataSet({edges});
+
+    var container = document.getElementById('mynetwork');
+    var data = {{
+        nodes: nodes,
+        edges: edges
+    }};
+
+    var options = {{
+        interaction: {{
+        zoomView: true,
+        dragView: true,
+        dragNodes: true
+        }},
+        edges: {{
+        arrows: 'to'
+        }},
+        physics: {{
+        stabilization: true
+        }}
+    }};
+
+    var network = new vis.Network(container, data, options);
+    </script>
+
+    </body>
+    </html>
+    """
+
+    with open(output, "w", encoding="utf-8") as f:
+        f.write(html_content)
+
+    print(f"Interactive graph saved to {output}")

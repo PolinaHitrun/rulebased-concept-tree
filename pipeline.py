@@ -3,7 +3,7 @@ import run_maltparser
 import os
 from make_graph_en import build_en_graph_from_conllu
 from make_graph_ru import build_ru_graph_from_conllu
-from graph.graph import visualize_graph
+from graph.graph import visualize_graph, visualize_graph_interactive
 from eng_neural_anaphora import resolve_anaphora
 import nltk
 from nltk.tokenize import sent_tokenize
@@ -11,11 +11,11 @@ from nltk.tokenize import sent_tokenize
 
 if __name__ == "__main__":
     nltk.download("punkt_tab")
-    winnie = open('pg67098.txt', 'r', encoding='utf-8')
-    text = winnie.read().replace('\n', ' ')
-    winnie.close()
-    # text = 'Alice looked at the stars. Bob sat on the chair. The dog slept under the table. Mary walked through the garden. The boy climbed into the tree.'
-    lang = 'en'
+    # winnie = open('pg67098.txt', 'r', encoding='utf-8')
+    # text = winnie.read().replace('\n', ' ')
+    # winnie.close()
+    text = 'Собака любит мясо. Она гуляет в парке.'
+    lang = 'ru'
     resolved_text = resolve_anaphora(text)
     sentences = sent_tokenize(resolved_text)
     input_path = os.path.abspath("input.conll")
@@ -43,4 +43,5 @@ if __name__ == "__main__":
     for e in g.edges:
         print(f"{e.agent_1} --[{e.meaning}]--> {e.agent_2}")
 
-    visualize_graph(g)
+    # visualize_graph(g)
+    visualize_graph_interactive(g, output="graph.html")

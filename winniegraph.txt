@@ -1,0 +1,1043 @@
+Pooh --[with]--> his
+jar --[of]--> honey
+warm day --[and]--> had
+had --[and]--> warm day
+had --[have]--> long way
+warm day --[have]--> long way
+sort --[of]--> funny feeling
+sort --[begin at]--> tip
+sort --[of]--> funny feeling
+tip --[of]--> his nose
+his feet --[trickle at]--> soles
+soles --[of]--> his feet
+sort --[of]--> funny feeling
+somebody --[inside]--> his
+Hallo time --[for]--> little something
+honey --[take]--> top
+jar --[take]--> top
+honey'sar --[take]--> top
+jar --[of]--> honey'sar
+honey'sar --[of]--> honey
+Many bear --[go on]--> warm day
+last lick --[conj]--> Pooh
+Pooh --[conj]--> last lick
+Pooh --[as]--> Hallo
+last lick --[as]--> Hallo
+Pooh --[of]--> inside
+last lick --[of]--> inside
+Pooh --[take]--> Hallo
+Hallo --[take]--> Hallo
+Pooh --[take]--> Hallo
+last lick --[take]--> Hallo
+inside --[of]--> his
+jar --[of]--> honey
+Pooh --[eat]--> present
+_must_ --[give]--> Hallo
+Pooh --[think For]--> little Hallo
+Pooh --[think of]--> anything
+nice pot --[and]--> washed
+washed --[and]--> nice pot
+nice pot --[and]--> got
+got --[and]--> nice pot
+washed --[and]--> got
+got --[and]--> washed
+got --[in]--> it
+washed --[in]--> it
+nice pot --[in]--> it
+s --[keep]--> things
+Pooh --[pass as]--> Hallo
+Many happy returns --[of]--> birthday
+Owl --[conj]--> Pooh
+Pooh --[conj]--> Owl
+Pooh_ Hallo Hallo --[conj]--> Pooh
+Pooh --[conj]--> Pooh_ Hallo Hallo
+Pooh --[give]--> Hallo
+Useful Pot --[keep]--> Things
+Pooh --[keep]--> Things
+Pooh --[ask]--> Hallo
+said Owl --[conj]--> Pooh paw
+Pooh paw --[conj]--> said Owl
+said Owl --[take]--> Owl
+said Owl --[take of]--> Hallo
+Pooh paw --[take]--> Owl
+Pooh paw --[take of]--> Hallo
+Pooh --[ask]--> Hallo
+Somebody --[keep]--> honey
+honey --[in]--> Owl
+Pooh --[keep]--> _anything_
+_anything_ --[in]--> Owl
+good spelling --[but]--> Wobbles
+Wobbles --[but]--> good spelling
+letters --[get in]--> wrong places
+Birthday --[on]--> my spelling
+round --[look at]--> Owl
+looking Owl --[look at]--> Owl
+nice pot --[look at]--> Owl
+end --[wash]--> pot
+pot --[wash]--> pot
+birthday --[wash]--> pot
+Owl --[wash]--> pot
+Owl --[lick]--> end
+end --[of]--> he
+_this_ --[and]--> Hallo
+Hallo --[and]--> _this_
+_actually_ --[of]--> course
+Very Happy Birthday --[with]--> love
+love --[from]--> Hallo
+pencil --[take]--> good deal
+long thing --[take]--> good deal
+good deal --[of]--> pencil
+long thing --[like]--> that
+s --[get]--> balloon
+Eeyore --[get]--> balloon
+s --[hold]--> balloon
+s --[hold against]--> s
+Eeyore --[get to]--> s
+Eeyore --[get before]--> Hallo
+present --[think for]--> s
+Piglet --[think for]--> s
+s --[think for]--> s
+Piglet --[think for]--> s
+anybody --[think for]--> s
+Piglet --[think for]--> s
+s --[think for]--> s
+anybody --[give]--> present
+Piglet --[give]--> present
+s --[give]--> present
+s --[put]--> foot
+s --[put in]--> hole
+Christopher --[think At]--> s
+Robin --[think At]--> s
+first Piglet --[think At]--> s
+Pooh --[think At]--> s
+whole world --[think At]--> s
+Eeyore --[think At]--> s
+s --[think At]--> s
+Piglet --[think At]--> s
+s --[think At]--> s
+Forest --[think At]--> s
+Forest part --[think At]--> s
+whole world --[think At]--> s
+Piglet --[think At]--> s
+s --[think At]--> s
+only _Piglet --[think At]--> s
+s_ --[think At]--> s
+Piglet --[think At]--> s
+s --[think At]--> s
+moon --[think At]--> s
+Forest part --[of]--> whole world
+s --[be in]--> moon
+s --[be in]--> Forest
+small piece --[of]--> damp rag
+small piece --[of]--> damp rag
+balloon --[and]--> _like_ balloons
+_like_ balloons --[and]--> balloon
+stream --[come to]--> side
+called --[come to]--> side
+Eeyore --[come to]--> side
+s --[come to]--> side
+side --[of]--> stream
+s --[and]--> called
+called --[and]--> s
+Many happy returns --[of]--> day
+Many hap --[wait]--> moment
+himself ear --[bring]--> fourth leg
+s --[do fell for]--> third time
+Many happy returns --[of]--> day
+s --[take]--> right hoof
+s --[take from]--> right ear
+s --[have in]--> other ear
+Piglet --[mean]--> s
+s --[and]--> s
+s --[and]--> s
+s --[at]--> last
+With--with many happy returns --[of]--> day
+Eeyore --[give]--> s
+Eeyore --[give]--> small piece
+damp rag --[give]--> s
+damp rag --[give]--> small piece
+small piece --[of]--> damp rag
+mouth --[begin]--> something
+river --[hear]--> shout
+river --[hear from]--> other side
+good saying _that_ --[hear]--> shout
+good saying _that_ --[hear from]--> other side
+other side --[of]--> river
+Many happy returns --[of]--> day
+Many happy returns --[frown for]--> minutes
+head --[in]--> paws
+Pooh --[splash across]--> stream
+Pooh --[splash to]--> s
+head --[splash across]--> stream
+head --[splash to]--> s
+minutes --[splash across]--> stream
+minutes --[splash to]--> s
+Eeyore --[splash across]--> stream
+Eeyore --[splash to]--> s
+Piglet --[splash across]--> stream
+Piglet --[splash to]--> s
+s --[splash across]--> stream
+s --[splash to]--> s
+little way --[splash across]--> stream
+little way --[splash to]--> s
+Pooh --[frown for]--> minutes
+head --[frown for]--> minutes
+s --[sit]--> little way
+Pooh --[snuffle to]--> s. Piglet
+head --[snuffle to]--> s. Piglet
+love --[get]--> Very Happy Birthday
+Pooh --[get]--> Very Happy Birthday
+minutes --[get]--> Very Happy Birthday
+love --[get]--> Very Happy Birthday
+Pooh --[get]--> Very Happy Birthday
+Very Happy Birthday --[with]--> love
+love --[from]--> .
+Very Happy Birthday --[frown for]--> minutes
+love --[frown for]--> minutes
+love --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+Very Happy Birthday --[write on]--> love
+love --[write on]--> love
+Pooh --[write on]--> love
+minutes --[write on]--> love
+love --[from]--> Pooh
+s --[see]--> pot
+Pot --[believe]--> balloon'swill
+balloon'swill --[go into]--> Pot
+balloon --[hold]--> ballon
+s --[pick]--> balloon
+s --[pick with]--> teeth
+things --[frown for]--> minutes
+Useful Pot --[frown for]--> minutes
+Useful Pot --[put]--> things
+s --[put in]--> Useful Pot
+Something --[put in]--> Useful Pot
+_I_ --[take]--> balloon
+balloon --[take]--> balloon
+anything --[take]--> balloon
+_I_ --[give]--> anything
+Robin --[ask]--> Christopher
+box --[give]--> little--a
+He--do --[give]--> little--a
+paints --[give]--> little--a
+things --[give]--> little--a
+box --[of]--> paints
+box --[paint]--> things
+top --[have]--> cake
+pink sugar --[have]--> cake
+candles --[have]--> cake
+candles --[ice on]--> top
+Nobody --[be in]--> Forest
+Tuesday Kanga --[and]--> Baby
+Baby --[and]--> Tuesday Kanga
+Pooh --[ask]--> Christopher
+minutes --[ask]--> Christopher
+Nobody --[ask]--> Christopher
+Robin --[ask]--> Christopher
+Pooh --[frown for]--> minutes
+Christopher --[know In]--> Usual Way
+Robin --[know In]--> Usual Way
+Pooh --[frown for]--> minutes
+Robin --[nod]--> Christopher
+Robin_ --[think about]--> s. Piglet
+Christopher --[at]--> house
+Robin --[find]--> Rabbit
+we--you --[frown for]--> minutes
+s --[and]--> .
+. --[and]--> s
+. --[frown for]--> minutes
+s --[frown for]--> minutes
+minutes_ --[forget]--> _Pooh
+_Pooh --[frown for]--> minutes_
+all--of--we --[and]--> then
+then --[and]--> all--of--we
+morning --[and]--> find
+find --[and]--> morning
+Strange Animal --[among]--> we
+animal --[of]--> whom
+animal --[carry]--> family
+pocket --[carry]--> family
+_I_ --[carry]--> _I_ family
+pockets --[in]--> suit
+long silence --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+his nose --[frown for]--> minutes
+thought --[frown for]--> minutes
+Rabbit --[frown for]--> minutes
+family --[frown for]--> minutes
+Pooh --[rub]--> his nose
+family --[rub]--> his nose
+thought --[rub]--> his nose
+Rabbit --[rub]--> his nose
+Rabbit --[talk about]--> family
+mind --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+Kanga --[steal]--> Funny little Roo
+Tuesday --[steal]--> Funny little Roo
+Roo --[steal]--> Funny little Roo
+little Roo --[steal]--> Funny little Roo
+Aha --[go Of]--> course
+Aha --[go Of]--> course
+Pooh --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+_Aha --[so]--> knows
+knows --[so]--> _Aha
+promise --[and]--> never
+never --[and]--> promise
+promise --[go from]--> Forest
+never --[go from]--> Forest
+means --[go from]--> Forest
+Roo --[go from]--> Forest
+Pooh --[go into]--> corner
+minutes --[go into]--> corner
+Aha --[go into]--> corner
+Pooh --[frown for]--> minutes
+sort --[of]--> voice
+s --[fidget]--> bit
+Fiercer Animals --[talk to]--> Christopher
+Tuesday Kanga --[talk to]--> Christopher
+Tuesday --[talk to]--> Christopher
+Robin --[talk to]--> Christopher
+Fiercer Animals --[frighten of]--> Fierce Animals
+Fiercer Animals --[frighten in]--> ordinary way
+Fiercer Animals --[frighten of]--> Fierce Animals
+Fiercer Animals --[frighten in]--> ordinary way
+case --[say In]--> _foolish_ thing
+_Aha --[say In]--> _foolish_ thing
+Rabbit --[take]--> pencil
+end --[take]--> pencil
+pluck --[take]--> pencil
+pencil --[take]--> pencil
+Rabbit --[lick]--> end
+pencil --[lick]--> end
+end --[of]--> pencil
+Piglet --[excite at]--> idea
+winter --[excite at]--> idea
+months --[excite at]--> idea
+other times --[excite at]--> idea
+Affectionate Disposition --[excite at]--> idea
+Rabbit --[excite at]--> idea
+Kangas --[excite at]--> idea
+Affectionate Disposition --[be at]--> other times
+other times --[of]--> Affectionate Disposition
+Pooh --[frown for]--> minutes
+mind --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+s --[and]--> look
+look --[and]--> s
+Pooh --[go into]--> corner
+minutes --[go into]--> corner
+Pooh --[go into]--> corner
+minutes --[go into]--> corner
+minutes --[go into]--> corner
+room --[go into]--> corner
+Pooh --[go into]--> corner
+corner --[of]--> room
+Pooh --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+_That_ sort --[of]--> Bear
+Rabbit --[listen with]--> Pooh
+Rabbit --[listen with]--> open
+Piglet --[listen with]--> Pooh
+Piglet --[listen with]--> open
+mouths --[listen with]--> Pooh
+mouths --[listen with]--> open
+Pooh --[and]--> open
+open --[and]--> Pooh
+Pooh --[and]--> read
+read --[and]--> Pooh
+Pooh --[capture]--> ROO
+BABY --[capture]--> ROO
+read --[capture]--> ROO
+General --[take Tuesday]--> eye
+Tuesday Kanga --[take Tuesday]--> eye
+Start --[capture]--> Funny little Roo
+_Therefore._ --[capture]--> Funny little Roo
+Long --[capture]--> Funny little Roo
+pocket --[and]--> Piglet
+Piglet --[and]--> pocket
+Tuesday Kanga --[know]--> difference
+Thought._ --[But]--> look
+look --[But]--> Thought._
+_might_ --[look]--> other way
+_Another --[frown for]--> minutes
+Thought._ --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+look --[frown for]--> minutes
+other way --[for]--> moment
+Tuesday Kanga --[discover]--> difference
+Tuesday Kanga --[discover until]--> Afterwards._
+. anything --[say for]--> little while
+nobody --[say for]--> little while
+noise --[shut]--> mouth
+Piglet --[shut]--> mouth
+Piglet --[make]--> noise
+s --[<unknown>]--> three_
+s --[say By]--> way
+Piglet --[say By]--> way
+winter --[say about]--> months
+anything --[talk to]--> Kanga
+little bit --[of]--> poetry
+little bit --[of]--> something
+poetry --[or]--> something
+something --[or]--> poetry
+Tuesday --[look for]--> Tuesday Kanga
+little Roo --[spend]--> quiet afternoon
+little Roo --[spend in]--> sandy part
+Kanga --[spend]--> quiet afternoon
+Kanga --[spend in]--> sandy part
+Baby --[spend]--> quiet afternoon
+Baby --[spend in]--> sandy part
+Kanga --[and]--> Baby
+Baby --[and]--> Kanga
+sandy part --[of]--> Forest
+little Roo --[practise]--> small jumps
+small jumps --[in]--> sand
+Roo --[and]--> fidgeting
+fidgeting --[and]--> Roo
+Roo --[and]--> go
+go --[and]--> Roo
+fidgeting --[conj]--> go
+go --[conj]--> fidgeting
+Kanga --[and]--> Baby
+Baby --[and]--> Kanga
+Tuesday Kanga --[fidget]--> jump
+hill --[come at]--> moment
+Pooh --[come at]--> moment
+Good afternoon --[frown for]--> minutes
+Kanga --[and]--> Baby
+Baby --[and]--> Kanga
+Good afternoon --[conj]--> Rabbit
+Rabbit --[conj]--> Good afternoon
+Rabbit --[and]--> Piglet
+Piglet --[and]--> Rabbit
+hill --[come from]--> other side
+Rabbit --[come from]--> other side
+Piglet --[come from]--> other side
+other side --[of]--> hill
+Good afternoon --[and]--> them
+them --[and]--> Good afternoon
+Good afternoon --[and]--> Funny little Roo
+Funny little Roo --[and]--> Good afternoon
+them --[conj]--> Funny little Roo
+Funny little Roo --[conj]--> them
+little Roo --[know Funny]--> little Kanga
+Kanga --[and]--> Baby
+Baby --[and]--> Kanga
+Roo --[fall]--> mouse-hole
+short silence --[fall]--> mouse-hole
+Rabbit --[in]--> loud whisper
+loud whisper --[behind]--> Funny paw
+Pooh --[frown for]--> minutes
+Pooh --[make]--> little piece
+Pooh --[make as]--> Pooh
+minutes --[make]--> little piece
+minutes --[make as]--> Pooh
+minutes --[make]--> little piece
+minutes --[make as]--> Pooh
+Pooh --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+Fancy --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+poetry --[love]--> piece
+piece --[of]--> poetry
+Kanga --[look at]--> Funny little Roo
+Pooh --[frown for]--> minutes
+little cough --[Pooh]--> began
+began --[Pooh]--> little cough
+began --[frown for]--> minutes
+little cough --[frown for]--> minutes
+LINES --[OF]--> LITTLE BRAIN
+LINES --[On]--> Monday
+LINES --[write BY]--> BEAR
+feeling --[On]--> Tuesday
+feeling --[on]--> I
+sky --[have On]--> Wednesday
+sky --[have]--> nothing
+twinkles --[on]--> trees
+Tuesday --[happen on]--> Friday
+Kanga --[happen on]--> Friday
+more jump --[and]--> Funny little Roo
+Funny little Roo --[and]--> more jump
+more jump --[and]--> going
+going --[and]--> more jump
+Funny little Roo --[conj]--> going
+going --[conj]--> Funny little Roo
+sort --[frown for]--> minutes
+nudge --[frown for]--> minutes
+hurrying-up --[frown for]--> minutes
+sort --[of]--> nudge
+right --[over]--> there
+Tuesday --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+Tuesday Kanga --[frown for]--> minutes
+Tuesday --[point behind]--> Tuesday Kanga
+Pooh --[point behind]--> Tuesday Kanga
+Forest --[conj]--> in
+in --[conj]--> Forest
+Kanga --[and]--> Baby
+Baby --[and]--> Kanga
+tree --[see]--> bird
+little Roo --[see]--> bird
+bird --[in]--> tree
+bird --[in]--> it
+bird --[in]--> it
+bird --[in]--> it
+starling --[or]--> blackbird
+blackbird --[or]--> starling
+blackbird --[or]--> starling
+starling --[or]--> blackbird
+Rabbit --[say in]--> loud voice
+Funny little Roo --[In]--> you
+scampered Rabbit --[with]--> Funny little Roo
+Funny little Roo --[in]--> Funny
+Kanga --[turn]--> round
+Piglet --[make]--> squeaky Roo-noise
+Piglet --[make from]--> bottom
+bottom --[of]--> s pocket
+Pooh something --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+minutes --[frown for]--> minutes
+Pooh --[think of]--> Pooh something
+Pooh --[think of]--> Pooh something
+minutes --[think of]--> Pooh something
+Pooh something --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+s --[think of]--> something
+s --[think at]--> same time
+Good-bye --[frown for]--> minutes
+Pooh --[frown for]--> minutes
+Kanga --[have]--> long home
+Kanga --[have through]--> Forest
+Kanga --[at]--> bottom
+bottom --[of]--> s pocket
+Kanga --[go in]--> air
+о-ow --[come as]--> Tuesday Kanga
+о-ow --[come as]--> Tuesday Kanga
+о --[come as]--> Tuesday Kanga
+о-ow_ way --[come as]--> Tuesday Kanga
+Tuesday --[come as]--> Tuesday Kanga
+Tuesday --[come as]--> Tuesday Kanga
+Kanga --[come as]--> Tuesday Kanga
+Tuesday house --[come as]--> Tuesday Kanga
+Tuesday --[come as]--> Tuesday Kanga
+Kanga --[come as]--> Tuesday Kanga
+_Ow --[come as]--> Tuesday Kanga
+Tuesday --[come as]--> Tuesday Kanga
+Tuesday Kanga --[come as]--> Tuesday Kanga
+о-ow --[conj]--> о-ow
+о-ow --[conj]--> о-ow
+о-ow --[conj]--> о-ow_ way
+о-ow_ way --[conj]--> о-ow
+о-ow --[conj]--> о-ow_ way
+о-ow_ way --[conj]--> о-ow
+о-ow_ way --[to]--> Tuesday house
+Tuesday --[see Of]--> course
+Kanga --[see Of]--> course
+Kanga --[see Of]--> course
+pocket'sday --[see Of]--> course
+s Kanga --[see Of]--> course
+pocket --[see Of]--> course
+Tuesday --[see Of]--> course
+Kanga --[see Of]--> course
+Kanga --[unbutton]--> pocket
+Kanga --[think for]--> moment
+harm --[happen to]--> Funny little Roo
+Kanga --[say to]--> Tuesday Kanga
+Tuesday Kanga --[have]--> joke
+Tuesday --[have]--> joke
+Tuesday --[have with]--> Tuesday Kanga
+joke --[with]--> they
+Kanga --[take]--> s
+s --[well]--> he
+he --[well]--> s
+Kanga --[and]--> Baby
+Baby --[and]--> Kanga
+Tuesday Kanga --[in]--> cheerful voice
+looking round --[for]--> others
+Rabbit --[play with]--> Funny little Roo
+Funny little Roo --[in]--> Funny
+sandy place --[frown for]--> Kanga
+sandy place --[frown on]--> top
+Forest --[frown for]--> Kanga
+Forest --[frown on]--> top
+minutesuesday --[frown for]--> Kanga
+minutesuesday --[frown on]--> top
+jumps --[frown for]--> Kanga
+jumps --[frown on]--> top
+top --[of]--> Forest
+Kanga --[in]--> thoughtful voice
+evening --[have]--> _cold_ bath
+good idea --[have]--> _cold_ bath
+Kanga --[have]--> _cold_ bath
+Piglet --[shudder]--> long indignant shudder
+Kanga --[say in]--> brave voice
+Funny little Roo --[say in]--> brave voice
+time --[say in]--> brave voice
+spleak --[say in]--> brave voice
+Tuesday --[say in]--> brave voice
+time --[come to]--> spleak
+Piglet --[imitate]--> voice
+s --[imitate]--> voice
+yellow soap --[take]--> large bar
+yellow soap --[take of]--> cupboard
+large bar --[of]--> yellow soap
+_Look_ --[at]--> Funny little Roo
+Roo --[conj]--> dear
+dear --[conj]--> Roo
+little Roo --[make]--> faces
+Piglet --[make]--> faces
+s --[make]--> faces
+faces --[like]--> s
+Funny little Roo --[let into]--> bath
+s --[be in]--> bath
+Roo --[let]--> Funny little Roo out
+soap --[open]--> mouth
+Piglet --[splutter]--> s
+mouthful --[splutter]--> s
+lathery flannel --[splutter]--> s
+s --[have]--> mouthful
+lathery flannel --[have]--> mouthful
+mouthful --[of]--> lathery flannel
+small like Piglet --[grow]--> s
+knock --[be At]--> moment
+knock --[at]--> door
+dear Pooh --[conj]--> dear Pooh
+dear Pooh --[conj]--> dear Pooh
+Tuesday --[tell]--> Tuesday Kanga
+house --[see]--> Funny little Roo playing
+Roo --[see]--> Funny little Roo playing
+Roo --[see]--> Funny little Roo playing
+Rabbit --[see]--> Funny little Roo playing
+Funny little Roo playing --[in]--> house
+mistake --[like]--> that
+Piglet --[know]--> s
+My --[know]--> s
+Pooh --[know]--> s
+dear _quite_ --[know]--> s
+different colour --[know]--> s
+dear _quite_ --[conj]--> My
+My --[conj]--> dear _quite_
+dear Pooh --[have]--> bath
+dear mouth --[say]--> something
+dear Pooh --[and]--> dear Pooh
+dear Pooh --[and]--> dear Pooh
+dear Pooh --[on]--> back
+dear Pooh --[on]--> back
+nice taste --[use to]--> back
+relation --[of]--> Pooh
+nephew --[or]--> uncle
+uncle --[or]--> nephew
+nephew --[or]--> something
+something --[or]--> nephew
+uncle --[conj]--> something
+something --[conj]--> uncle
+Pootel Piglet --[for]--> short
+Piglet --[wriggle of]--> arms
+yards --[and]--> rest
+rest --[and]--> yards
+rest --[of]--> home
+little Roo --[stay in]--> Forest
+Kanga --[stay in]--> Forest
+Baby --[stay in]--> Forest
+Kanga --[and]--> Baby
+Baby --[and]--> Kanga
+Roo --[spend with]--> Funny great Rabbit
+Pooh --[and]--> teaching
+teaching --[and]--> Pooh
+Pooh --[and]--> spent
+spent --[and]--> Pooh
+teaching --[conj]--> spent
+spent --[conj]--> teaching
+teaching --[teach]--> Funny little Roo
+spent --[teach]--> Funny little Roo
+Pooh --[teach]--> Funny little Roo
+Tuesday Piglet --[spend with]--> dear Pooh
+Kanga --[and]--> Baby
+Baby --[and]--> Kanga
+Pooh --[stump to]--> top
+top --[of]--> Forest
+simple meal --[of]--> marmalade spread
+simple meal --[over]--> honeycomb
+morning --[think of]--> new song
+little Roo --[think of]--> new song
+life --[of]--> Bear._
+Roo --[scratch]--> Funny little head
+little Roo --[scratch]--> Funny little head
+good start --[but]--> ?
+? --[but]--> good start
+good start --[for]--> song
+? --[for]--> song
+times --[but]--> seem
+seem --[but]--> times
+Bear --[sing]--> Hi
+life --[sing]--> Hi
+Hi --[for]--> life
+life --[of]--> Bear
+little Roo --[sing]--> first line
+time --[sing]--> third lines
+life --[of]--> Bear
+life --[of]--> Bear
+I --[get]--> lot
+I --[get on]--> nice new nose
+lot --[of]--> honey
+I --[get]--> lot
+I --[get on]--> nice clean paws
+lot --[of]--> honey
+hour --[have]--> little something
+little something --[in]--> hour
+song --[please with]--> song
+song --[please with]--> song
+time --[please with]--> song
+way --[please with]--> song
+little something --[please with]--> song
+top --[please with]--> song
+hour --[please with]--> song
+Forest --[please with]--> song
+last line --[please with]--> song
+song --[please with]--> song
+top --[sing]--> song
+Forest --[sing]--> song
+way --[sing]--> song
+way --[to]--> top
+top --[of]--> Forest
+time --[for]--> little something
+little something --[in]--> hour
+Pooh --[brush]--> honey
+Pooh --[brush off]--> dear nose
+Pooh --[brush with]--> back
+Pooh --[brush]--> honey
+Pooh --[brush off]--> dear nose
+Pooh --[brush with]--> back
+Pooh --[brush]--> honey
+Pooh --[brush off]--> dear nose
+Pooh --[brush with]--> back
+dear paw --[brush]--> honey
+dear paw --[brush off]--> dear nose
+dear paw --[brush with]--> back
+back --[of]--> My
+Pooh --[dig into]--> ground
+dear feet --[dig into]--> ground
+dear back --[and]--> My
+My --[and]--> dear back
+dear Pooh --[and]--> pulled
+pulled --[and]--> dear Pooh
+dear Pooh --[and]--> pulled
+pulled --[and]--> dear Pooh
+pulled --[conj]--> pulled
+pulled --[conj]--> pulled
+dear Pooh --[as]--> My
+x --[in]--> It
+Rabbit --[and]--> Kanga
+Kanga --[and]--> Rabbit
+Rabbit --[and]--> all
+all --[and]--> Rabbit
+Kanga --[conj]--> all
+all --[conj]--> Kanga
+Rabbit --[of]--> you
+Kanga --[of]--> you
+all --[of]--> you
+long line --[of]--> everybody
+right --[tell]--> others
+Rabbit --[and]--> see
+see --[and]--> Rabbit
+message --[for]--> you
+s --[go on]--> Expotition
+Expotition --[with]--> My
+message --[for]--> you
+s --[be on]--> message
+sort --[of]--> boat
+North Pole --[or]--> something
+something --[or]--> North Pole
+message --[for]--> you
+Pro- --[eat]--> things
+- --[eat]--> things
+Piglet --[leave]--> Rabbit
+house --[leave]--> Rabbit
+Piglet --[hurry to]--> house
+Piglet --[sit on]--> ground
+Piglet --[sit at]--> door
+house --[blow at]--> dandelion
+s --[go on]--> Expotition
+dear Pooh --[say]--> fierce anything
+top --[of]--> Forest
+First --[come at]--> end
+First --[come in]--> long line
+Robin --[and]--> Rabbit
+Rabbit --[and]--> Robin
+Piglet --[and]--> Pooh
+Pooh --[and]--> Piglet
+Kanga --[and]--> Owl
+Owl --[and]--> Kanga
+Owl --[with]--> Roo
+Kanga --[with]--> Roo
+Roo --[in]--> pocket
+Eeyore --[march at]--> end
+end --[of]--> Expo--what
+end --[let]--> _be_ end
+Expo--whatever --[sit for]--> little rest
+time --[sit for]--> little rest
+Confused Noise --[sit for]--> little rest
+Expo--whatever --[brush]--> dozen
+time --[brush]--> dozen
+Confused Noise --[brush]--> dozen
+Rabbit --[brush]--> dozen
+smaller friends-and-relations --[brush]--> dozen
+dozen --[of]--> smaller friends-and-relations
+Pole --[or]--> We
+We --[or]--> Pole
+gathering --[go]--> Nuts
+May --[with]--> part
+part --[of]--> nest
+shout --[from]--> top
+top --[of]--> line
+dear Pooh --[and]--> Piglet
+Piglet --[and]--> dear Pooh
+whole Expotition --[hurry to]--> front
+dear Pooh --[hurry to]--> front
+front --[of]--> whole Expotition
+first verse --[say to]--> Piglet
+Pole --[and]--> Owl
+Owl --[and]--> Pole
+Pole --[and]--> Piglet
+Piglet --[and]--> Pole
+Pole --[and]--> Rabbit
+Rabbit --[and]--> Pole
+Pole --[and]--> all
+all --[and]--> Pole
+Owl --[conj]--> Piglet
+Piglet --[conj]--> Owl
+Owl --[conj]--> Rabbit
+Rabbit --[conj]--> Owl
+Owl --[conj]--> all
+all --[conj]--> Owl
+Piglet --[conj]--> Rabbit
+Rabbit --[conj]--> Piglet
+Piglet --[conj]--> all
+all --[conj]--> Piglet
+Rabbit --[conj]--> all
+all --[conj]--> Rabbit
+tole --[and]--> .
+. --[and]--> tole
+tole --[By]--> Piglet
+tole --[By]--> Rabbit
+tole --[By]--> Owl
+. --[By]--> Piglet
+. --[By]--> Rabbit
+. --[By]--> Owl
+Owl --[and]--> Piglet
+Piglet --[and]--> Owl
+Owl --[and]--> Rabbit
+Rabbit --[and]--> Owl
+Piglet --[conj]--> Rabbit
+Rabbit --[conj]--> Piglet
+dear Pooh --[and]--> went
+went --[and]--> dear Pooh
+none --[of]--> all
+Owl --[and]--> Rabbit
+Rabbit --[and]--> Owl
+dear Poohear Pooh --[come to]--> Dangerous Place
+turning Pooh --[turn]--> round
+turning Pooh --[turn to]--> Piglet
+Piglet --[to]--> Kanga
+Kanga --[to]--> Owl
+several times --[to]--> little Roo
+Owl --[to]--> Eeyore
+Eeyore --[in]--> terrible voice
+Eeyore --[to]--> friends-and-relations
+buried Beetle head --[in]--> crack
+crack --[in]--> ground
+home --[go in]--> great hurry
+dear Pooh --[come to]--> stream
+high rocky banks --[come to]--> stream
+stream --[tumble between]--> high rocky banks
+dear Pooh --[explain for]--> Ambush
+place --[explain for]--> Ambush
+sort --[of]--> bush
+dear Pooh --[to]--> Piglet
+Owl --[in]--> superior way
+private whisper --[and]--> was
+was --[and]--> private whisper
+looking round --[at]--> Beetle
+sort --[of]--> Surprise
+sort --[of]--> Surprise
+Pooh --[fall]--> taken
+Pooh --[fall]--> tree
+days --[fall]--> taken
+days --[fall]--> tree
+prickles --[fall]--> taken
+prickles --[fall]--> tree
+gorse-bush --[fall]--> taken
+gorse-bush --[fall]--> tree
+day --[fall]--> taken
+day --[fall]--> tree
+gorse-bush --[spring at]--> day
+tree --[and]--> taken
+taken --[and]--> tree
+taken --[get]--> prickles
+Pooh --[get]--> prickles
+tree --[get]--> prickles
+banks --[climb up]--> stream
+side --[climb up]--> stream
+side --[climb up]--> stream
+rock --[climb up]--> stream
+water --[climb up]--> stream
+level --[climb up]--> stream
+strip --[climb up]--> stream
+rest --[climb up]--> stream
+grass --[climb up]--> stream
+little way --[climb up]--> stream
+place --[climb up]--> stream
+little way --[come to]--> place
+banks --[come to]--> place
+side --[come to]--> place
+banks --[widen at]--> side
+strip --[be on]--> side
+side --[of]--> water
+strip --[of]--> grass
+dear Pooh --[and]--> My
+My --[and]--> dear Pooh
+dear Pooh --[with]--> My
+looked round --[at]--> them
+looked round --[in]--> melancholy way
+none --[sit on]--> thistle
+none --[sit by]--> chance
+none --[of]--> you
+time --[of]--> you
+little Consideration --[make]--> difference
+little Thought --[for]--> Others
+stream --[walk of]--> course
+stream --[walk]--> little way
+North _look_ --[like]--> ?
+sort --[of]--> forgotten
+Rabbit --[but]--> "
+" --[but]--> Rabbit
+Rabbit --[but]--> I
+I --[but]--> Rabbit
+" --[conj]--> I
+I --[conj]--> "
+pole --[stick in]--> ground
+Rabbit --[stick in]--> ground
+pole --[stick in]--> ground
+Rabbit --[and]--> pole
+pole --[and]--> Rabbit
+Piglet --[lie on]--> dear back
+little Roo --[wash]--> little face
+little Roo --[wash]--> paws
+little Roo --[wash in]--> stream
+little face --[and]--> paws
+paws --[and]--> little face
+Kanga --[explain to]--> everybody
+dear Pooh --[and]--> Owl
+Owl --[and]--> dear Pooh
+Kanga --[tell]--> Kanga
+Interesting full Anecdote --[tell]--> Kanga
+long words --[tell]--> Kanga
+Encyclop√¶dia --[tell]--> Kanga
+Rhododendron --[tell]--> Kanga
+first time --[tell]--> Kanga
+Kanga --[tell]--> Kanga
+long words --[like]--> Rhododendron
+long words --[like]--> Encyclop√¶dia
+Encyclop√¶dia --[and]--> Rhododendron
+Rhododendron --[and]--> Encyclop√¶dia
+little Roo --[hold with]--> washing
+dear Pooh thought --[come]--> sudden squeak
+dear Pooh thought --[come]--> loud cry
+dear Pooh thought --[come]--> splash
+sudden squeak --[and]--> loud cry
+loud cry --[and]--> sudden squeak
+sudden squeak --[and]--> splash
+splash --[and]--> sudden squeak
+loud cry --[conj]--> splash
+splash --[conj]--> loud cry
+sudden squeak --[from]--> Roo
+loud cry --[from]--> Roo
+splash --[from]--> Roo
+loud cry --[of]--> alarm
+alarm --[from]--> Kanga
+cried Rabbit --[and]--> rushing
+rushing --[and]--> cried Rabbit
+cried Rabbit --[and]--> he
+he --[and]--> cried Rabbit
+rushing --[conj]--> he
+he --[conj]--> rushing
+dear Pooh --[rush to]--> rescue
+Roo --[look at]--> little Roo swimming
+little Roo --[from]--> middle
+middle --[of]--> next pool
+Roo --[look at]--> little sw
+Everybody --[do]--> something
+Oo --[conj]--> little Roo
+little Roo --[conj]--> Oo
+Important Thing --[be in]--> case
+case --[of]--> Sudden Immersion
+Water --[keep]--> Head
+noises --[keep]--> Head
+Kanga --[jump along]--> bank
+little Rooent --[look at]--> little Roo swimming
+Eeyore --[turn]--> tail
+Eeyore --[turn over]--> first pool
+round --[and]--> hung
+hung --[and]--> round
+washing --[grumble to]--> accident
+washing --[grumble to]--> little Roo
+dear Pooh --[hurry]--> past Eeyore
+Rabbit --[hurry]--> past Eeyore
+dear Pooh --[and]--> Rabbit
+Rabbit --[and]--> dear Pooh
+front --[call to]--> others
+others --[in]--> front
+front --[of]--> them
+stream --[get]--> something
+something --[across]--> stream
+dear Pooh --[get]--> something
+Roo --[stand with]--> long pole
+Roo --[stand]--> paws
+Roo --[stand with]--> long pole
+Roo --[stand]--> paws
+long pole --[take]--> end
+long pole --[take in]--> paws
+end --[of]--> long pole
+Roo --[drift against]--> end
+swimming --[drift against]--> end
+end --[drift against]--> end
+lower part --[drift against]--> end
+next pool --[drift against]--> end
+Roo --[drift against]--> end
+Roo --[hold]--> end
+swimming --[hold]--> end
+lower part --[hold]--> end
+next pool --[hold]--> end
+Roo --[hold]--> end
+end --[of]--> it
+lower part --[of]--> next pool
+end --[of]--> it
+Roo --[and]--> rubbed
+rubbed --[and]--> Roo
+Roo --[see]--> little Roo swimming
+Hallo --[conj]--> Piglet
+Piglet --[conj]--> Hallo
+dear Pooh --[look at]--> pole
+pole --[in]--> My
+Eeyore --[sit with]--> dear tail
+Eeyore --[sit in]--> water
+s --[but]--> little Roo
+little Roo --[but]--> s
+s --[from]--> side
+Roo --[dry]--> feeling
+feeling --[for]--> you
+dear Pooh --[and]--> My
+My --[and]--> dear Pooh
+dear Pooh --[take]--> dear handkerchief
+My --[take]--> dear handkerchief
+dear Pooh --[take]--> dear handkerchief
+Pooh --[take]--> dear handkerchief
+handkerchief --[take]--> dear handkerchief
+matter --[with]--> some
+tail --[to]--> _They_
+Pooh --[come with]--> dear pole
+Roo --[talk about]--> anything

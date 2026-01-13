@@ -1,7 +1,7 @@
 from collections import deque
 
 from graph.higher_dim_graph import Graph
-from graph.graph import visualize_graph
+from graph.graph import visualize_graph, visualize_graph_interactive
 from graph.edge import Edge
 from graph.vertex import Vertex
 
@@ -17,14 +17,12 @@ def parse_conllu(conllu_text):
     for line in conllu_text.split("\n"):
         line = line.strip()
 
-        # empty line = end of sentence
         if not line:
             if current:
                 sentences.append(current)
                 current = []
             continue
 
-        # skip comments
         if line.startswith("#"):
             continue
 
@@ -76,19 +74,25 @@ def build_noun_concept(token, tokens_map):
 def get_conjuncts(token_id, tokens_map):
     """
     Given a token id, returns a set of token ids including the token and all its conjuncts.
-    Uses BFS over 'conj' children.
+    Uses BFS over 'conj' children. Only includes noun tokens.
     """
+    noun_upos_tags = {"NN", "NNS", "NNP", "NNPS", "NP"}
     conjuncts = set()
     queue = deque([token_id])
     while queue:
         current = queue.popleft()
         if current in conjuncts:
             continue
-        conjuncts.add(current)
+        # Only add current if it's a noun/NP
+        if tokens_map[current]["upos"] in noun_upos_tags:
+            conjuncts.add(current)
+        else:
+            # skip non-noun tokens entirely (do not traverse their conj children)
+            continue
         current_token = tokens_map[current]
         for child_id in current_token.get("children", []):
             child = tokens_map[child_id]
-            if child["deprel"] == "conj":
+            if child["deprel"] == "conj" and child["upos"] in noun_upos_tags:
                 queue.append(child_id)
     return conjuncts
 
@@ -203,12 +207,16 @@ def process_node(token_id, tokens_map, vertices, edges):
 
         for subj_id in subj_ids:
             # ensure subj label present
-            if subj_id not in vertices:
+            if subj_id not in vertices and tokens_map[subj_id]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
                 subj_token = tokens_map[subj_id]
                 vertices[subj_id] = build_noun_concept(subj_token, tokens_map)
-            subj_label = vertices[subj_id]
+            subj_label = vertices.get(subj_id)
+            if subj_label is None:
+                continue
 
             for obj_id, prep_chain in obj_ids_with_prep.items():
+                if tokens_map[obj_id]["upos"] not in {"NN","NNS","NNP","NNPS","NP"}:
+                    continue
                 if obj_id not in vertices:
                     obj_token = tokens_map[obj_id]
                     vertices[obj_id] = build_noun_concept(obj_token, tokens_map)
@@ -224,13 +232,40 @@ def process_node(token_id, tokens_map, vertices, edges):
         if token_id not in vertices:
             vertices[token_id] = build_noun_concept(token, tokens_map)
 
+        # Possessive edges: possessor --[possessive]--> possessed
+        for child_id in token.get("children", []):
+            child = tokens_map[child_id]
+            if child["deprel"] == "poss":
+                possessor_group = get_conjuncts(child_id, tokens_map)
+                possessed_group = get_conjuncts(token_id, tokens_map)
+
+                # ensure labels
+                for n in possessor_group:
+                    if tokens_map[n]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
+                        if n not in vertices:
+                            vertices[n] = build_noun_concept(tokens_map[n], tokens_map)
+                for n in possessed_group:
+                    if tokens_map[n]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
+                        if n not in vertices:
+                            vertices[n] = build_noun_concept(tokens_map[n], tokens_map)
+
+                # cross edges (reversed: possessed --> possessor)
+                for tgt in possessed_group:
+                    if tokens_map[tgt]["upos"] not in {"NN","NNS","NNP","NNPS","NP"}:
+                        continue
+                    for src in possessor_group:
+                        if tokens_map[src]["upos"] not in {"NN","NNS","NNP","NNPS","NP"}:
+                            continue
+                        edges.append((vertices[tgt], vertices[src], "possessive"))
+
     # Conjunction edges among nouns (bidirectional)
     if token["upos"].startswith("N"):
         conjuncts = get_conjuncts(token_id, tokens_map)
         # ensure labels for all conjuncts
         for cid in conjuncts:
-            if cid not in vertices:
-                vertices[cid] = build_noun_concept(tokens_map[cid], tokens_map)
+            if tokens_map[cid]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
+                if cid not in vertices:
+                    vertices[cid] = build_noun_concept(tokens_map[cid], tokens_map)
         # pick head among conjuncts by depth (shallower = head)
         def get_depth(tid):
             depth = 0
@@ -253,9 +288,10 @@ def process_node(token_id, tokens_map, vertices, edges):
                 cc_label = find_cc_label(n1, tokens_map) if depth1 <= depth2 else find_cc_label(n2, tokens_map)
                 if cc_label is None:
                     cc_label = "conj"
-                # add bidirectional conj edges using labels
-                edges.append((vertices[n1], vertices[n2], cc_label))
-                edges.append((vertices[n2], vertices[n1], cc_label))
+                # add bidirectional conj edges using labels, only if vertices exist
+                if n1 in vertices and n2 in vertices:
+                    edges.append((vertices[n1], vertices[n2], cc_label))
+                    edges.append((vertices[n2], vertices[n1], cc_label))
 
     # Prepositional edges for nouns: N --[prep]--> N (inherit to conj groups)
     if token["upos"].startswith("N"):
@@ -270,14 +306,20 @@ def process_node(token_id, tokens_map, vertices, edges):
                         obj_group = get_conjuncts(gc_id, tokens_map)
                         # ensure labels exist for all participants
                         for n in noun_group:
-                            if n not in vertices:
-                                vertices[n] = build_noun_concept(tokens_map[n], tokens_map)
+                            if tokens_map[n]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
+                                if n not in vertices:
+                                    vertices[n] = build_noun_concept(tokens_map[n], tokens_map)
                         for o in obj_group:
-                            if o not in vertices:
-                                vertices[o] = build_noun_concept(tokens_map[o], tokens_map)
+                            if tokens_map[o]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
+                                if o not in vertices:
+                                    vertices[o] = build_noun_concept(tokens_map[o], tokens_map)
                         # create cross-product edges
                         for n in noun_group:
+                            if tokens_map[n]["upos"] not in {"NN","NNS","NNP","NNPS","NP"}:
+                                continue
                             for o in obj_group:
+                                if tokens_map[o]["upos"] not in {"NN","NNS","NNP","NNPS","NP"}:
+                                    continue
                                 edges.append((vertices[n], vertices[o], prep_label))
 
     # Recurse to children
@@ -350,4 +392,5 @@ if __name__ == "__main__":
         sample_conllu = f.read()
 
     graph_res = build_en_graph_from_conllu(sample_conllu)
-    visualize_graph(graph_res)
+    # visualize_graph(graph_res)
+    visualize_graph_interactive(graph_res, output="graph.html")
