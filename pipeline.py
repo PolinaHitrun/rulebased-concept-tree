@@ -4,7 +4,7 @@ import os
 from make_graph_en import build_en_graph_from_conllu
 from make_graph_ru import build_ru_graph_from_conllu
 from graph.graph import visualize_graph, visualize_graph_interactive
-from eng_neural_anaphora import resolve_anaphora
+from eng_neural_anaphora import resolve_anaphora_en
 import nltk
 from nltk.tokenize import sent_tokenize
 
@@ -16,7 +16,10 @@ if __name__ == "__main__":
     # winnie.close()
     text = 'Собака любит мясо. Она гуляет в парке.'
     lang = 'ru'
-    resolved_text = resolve_anaphora(text)
+    if lang == 'en':
+        resolved_text = resolve_anaphora_en(text)
+    else:
+        resolved_text = resolve_anaphora_ru(text)
     sentences = sent_tokenize(resolved_text)
     input_path = os.path.abspath("input.conll")
 

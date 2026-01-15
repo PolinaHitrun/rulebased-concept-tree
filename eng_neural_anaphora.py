@@ -120,7 +120,7 @@ def get_resolver():
         _resolver.start_client()
     return _resolver
 
-def resolve_anaphora(text):
+def resolve_anaphora_en(text):
     resolver = get_resolver()
     return resolver.resolve_coreferences(text)
 
@@ -133,5 +133,5 @@ def shutdown_resolver():
 
 if __name__ == "__main__":
     text = "Alice went to the store. She bought some milk."
-    resolved_text = resolve_anaphora(text)
+    resolved_text = resolve_anaphora_en(text)
     print("Resolved:", resolved_text)

@@ -1,0 +1,3 @@
+[submodule "russian_anaphora_resolver"]
+	path = russian_anaphora_resolver
+	url = https://github.com/max-ionov/russian-anaphora
