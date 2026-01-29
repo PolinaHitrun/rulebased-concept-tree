@@ -1,4 +1,8 @@
 from russian_anaphora_resolver.anaphora import resolve_anaphora
+import pymorphy2
+
+
+morph = pymorphy2.MorphAnalyzer()
 
 
 def resolve_anaphora_ru(text: str) -> str:
@@ -11,7 +15,6 @@ def resolve_anaphora_ru(text: str) -> str:
 
     links = resolve_anaphora(text)
 
-    # Sort by anaphora offset descending to avoid offset shifts
     links = sorted(
         links,
         key=lambda x: x["anaphora_offset"],
@@ -24,10 +27,30 @@ def resolve_anaphora_ru(text: str) -> str:
         a_off = link["anaphora_offset"]
         a_len = link["anaphora_length"]
         antecedent = link["antecedent_token"]
+        pronoun = resolved_text[a_off : a_off + a_len]
+        pron_parse = morph.parse(pronoun)[0]
+        ant_parse = morph.parse(antecedent)[0]
+        target_grammemes = set()
+
+        if pron_parse.tag.case:
+            target_grammemes.add(pron_parse.tag.case)
+
+        if pron_parse.tag.number:
+            target_grammemes.add(pron_parse.tag.number)
+        
+        if pron_parse.tag.gender:
+            target_grammemes.add(pron_parse.tag.gender)
+
+        inflected = ant_parse.inflect(target_grammemes)
+
+        if inflected:
+            replacement = inflected.word
+        else:
+            replacement = antecedent
 
         resolved_text = (
             resolved_text[:a_off]
-            + antecedent
+            + replacement
             + resolved_text[a_off + a_len :]
         )
 
@@ -36,6 +59,9 @@ def resolve_anaphora_ru(text: str) -> str:
 
 if __name__ == "__main__":
     text = "Мама была уставшей. Она зашла в комнату."
+    # text = 'Петя увидел Машу, которая вышла гулять.'
+    # text = 'Мама зашла в комнату. Она начала готовить ужин.'
+    # text = 'Аня нашла свой кошелёк.'
     print(resolve_anaphora_ru(text))
-    # links = resolve_anaphora(text)
-    # print(links)
+    links = resolve_anaphora(text)
+    print(links)
