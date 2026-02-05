@@ -1,9 +1,30 @@
 from russian_anaphora_resolver.anaphora import resolve_anaphora
-import pymorphy2
+import pymorphy3
 
 
-morph = pymorphy2.MorphAnalyzer()
+morph = pymorphy3.MorphAnalyzer()
 
+
+def safe_inflect(antecedent: str, pronoun: str) -> str:
+    ant = morph.parse(antecedent)[0]
+    pro = morph.parse(pronoun)[0]
+
+    grammemes = set()
+
+    for g in ("case", "number", "gender"):
+        val = getattr(pro.tag, g, None)
+        if val:
+            grammemes.add(val)
+
+    # pymorphy3 требует строки
+    grammemes = set(map(str, grammemes))
+
+    inflected = ant.inflect(grammemes)
+
+    if inflected:
+        return inflected.word
+
+    return antecedent
 
 def resolve_anaphora_ru(text: str) -> str:
     """
@@ -28,25 +49,8 @@ def resolve_anaphora_ru(text: str) -> str:
         a_len = link["anaphora_length"]
         antecedent = link["antecedent_token"]
         pronoun = resolved_text[a_off : a_off + a_len]
-        pron_parse = morph.parse(pronoun)[0]
-        ant_parse = morph.parse(antecedent)[0]
-        target_grammemes = set()
 
-        if pron_parse.tag.case:
-            target_grammemes.add(pron_parse.tag.case)
-
-        if pron_parse.tag.number:
-            target_grammemes.add(pron_parse.tag.number)
-        
-        if pron_parse.tag.gender:
-            target_grammemes.add(pron_parse.tag.gender)
-
-        inflected = ant_parse.inflect(target_grammemes)
-
-        if inflected:
-            replacement = inflected.word
-        else:
-            replacement = antecedent
+        replacement = safe_inflect(antecedent, pronoun)
 
         resolved_text = (
             resolved_text[:a_off]
@@ -58,10 +62,9 @@ def resolve_anaphora_ru(text: str) -> str:
 
 
 if __name__ == "__main__":
-    text = "Мама была уставшей. Она зашла в комнату."
+    # text = "Мама была уставшей. Она зашла в комнату."
     # text = 'Петя увидел Машу, которая вышла гулять.'
     # text = 'Мама зашла в комнату. Она начала готовить ужин.'
     # text = 'Аня нашла свой кошелёк.'
+    text = 'Петя увидел Машу. Она улыбнулась ему.'
     print(resolve_anaphora_ru(text))
-    links = resolve_anaphora(text)
-    print(links)
