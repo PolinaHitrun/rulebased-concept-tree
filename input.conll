@@ -4,8 +4,8 @@
 3	мясо	мясо	Ncnsan	Ncnsan	_	0	_	_	_
 4	.	.	SENT	SENT	_	0	_	_	_
 
-# text = Она гуляет в парке.
-1	Она	она	P-3fsnn	P-3fsnn	_	0	_	_	_
+# text = собака гуляет в парке.
+1	собака	собака	Ncfsny	Ncfsny	_	0	_	_	_
 2	гуляет	гулять	Vmip3s-a-e	Vmip3s-a-e	_	0	_	_	_
 3	в	в	Sp-l	Sp-l	_	0	_	_	_
 4	парке	парк	Ncmsln	Ncmsln	_	0	_	_	_

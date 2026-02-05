@@ -5,6 +5,7 @@ from make_graph_en import build_en_graph_from_conllu
 from make_graph_ru import build_ru_graph_from_conllu
 from graph.graph import visualize_graph, visualize_graph_interactive
 from eng_neural_anaphora import resolve_anaphora_en
+from ru_anaphora import resolve_anaphora_ru
 import nltk
 from nltk.tokenize import sent_tokenize
 
