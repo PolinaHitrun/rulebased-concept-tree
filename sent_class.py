@@ -101,6 +101,36 @@ def parse_conll(path):
     return sentences
 
 
+def generate_conll(sentences, output_path):
+    """
+    Writes a list of Sentence objects to a file in CoNLL format.
+    """
+    with open(output_path, "w", encoding="utf8") as f:
+        for sent in sentences:
+            if sent.text:
+                f.write(f"# text = {sent.text}\n")
+            for tok in sent.tokens:
+                # placeholders for unused fields (XPOS, feats, deps, misc)
+                xpos = getattr(tok, "xpos", "_")
+                feats = getattr(tok, "feats", "_")
+                deps = getattr(tok, "deps", "_")
+                misc = getattr(tok, "misc", "_")
+                line = "\t".join([
+                    str(tok.id),
+                    tok.form,
+                    tok.lemma,
+                    tok.pos,
+                    xpos,
+                    feats,
+                    str(tok.head),
+                    tok.deprel,
+                    deps,
+                    misc
+                ])
+                f.write(line + "\n")
+            f.write("\n")  # empty line between sentences
+
+
 if __name__ == "__main__":
     sentences = parse_conll("output.conll")
 

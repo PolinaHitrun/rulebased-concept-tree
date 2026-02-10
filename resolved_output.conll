@@ -1,0 +1,12 @@
+# text = John likes Mary.
+1	John	john	NNP	NNP	_	2	nsubj	_	_
+2	likes	like	VBZ	VBZ	_	0	ROOT	_	_
+3	Mary	mary	NNP	NNP	_	2	obj	_	_
+4	.	.	SENT	SENT	_	2	punct	_	_
+
+# text = She likes him.
+1	John	she	PRP	PRP	_	2	nsubj	_	_
+2	likes	like	VBZ	VBZ	_	0	ROOT	_	_
+3	Mary	he	PRP	PRP	_	2	obj	_	_
+4	.	.	SENT	SENT	_	2	punct	_	_
+

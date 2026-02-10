@@ -329,39 +329,63 @@ def process_node(token_id, tokens_map, vertices, edges):
 
 def process_sentence(sent):
     """
-    Process a single sentence (list of token dicts).
+    Process a single sentence (Sentence object).
     Returns:
       - vertices: dict token_id -> label (string)
       - edges: list of tuples (src_label, tgt_label, label)
     """
-    # build local tokens_map and children links
-    tokens_map = {t["id"]: t for t in sent}
-    for t in sent:
-        t["children"] = []
-    for t in sent:
-        head = t["head"]
+    # sent: Sentence object with .tokens: List[Token]
+    tokens = sent.tokens
+    tokens_map = {t.id: t for t in tokens}
+    for t in tokens:
+        t.children = []
+    for t in tokens:
+        head = t.head
         if head in tokens_map:
-            tokens_map[head]["children"].append(t["id"])
+            tokens_map[head].children.append(t.id)
+
+    # We need to work with dicts in process_node etc, so convert Token objects to dicts
+    tokens_map_dict = {}
+    for tid, t in tokens_map.items():
+        # Convert Token object to dict with all required fields
+        token_dict = {
+            "id": t.id,
+            "form": t.form,
+            "lemma": t.lemma,
+            "upos": t.pos,
+            "xpos": getattr(t, "xpos", "_"),
+            "feats": getattr(t, "feats", "_"),
+            "head": t.head,
+            "deprel": t.deprel,
+            "deps": getattr(t, "deps", "_"),
+            "misc": getattr(t, "misc", "_"),
+            "children": [c for c in getattr(t, "children", [])]
+        }
+        tokens_map_dict[tid] = token_dict
+    # Build children lists for dicts
+    for t in tokens_map_dict.values():
+        t["children"] = []
+    for t in tokens_map_dict.values():
+        head = t["head"]
+        if head in tokens_map_dict:
+            tokens_map_dict[head]["children"].append(t["id"])
 
     vertices = {}  # token_id -> label
     edges = []     # (src_label, tgt_label, label)
 
     # find roots (head == 0)
-    root_ids = [t["id"] for t in sent if t["head"] == 0 or t["head"] == "0"]
+    root_ids = [t["id"] for t in tokens_map_dict.values() if t["head"] == 0 or t["head"] == "0"]
     for root_id in root_ids:
-        process_node(root_id, tokens_map, vertices, edges)
+        process_node(root_id, tokens_map_dict, vertices, edges)
 
-    # convert edges to ensure deduplication if desired (optional)
-    # here we return as-is; global graph will handle duplicates if necessary
     return vertices, edges
 
 
-def build_en_graph_from_conllu(conllu_text):
+def build_en_graph(sentences):
     """
-    Build a Graph from multi-sentence CoNLL-U text.
+    Build a Graph from a list of Sentence objects.
     Processes each sentence independently and merges results into a single Graph.
     """
-    sentences = parse_conllu(conllu_text)
     graph = Graph()
 
     for sent in sentences:
@@ -376,21 +400,17 @@ def build_en_graph_from_conllu(conllu_text):
         # add edges (labels are already text labels)
         for src_label, tgt_label, label in edges:
             if src_label in graph.vertices and tgt_label in graph.vertices:
-                # try to add (Graph.add_edge may accept different signatures;
-                #   use the simple one first)
                 try:
                     graph.add_edge(src_label, tgt_label, label)
                 except TypeError:
-                    # fallback to (agent1, agent2, meaning, weight_from, weight_to)
                     graph.add_edge(src_label, tgt_label, label, 1, 0)
 
     return graph
 
 
 if __name__ == "__main__":
-    with open("output.conll", "r", encoding="utf-8") as f:
-        sample_conllu = f.read()
+    from sent_class import parse_conll
 
-    graph_res = build_en_graph_from_conllu(sample_conllu)
-    # visualize_graph(graph_res)
+    sentence_list = parse_conll("output.conll")
+    graph_res = build_en_graph(sentence_list)
     visualize_graph_interactive(graph_res, output="graph.html")

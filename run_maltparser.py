@@ -8,7 +8,7 @@ MALT_DIR = "/Users/mac/Desktop/vscode/gromov/maltparser"
 JAR_NAME = "maltparser-1.9.2.jar"
 JAR_PATH = os.path.join(MALT_DIR, JAR_NAME)
 
-def run_malt(input_path, output_path=None, lang="en"):
+def annotate(input_path, output_path=None, lang="en"):
     """
     Запускает MaltParser на указанном входном .conll-файле.
     Логика:
@@ -72,5 +72,5 @@ def run_malt(input_path, output_path=None, lang="en"):
 
 if __name__ == "__main__":
     input_file = "input.conll"
-    text = run_malt(input_file, lang="en")
+    text = annotate(input_file, lang="en")
     print(text)

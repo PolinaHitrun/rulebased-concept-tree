@@ -373,7 +373,48 @@ def resolve_anaphora_en(conll_file: str):
     return sentences
 
 
+def sentences_to_conll(sentences):
+    """
+    Convert list of Sentence objects to CoNLL formatted strings.
+    Returns list of strings for each sentence.
+    """
+    conll_lines = []
+
+    for sent in sentences:
+        conll_lines.append(f"# text = {sent.text}")
+        for tok in sent.tokens:
+            # Assuming Token has attributes: id, form, lemma, pos, xpos, feats, head, deprel, deps, misc
+            # Using '_' for xpos, feats, deps, misc if not present
+            xpos = getattr(tok, 'xpos', '_')
+            feats = getattr(tok, 'feats', '_')
+            deps = getattr(tok, 'deps', '_')
+            misc = getattr(tok, 'misc', '_')
+            line = "\t".join([
+                str(tok.id),
+                tok.form,
+                tok.lemma,
+                tok.pos,
+                xpos,
+                feats,
+                str(tok.head),
+                tok.deprel,
+                deps,
+                misc
+            ])
+            conll_lines.append(line)
+        conll_lines.append("")  # empty line between sentences
+
+    return conll_lines
+
+
 if __name__ == "__main__":
+    from sent_class import generate_conll
+
     resolved_sentences = resolve_anaphora_en("test.conll")
+
+    # print sentences as text
     for sent in resolved_sentences:
         print(f"SENT {sent.sent_id}: {' '.join([t.form for t in sent])}")
+
+    # write resolved CoNLL to file
+    generate_conll(resolved_sentences, "resolved_output.conll")
