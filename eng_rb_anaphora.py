@@ -90,7 +90,7 @@ class NPExtractor:
 
         for tok in sent.tokens:
             # Head of NP: common noun or proper noun or pronoun
-            if tok.pos not in {"NN", "NNS", "NNP", "NNPS", "PRP"}:
+            if tok.pos not in {"NN", "NNS", "NP"}:
                 continue
 
             np_tokens = self._collect_np_tokens(tok, sent)
@@ -139,9 +139,9 @@ class NPExtractor:
     def _get_number(self, tok):
         if tok.pos in {"NNS", "NNPS"}:
             return "PL"
-        if tok.pos in {"NN", "NNP"}:
+        if tok.pos in {"NN", "NNP", "NP"}:
             return "SG"
-        if tok.pos == "PRP":
+        if tok.pos == "PP":
             return self._pronoun_number(tok.lemma)
         return "UNK"
 
@@ -201,7 +201,6 @@ class BindingFilter:
         return filtered
 
 
-# --------- Discourse Model -----------
 class DiscourseModel:
     """
     Minimal discourse model for RAP.
@@ -237,7 +236,6 @@ class DiscourseModel:
             if distance > self.max_sent_distance:
                 continue
 
-            # simple decay: halve salience per sentence
             ent["salience"] = ent["salience"] / (2 ** distance)
             new_entities.append(ent)
 
@@ -257,7 +255,6 @@ class DiscourseModel:
         return candidates
 
 
-# --------- Salience Scorer -----------
 class SalienceScorer:
     """
     Computes salience weights for NP candidates in RAP.
@@ -305,7 +302,6 @@ class SalienceScorer:
         return scored
 
     def _get_pronoun_role(self, pron_token):
-        # approximate: use deprel of pronoun
         if pron_token.deprel in {"nsubj", "nsubjpass"}:
             return "SUBJ"
         if pron_token.deprel in {"dobj", "obj"}:
@@ -317,18 +313,18 @@ class SalienceScorer:
         return "OTHER"
 
 class MorphFilter:
-    """
-    Filters NP candidates based on number agreement with pronoun.
-    Can be extended later to include gender.
-    """
     def filter(self, pronoun_token, candidates):
-        pron_number = "SG" if pronoun_token.lemma in {"i","he","she","it"} else "PL"
-        filtered = []
-        for np in candidates:
-            if np["number"] != pron_number:
-                continue
-            filtered.append(np)
-        return filtered
+        sg_pron = {"i", "he", "she", "it", "him", "her"}
+        pl_pron = {"we", "they", "them"}
+
+        if pronoun_token.lemma in sg_pron:
+            pron_number = "SG"
+        elif pronoun_token.lemma in pl_pron:
+            pron_number = "PL"
+        else:
+            return candidates  # unknown → do not filter
+
+        return [np for np in candidates if np["number"] == pron_number]
 
 def resolve_anaphora_en(conll_file: str):
     """
@@ -349,7 +345,7 @@ def resolve_anaphora_en(conll_file: str):
         nps = np_extractor.extract_nps(sent)
         dm.decay(sent.sent_id)
 
-        pronouns = [t for t in sent if t.pos == "PRP"]
+        pronouns = [t for t in sent if t.pos == "PP"]
 
         for pron in pronouns:
             if pron.lemma == "it" and pleonastic.is_pleonastic(pron, sent):
@@ -366,7 +362,8 @@ def resolve_anaphora_en(conll_file: str):
 
             if scored:
                 best = scored[0][0]
-                pron.form = best["head_form"]  # replace pronoun with antecedent
+                pron.form = best["head_form"]
+                sent.text = " ".join(t.form for t in sent.tokens)
 
         dm.add_nps(nps, sent.sent_id)
 
@@ -410,11 +407,11 @@ def sentences_to_conll(sentences):
 if __name__ == "__main__":
     from sent_class import generate_conll
 
-    resolved_sentences = resolve_anaphora_en("test.conll")
+    resolved_sentences = resolve_anaphora_en("output.conll")
 
     # print sentences as text
     for sent in resolved_sentences:
         print(f"SENT {sent.sent_id}: {' '.join([t.form for t in sent])}")
 
     # write resolved CoNLL to file
-    generate_conll(resolved_sentences, "resolved_output.conll")
+    # generate_conll(resolved_sentences, "resolved_output.conll")

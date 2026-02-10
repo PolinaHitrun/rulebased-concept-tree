@@ -17,7 +17,17 @@ if __name__ == "__main__":
     # text = winnie.read().replace('\n', ' ')
     # winnie.close()
 
-    text = 'John likes Mary. She likes him too.'
+    text = '''Thus in the case of tossing a penny, if we take a few throws, say ten, it is decidedly unlikely that there should be a
+    diﬀerence of six between the numbers of heads and tails; that is,
+    that there should be as many as eight heads and therefore as few
+    as two tails, or vice versa. But take a thousand throws, and it
+    becomes in turn exceedingly likely that there should be as much
+    as, or more than, a diﬀerence of six between the respective numbers. On the other hand the proportion of heads to tails in the
+    case of the thousand throws will be very much nearer to unity,
+    in most cases, than when we only took ten. In other words, the
+    longer a game of chance continues the larger are the spells and
+    runs of luck in themselves, but the less their relative proportions
+    to the whole amounts involved.'''.replace('\n', ' ').lower()
     lang = 'en'
 
     # if lang == 'en':
