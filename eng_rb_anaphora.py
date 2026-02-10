@@ -1,4 +1,4 @@
-
+from sent_class import parse_conll
 
 class PleonasticItDetector:
     def __init__(self):
@@ -19,12 +19,7 @@ class PleonasticItDetector:
             "late", "early", "dark", "cold", "hot"
         }
 
-    def is_pleonastic(self, it_token, sent):
-        """
-        it_token: Token (lemma == 'it')
-        sent: sentence object with tokens + dependency access
-        """
-
+    def is_pleonastic(self, it_token, sent) -> bool:
         # 1. it must be subject
         if it_token.deprel not in {"nsubj", "expl"}:
             return False
@@ -52,8 +47,6 @@ class PleonasticItDetector:
 
         return False
 
-    # ---------- helpers ----------
-
     def _is_extraposition(self, it_token, be_token, sent):
         adj = self._get_predicative_adj(be_token, sent)
         if not adj:
@@ -76,3 +69,311 @@ class PleonasticItDetector:
             if tok.head == head.id and tok.deprel in {"ccomp", "xcomp"}:
                 return True
         return False
+
+
+class NPExtractor:
+    """
+    Rule-based NP extractor for dependency trees.
+    Extracts noun phrases with grammatical roles needed for RAP.
+    """
+
+    def extract_nps(self, sent):
+        """
+        sent: sentence object with attributes:
+            - tokens: list of Token
+            - get_token(id) -> Token
+
+        returns: list of NP dicts
+        """
+
+        nps = []
+
+        for tok in sent.tokens:
+            # Head of NP: common noun or proper noun or pronoun
+            if tok.pos not in {"NN", "NNS", "NNP", "NNPS", "PRP"}:
+                continue
+
+            np_tokens = self._collect_np_tokens(tok, sent)
+
+            np = {
+                "head_id": tok.id,
+                "tokens": sorted(np_tokens),
+                "head_lemma": tok.lemma,
+                "head_form": tok.form,
+                "pos": tok.pos,
+                "number": self._get_number(tok),
+                "person": self._get_person(tok),
+                "gram_role": self._get_grammatical_role(tok),
+                "sentence_id": sent.sent_id
+            }
+
+            nps.append(np)
+
+        return nps
+
+    def _collect_np_tokens(self, head, sent):
+        """
+        Collect determiners, compounds, adjectival modifiers.
+        """
+        tokens = {head.id}
+
+        for tok in sent.tokens:
+            if tok.head == head.id and tok.deprel in {
+                "det", "amod", "compound", "nummod", "poss"
+            }:
+                tokens.add(tok.id)
+
+        return tokens
+
+    def _get_grammatical_role(self, tok):
+        if tok.deprel in {"nsubj", "nsubjpass"}:
+            return "SUBJ"
+        if tok.deprel in {"dobj", "obj"}:
+            return "OBJ"
+        if tok.deprel == "iobj":
+            return "IOBJ"
+        if tok.deprel == "pobj":
+            return "POBJ"
+        return "OTHER"
+
+    def _get_number(self, tok):
+        if tok.pos in {"NNS", "NNPS"}:
+            return "PL"
+        if tok.pos in {"NN", "NNP"}:
+            return "SG"
+        if tok.pos == "PRP":
+            return self._pronoun_number(tok.lemma)
+        return "UNK"
+
+    def _get_person(self, tok):
+        if tok.pos == "PRP":
+            return self._pronoun_person(tok.lemma)
+        return 3
+
+    def _pronoun_number(self, lemma):
+        if lemma in {"we", "they"}:
+            return "PL"
+        if lemma in {"i", "he", "she", "it"}:
+            return "SG"
+        return "UNK"
+
+    def _pronoun_person(self, lemma):
+        if lemma == "i":
+            return 1
+        if lemma == "you":
+            return 2
+        return 3
+
+class BindingFilter:
+    """
+    Implements Binding Theory filters for RAP.
+    Currently: Co-argument constraint (Condition B).
+    """
+
+    def filter_coargument(self, pronoun_token, candidate_nps, sent):
+        """
+        Remove NP candidates that are co-arguments of the same predicate
+        as the pronoun (Condition B), but only for NPs in the same sentence.
+        """
+        filtered = []
+
+        pron_head = sent.get_token(pronoun_token.head)
+        if not pron_head:
+            return candidate_nps
+
+        for np in candidate_nps:
+            # NP from previous sentence: keep without filtering
+            if np["sentence_id"] != sent.sent_id:
+                filtered.append(np)
+                continue
+
+            cand_head = sent.get_token(np["head_id"])
+            if not cand_head:
+                filtered.append(np)  # keep if head not found
+                continue
+
+            # same governing predicate in the same sentence
+            if cand_head.head == pron_head.id and pronoun_token.head == pron_head.id:
+                continue
+
+            filtered.append(np)
+
+        return filtered
+
+
+# --------- Discourse Model -----------
+class DiscourseModel:
+    """
+    Minimal discourse model for RAP.
+    Keeps track of active NP candidates with sentence-based decay.
+    """
+
+    def __init__(self, max_sent_distance=4):
+        self.max_sent_distance = max_sent_distance
+        self.entities = []  # list of dicts: NP + salience + last_seen
+
+    def add_nps(self, nps, current_sent_id):
+        """
+        Add new NPs from the current sentence to the discourse model.
+        Initial salience is assigned later; here we just register them.
+        """
+        for np in nps:
+            entry = {
+                "np": np,
+                "salience": 0,
+                "last_seen": current_sent_id
+            }
+            self.entities.append(entry)
+
+    def decay(self, current_sent_id):
+        """
+        Apply sentence-based decay and remove stale entities.
+        """
+        new_entities = []
+
+        for ent in self.entities:
+            distance = current_sent_id - ent["last_seen"]
+
+            if distance > self.max_sent_distance:
+                continue
+
+            # simple decay: halve salience per sentence
+            ent["salience"] = ent["salience"] / (2 ** distance)
+            new_entities.append(ent)
+
+        self.entities = new_entities
+
+    def get_candidates(self, current_sent_id):
+        """
+        Return NP candidates within discourse window.
+        """
+        candidates = []
+
+        for ent in self.entities:
+            distance = current_sent_id - ent["last_seen"]
+            if distance <= self.max_sent_distance:
+                candidates.append(ent["np"])
+
+        return candidates
+
+
+# --------- Salience Scorer -----------
+class SalienceScorer:
+    """
+    Computes salience weights for NP candidates in RAP.
+    """
+
+    ROLE_WEIGHTS = {
+        "SUBJ": 80,
+        "OBJ": 50,
+        "IOBJ": 40,
+        "POBJ": 40,
+        "OTHER": 0
+    }
+
+    RECENCY_WEIGHT = 100
+    HEAD_WEIGHT = 80
+    PARALLELISM_BONUS = 35
+
+    def score(self, pronoun_token, candidates, sent):
+        scored = []
+
+        for np in candidates:
+            weight = 0
+
+            # sentence recency
+            if np["sentence_id"] == sent.sent_id:
+                weight += self.RECENCY_WEIGHT
+
+            # grammatical role
+            weight += self.ROLE_WEIGHTS.get(np["gram_role"], 0)
+
+            # head NP emphasis
+            # simple approximation: if NP not nested (tokens == 1)
+            if len(np["tokens"]) == 1:
+                weight += self.HEAD_WEIGHT
+
+            # parallelism: if pronoun role matches NP role
+            pron_role = self._get_pronoun_role(pronoun_token)
+            if pron_role == np["gram_role"]:
+                weight += self.PARALLELISM_BONUS
+
+            scored.append((np, weight))
+
+        # sort descending by weight
+        scored.sort(key=lambda x: x[1], reverse=True)
+        return scored
+
+    def _get_pronoun_role(self, pron_token):
+        # approximate: use deprel of pronoun
+        if pron_token.deprel in {"nsubj", "nsubjpass"}:
+            return "SUBJ"
+        if pron_token.deprel in {"dobj", "obj"}:
+            return "OBJ"
+        if pron_token.deprel == "iobj":
+            return "IOBJ"
+        if pron_token.deprel == "pobj":
+            return "POBJ"
+        return "OTHER"
+
+class MorphFilter:
+    """
+    Filters NP candidates based on number agreement with pronoun.
+    Can be extended later to include gender.
+    """
+    def filter(self, pronoun_token, candidates):
+        pron_number = "SG" if pronoun_token.lemma in {"i","he","she","it"} else "PL"
+        filtered = []
+        for np in candidates:
+            if np["number"] != pron_number:
+                continue
+            filtered.append(np)
+        return filtered
+
+def resolve_anaphora_en(conll_file: str):
+    """
+    Resolves English anaphora in a CoNLL file using rule-based RAP approach.
+    Returns list of sentences with tokens, where pronouns have 'form' replaced
+    by resolved antecedent if found.
+    """
+    sentences = parse_conll(conll_file)
+
+    np_extractor = NPExtractor()
+    pleonastic = PleonasticItDetector()
+    binding = BindingFilter()
+    dm = DiscourseModel()
+    scorer = SalienceScorer()
+    morph_filter = MorphFilter()
+
+    for sent in sentences:
+        nps = np_extractor.extract_nps(sent)
+        dm.decay(sent.sent_id)
+
+        pronouns = [t for t in sent if t.pos == "PRP"]
+
+        for pron in pronouns:
+            if pron.lemma == "it" and pleonastic.is_pleonastic(pron, sent):
+                continue  # leave pleonastic it unchanged
+
+            candidates = [
+                np for np in dm.get_candidates(sent.sent_id)
+                if np["sentence_id"] < sent.sent_id
+            ]
+
+            filtered = binding.filter_coargument(pron, candidates, sent)
+            filtered = morph_filter.filter(pron, filtered)
+            scored = scorer.score(pron, filtered, sent)
+
+            if scored:
+                best = scored[0][0]
+                pron.form = best["head_form"]  # replace pronoun with antecedent
+
+        dm.add_nps(nps, sent.sent_id)
+
+    return sentences
+
+
+if __name__ == "__main__":
+    resolved_sentences = resolve_anaphora_en("test.conll")
+    for sent in resolved_sentences:
+        print(f"SENT {sent.sent_id}: {' '.join([t.form for t in sent])}")

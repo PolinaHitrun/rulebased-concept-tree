@@ -15,8 +15,8 @@ if __name__ == "__main__":
     # winnie = open('pg67098.txt', 'r', encoding='utf-8')
     # text = winnie.read().replace('\n', ' ')
     # winnie.close()
-    text = 'Собака любит мясо. Она гуляет в парке.'
-    lang = 'ru'
+    text = 'John likes Mary. She likes him too.'
+    lang = 'en'
     if lang == 'en':
         resolved_text = resolve_anaphora_en(text)
     else:

@@ -58,6 +58,6 @@ def write_conllx_file(sentence, filename="input.conll", lang='en'):
 if __name__ == "__main__":
     # Пример по умолчанию для теста
     # test_sentence = "The cat and the dogs eat meat and fish."
-    test_sentence = "Кошка убила мышку"
-    file_path = write_conllx_file(test_sentence, lang='ru')
+    test_sentence = "John likes Mary. She likes him too."
+    file_path = write_conllx_file(test_sentence, lang='en')
     print(f"Saved CoNLL-X file at {file_path}")

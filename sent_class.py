@@ -12,13 +12,13 @@ class Token:
         head,
         deprel
     ):
-        self.id = id              # int
-        self.form = form          # surface form
-        self.lemma = lemma        # lemma
-        self.pos = pos            # coarse POS (we use this)
-        self.xpos = xpos          # fine-grained POS (TreeTagger/Malt)
-        self.head = head          # head id (int)
-        self.deprel = deprel      # dependency relation
+        self.id = id
+        self.form = form
+        self.lemma = lemma
+        self.pos = pos
+        self.xpos = xpos
+        self.head = head
+        self.deprel = deprel
 
     def __repr__(self):
         return f"Token({self.id}, {self.form}, {self.pos}, head={self.head}, rel={self.deprel})"

@@ -72,5 +72,5 @@ def run_malt(input_path, output_path=None, lang="en"):
 
 if __name__ == "__main__":
     input_file = "input.conll"
-    text = run_malt(input_file, lang="ru")
+    text = run_malt(input_file, lang="en")
     print(text)
