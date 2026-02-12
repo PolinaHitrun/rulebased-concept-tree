@@ -2,7 +2,7 @@ import prepare
 from run_maltparser import annotate
 import os
 from make_graph_en import build_en_graph
-from make_graph_ru import build_ru_graph_from_conllu
+from make_graph_ru import build_ru_graph
 from graph.graph import visualize_graph, visualize_graph_interactive
 from eng_rb_anaphora import resolve_anaphora_en
 from ru_rb_anaphora import resolve_anaphora_ru
@@ -19,11 +19,6 @@ if __name__ == "__main__":
 
     text = '''Мама зашла в комнату. Она начала готовить ужин.'''.replace('\n', ' ').lower()
     lang = 'ru'
-
-    # if lang == 'en':
-    #     resolved_text = resolve_anaphora_en(text)
-    # else:
-    #     resolved_text = resolve_anaphora_ru(text)
     
     sentences = sent_tokenize(text)
     input_path = os.path.abspath("input.conll")
@@ -44,6 +39,9 @@ if __name__ == "__main__":
         resolved_sentences = resolve_anaphora_en("output.conll")
     elif lang == 'ru':
         resolved_sentences = resolve_anaphora_ru("output.conll")
+        print("\nResolved sentences:")
+        for sent in resolved_sentences:
+            print(sent.text)
 
     # with open("output.conll", "r", encoding="utf-8") as f:
     #     conllu_example = f.read()
@@ -52,7 +50,7 @@ if __name__ == "__main__":
     if lang == 'en':
         g = build_en_graph(resolved_sentences)
     else:
-        g = build_ru_graph_from_conllu(conllu_example)
+        g = build_ru_graph(resolved_sentences)
 
     print("Graph edges:")
     for e in g.edges:

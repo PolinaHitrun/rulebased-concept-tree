@@ -298,24 +298,51 @@ def resolve_anaphora_ru(conll_file: str):
                 np for np in dm.get_candidates(sent.sent_id)
                 if np["sentence_id"] < sent.sent_id
             ]
-            print(f"\nPRONOUN: {pron.form}")
-            print("Candidates from discourse model:", [c['head_form'] for c in candidates])
 
-            # после BindingFilter
+            # BindingFilter
             filtered = binding.filter_coargument(pron, candidates, sent)
-            print("After binding filter:", [c['head_form'] for c in filtered])
 
-            # после MorphFilter
+            # MorphFilter
             filtered = morph_filter.filter(pron, filtered)
-            print("After morph filter:", [c['head_form'] for c in filtered])
 
             # Salience
             scored = scorer.score(pron, filtered, sent)
-            print("Scored candidates:", [(c['head_form'], score) for c, score in scored])
 
             if scored:
                 best = scored[0][0]
-                pron.form = best["head_form"]
+
+                # морфологический анализ местоимения
+                pron_parse = morph_filter.morph.parse(pron.form)[0]
+
+                target_case = pron_parse.tag.case
+                target_number = pron_parse.tag.number
+                target_gender = pron_parse.tag.gender
+
+                # анализ антецедента
+                antecedent_parse = morph_filter.morph.parse(best["head_form"])[0]
+
+                # лемма в нормальной форме (именительный падеж)
+                pron.lemma = antecedent_parse.normal_form
+
+                # собираем граммемы для согласования формы
+                grammemes = set()
+
+                if target_case:
+                    grammemes.add(target_case)
+                if target_number:
+                    grammemes.add(target_number)
+                if target_gender:
+                    grammemes.add(target_gender)
+
+                # пытаемся просклонять антецедент
+                inflected = antecedent_parse.inflect(grammemes)
+
+                if inflected:
+                    pron.form = inflected.word
+                else:
+                    # fallback — используем исходную форму
+                    pron.form = best["head_form"]
+
                 sent.text = " ".join(t.form for t in sent.tokens)
 
         dm.add_nps(nps, sent.sent_id)
@@ -366,5 +393,5 @@ if __name__ == "__main__":
     for sent in resolved_sentences:
         print(f"SENT {sent.sent_id}: {' '.join([t.form for t in sent])}")
 
-    # write resolved CoNLL to file
-    # generate_conll(resolved_sentences, "resolved_output.conll")
+    with open("resolved_output.conll", "w") as f:
+        f.write("\n".join(sentences_to_conll(resolved_sentences)))

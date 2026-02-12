@@ -1,12 +1,13 @@
-# text = John likes Mary.
-1	John	john	NNP	NNP	_	2	nsubj	_	_
-2	likes	like	VBZ	VBZ	_	0	ROOT	_	_
-3	Mary	mary	NNP	NNP	_	2	obj	_	_
-4	.	.	SENT	SENT	_	2	punct	_	_
+# text = мама зашла в комнату.
+1	мама	мама	Ncfsny	Ncfsny	_	2	огранич	_	_
+2	зашла	зайти	Vmis-sfa-p	Vmis-sfa-p	_	0	ROOT	_	_
+3	в	в	Sp-a	Sp-a	_	4	огранич	_	_
+4	комнату	комната	Ncfsan	Ncfsan	_	2	предик	_	_
+5	.	.	SENT	SENT	_	4	PUNC	_	_
 
-# text = She likes him.
-1	John	she	PRP	PRP	_	2	nsubj	_	_
-2	likes	like	VBZ	VBZ	_	0	ROOT	_	_
-3	Mary	he	PRP	PRP	_	2	obj	_	_
-4	.	.	SENT	SENT	_	2	punct	_	_
-
+# text = мама начала готовить ужин .
+1	мама	мама	P-3fsnn	P-3fsnn	_	2	огранич	_	_
+2	начала	начать	Vmis-sfa-p	Vmis-sfa-p	_	0	ROOT	_	_
+3	готовить	готовить	Vmn----a-e	Vmn----a-e	_	4	огранич	_	_
+4	ужин	ужин	Ncmsan	Ncmsan	_	2	предл	_	_
+5	.	.	SENT	SENT	_	4	PUNC	_	_

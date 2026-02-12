@@ -29,9 +29,9 @@ class Sentence:
     Sentence container used across the RAP pipeline.
     """
     def __init__(self, tokens, sent_id, text=None):
-        self.tokens = tokens              # list[Token]
-        self.sent_id = sent_id             # sentence index in document
-        self.text = text                  # raw sentence (optional)
+        self.tokens = tokens
+        self.sent_id = sent_id
+        self.text = text
 
         self._token_index = {t.id: t for t in tokens}
 
@@ -42,7 +42,7 @@ class Sentence:
         return iter(self.tokens)
 
     def __repr__(self):
-        return f"Sentence(id={self.sent_id}, tokens={len(self.tokens)})"
+        return f"Sentence(id={self.sent_id}, tokens={len(self.tokens)}) {self.text}"
 
 
 def parse_conll(path):
