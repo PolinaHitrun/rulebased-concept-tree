@@ -55,7 +55,6 @@ def parse_conllu(conllu_text):
 def build_noun_concept(token, tokens_map):
     """
     Build a noun concept string from a token, including modifiers and compounds.
-    Uses the provided tokens_map so it's safe for multi-sentence processing.
     """
     def collect_modifiers(token_id, collected):
         token_obj = tokens_map[token_id]
@@ -74,7 +73,6 @@ def build_noun_concept(token, tokens_map):
 def get_conjuncts(token_id, tokens_map):
     """
     Given a token id, returns a set of token ids including the token and all its conjuncts.
-    Uses BFS over 'conj' children. Only includes noun tokens.
     """
     noun_upos_tags = {"NN", "NNS", "NNP", "NNPS", "NP"}
     conjuncts = set()
@@ -83,11 +81,9 @@ def get_conjuncts(token_id, tokens_map):
         current = queue.popleft()
         if current in conjuncts:
             continue
-        # Only add current if it's a noun/NP
         if tokens_map[current]["upos"] in noun_upos_tags:
             conjuncts.add(current)
         else:
-            # skip non-noun tokens entirely (do not traverse their conj children)
             continue
         current_token = tokens_map[current]
         for child_id in current_token.get("children", []):
@@ -119,14 +115,12 @@ def find_related_nouns(verb_id, tokens_map):
     noun_upos_tags = {"NN", "NNS", "NNP", "NNPS", "NP"}
     verb_token = tokens_map[verb_id]
 
-    # Collect subjects: direct nsubj + their conjuncts
     subject_ids = set()
     for child_id in verb_token.get("children", []):
         child = tokens_map[child_id]
         if child["deprel"] == "nsubj" and child["upos"] in noun_upos_tags:
             subject_ids.update(get_conjuncts(child_id, tokens_map))
 
-    # Objects: recursive prep -> pobj -> conj and direct obj/dobj
     object_ids_with_prep = {}
 
     def collect_objects(token_id, prep_chain=None):
@@ -134,7 +128,6 @@ def find_related_nouns(verb_id, tokens_map):
             prep_chain = []
         token = tokens_map[token_id]
 
-        # Direct object forms (obj/dobj/iobj/pobj etc.)
         if token["deprel"] in {"obj", "dobj", "pobj", "iobj"} and token["upos"] in noun_upos_tags:
             for obj_id in get_conjuncts(token_id, tokens_map):
                 object_ids_with_prep[obj_id] = " ".join(prep_chain)
@@ -142,23 +135,19 @@ def find_related_nouns(verb_id, tokens_map):
                 for c_id in get_conjuncts(obj_id, tokens_map):
                     object_ids_with_prep[c_id] = " ".join(prep_chain)
 
-        # If the token is a preposition, include it into the chain and recurse
         if token["deprel"] == "prep":
             new_prep_chain = prep_chain + [token["form"]]
             for child_id in token.get("children", []):
                 collect_objects(child_id, new_prep_chain)
 
-        # Also descend into children that are not handled above to catch nested structures
         for child_id in token.get("children", []):
             child = tokens_map[child_id]
             if child["deprel"] not in {"prep", "obj", "dobj", "pobj", "conj"}:
                 collect_objects(child_id, prep_chain)
 
-    # Apply to all children of the verb
     for child_id in verb_token.get("children", []):
         collect_objects(child_id)
 
-    # Fallback subjects if none found (look up the head chain and subtree)
     if not subject_ids:
         subject_candidates = set()
         current_id = verb_id
@@ -172,7 +161,6 @@ def find_related_nouns(verb_id, tokens_map):
                 subject_candidates.add(head_id)
             current_id = head_id
 
-        # Add noun tokens in subtree excluding objects
         subtree_tokens = set()
         queue = deque([verb_id])
         while queue:
@@ -186,7 +174,6 @@ def find_related_nouns(verb_id, tokens_map):
         for subj in subject_candidates:
             subject_ids.update(get_conjuncts(subj, tokens_map))
 
-    # Ensure subjects and objects are disjoint
     subject_ids = subject_ids - set(object_ids_with_prep.keys())
 
     return subject_ids, object_ids_with_prep
@@ -201,12 +188,10 @@ def process_node(token_id, tokens_map, vertices, edges):
     """
     token = tokens_map[token_id]
 
-    # Verb block: create verb edges subj -> obj (verb + prep_chain)
     if token["upos"].startswith("V"):
         subj_ids, obj_ids_with_prep = find_related_nouns(token_id, tokens_map)
 
         for subj_id in subj_ids:
-            # ensure subj label present
             if subj_id not in vertices and tokens_map[subj_id]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
                 subj_token = tokens_map[subj_id]
                 vertices[subj_id] = build_noun_concept(subj_token, tokens_map)
@@ -227,19 +212,16 @@ def process_node(token_id, tokens_map, vertices, edges):
                     verb_label = f"{verb_label} {prep_chain}"
                 edges.append((subj_label, obj_label, verb_label))
 
-    # Noun block: ensure vertex exists
     if token["upos"].startswith("N"):
         if token_id not in vertices:
             vertices[token_id] = build_noun_concept(token, tokens_map)
 
-        # Possessive edges: possessor --[possessive]--> possessed
         for child_id in token.get("children", []):
             child = tokens_map[child_id]
             if child["deprel"] == "poss":
                 possessor_group = get_conjuncts(child_id, tokens_map)
                 possessed_group = get_conjuncts(token_id, tokens_map)
 
-                # ensure labels
                 for n in possessor_group:
                     if tokens_map[n]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
                         if n not in vertices:
@@ -249,7 +231,6 @@ def process_node(token_id, tokens_map, vertices, edges):
                         if n not in vertices:
                             vertices[n] = build_noun_concept(tokens_map[n], tokens_map)
 
-                # cross edges (reversed: possessed --> possessor)
                 for tgt in possessed_group:
                     if tokens_map[tgt]["upos"] not in {"NN","NNS","NNP","NNPS","NP"}:
                         continue
@@ -258,15 +239,12 @@ def process_node(token_id, tokens_map, vertices, edges):
                             continue
                         edges.append((vertices[tgt], vertices[src], "possessive"))
 
-    # Conjunction edges among nouns (bidirectional)
     if token["upos"].startswith("N"):
         conjuncts = get_conjuncts(token_id, tokens_map)
-        # ensure labels for all conjuncts
         for cid in conjuncts:
             if tokens_map[cid]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
                 if cid not in vertices:
                     vertices[cid] = build_noun_concept(tokens_map[cid], tokens_map)
-        # pick head among conjuncts by depth (shallower = head)
         def get_depth(tid):
             depth = 0
             current = tid
@@ -293,7 +271,6 @@ def process_node(token_id, tokens_map, vertices, edges):
                     edges.append((vertices[n1], vertices[n2], cc_label))
                     edges.append((vertices[n2], vertices[n1], cc_label))
 
-    # Prepositional edges for nouns: N --[prep]--> N (inherit to conj groups)
     if token["upos"].startswith("N"):
         noun_group = get_conjuncts(token_id, tokens_map)
         for child_id in token.get("children", []):
@@ -304,7 +281,6 @@ def process_node(token_id, tokens_map, vertices, edges):
                     gc = tokens_map[gc_id]
                     if gc["deprel"] == "pobj":
                         obj_group = get_conjuncts(gc_id, tokens_map)
-                        # ensure labels exist for all participants
                         for n in noun_group:
                             if tokens_map[n]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
                                 if n not in vertices:
@@ -313,7 +289,6 @@ def process_node(token_id, tokens_map, vertices, edges):
                             if tokens_map[o]["upos"] in {"NN","NNS","NNP","NNPS","NP"}:
                                 if o not in vertices:
                                     vertices[o] = build_noun_concept(tokens_map[o], tokens_map)
-                        # create cross-product edges
                         for n in noun_group:
                             if tokens_map[n]["upos"] not in {"NN","NNS","NNP","NNPS","NP"}:
                                 continue
@@ -322,7 +297,6 @@ def process_node(token_id, tokens_map, vertices, edges):
                                     continue
                                 edges.append((vertices[n], vertices[o], prep_label))
 
-    # Recurse to children
     for child_id in token.get("children", []):
         process_node(child_id, tokens_map, vertices, edges)
 
@@ -334,7 +308,6 @@ def process_sentence(sent):
       - vertices: dict token_id -> label (string)
       - edges: list of tuples (src_label, tgt_label, label)
     """
-    # sent: Sentence object with .tokens: List[Token]
     tokens = sent.tokens
     tokens_map = {t.id: t for t in tokens}
     for t in tokens:
@@ -344,7 +317,6 @@ def process_sentence(sent):
         if head in tokens_map:
             tokens_map[head].children.append(t.id)
 
-    # We need to work with dicts in process_node etc, so convert Token objects to dicts
     tokens_map_dict = {}
     for tid, t in tokens_map.items():
         # Convert Token object to dict with all required fields
@@ -373,7 +345,6 @@ def process_sentence(sent):
     vertices = {}  # token_id -> label
     edges = []     # (src_label, tgt_label, label)
 
-    # find roots (head == 0)
     root_ids = [t["id"] for t in tokens_map_dict.values() if t["head"] == 0 or t["head"] == "0"]
     for root_id in root_ids:
         process_node(root_id, tokens_map_dict, vertices, edges)
@@ -391,13 +362,11 @@ def build_en_graph(sentences):
     for sent in sentences:
         vertices, edges = process_sentence(sent)
 
-        # add vertices (by label) to global graph
         for vid, label in vertices.items():
             concept_label = label
             if concept_label not in graph.vertices:
                 graph.add_vertex(concept_label, [concept_label])
 
-        # add edges (labels are already text labels)
         for src_label, tgt_label, label in edges:
             if src_label in graph.vertices and tgt_label in graph.vertices:
                 try:
