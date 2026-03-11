@@ -82,32 +82,55 @@ def is_conjunction(token):
     return xpos.upper().startswith("C") or ("соч" in deprel) or ("conj" in deprel) or ("сравн-союзн" in deprel)
 
 
-def build_noun_concept(token_id, tokens_map):
+def build_noun_concept(token_id, tokens):
     """
-    Собирает строковое представление именной группы: включаем определители/прилагательные/композиты.
-    Эвристика: берем токен + детей, у которых xpos начинается на A (adj), deprel содержит 'определ'/'det'/'amod'/'compound'
-    Сохраняем порядок: модификаторы слева (рекурсивно), затем ядро.
+    Строит минимальную различающую именную группу (concept NP).
+
+    Включает:
+    - голову (существительное / местоимение)
+    - amod (прилагательные)
+    - det (детерминаторы)
+    - nummod (числительные)
+    - advmod, если он модифицирует amod
+
+    Не включает:
+    - предложные группы
+    - другие существительные
+    - инфинитивы
+    - комплементы
     """
-    token = tokens_map[token_id]
-    modifiers = []
 
-    def collect_left_mods(tid):
-        t = tokens_map[tid]
-        for cid in getattr(t, "children", []):
-            child = tokens_map[cid]
-            child_deprel = (getattr(child, "deprel", None) or "").lower()
-            child_xpos = (getattr(child, "xpos", None) or "").upper()
-            # определители и прилагательные и компаунды
-            if child_xpos.startswith("A") or "определ" in child_deprel or child_deprel in {"det", "amod", "compound", "атрибут"}:
-                collect_left_mods(cid)
-                modifiers.append(child.lemma)
-    collect_left_mods(token_id)
-    # соберём концепт: модификаторы + ядро (все леммы)
-    parts = modifiers + [token.lemma]
-    return " ".join(parts)
+    head = tokens[token_id]
+    concept_tokens = [head]
+
+    for child_id in getattr(head, "children", []):
+        child = tokens[child_id]
+        deprel = (getattr(child, "deprel", "") or "").lower()
+
+        # Прилагательные
+        if deprel == "amod":
+            concept_tokens.append(child)
+
+        # Детерминаторы (всё, некоторые и т.п.)
+        elif deprel == "det":
+            concept_tokens.append(child)
+
+        # Числительные
+        elif deprel == "nummod":
+            concept_tokens.append(child)
+
+        # Наречия, модифицирующие прилагательные (самые интересные)
+        elif deprel == "advmod":
+            head_of_child = tokens.get(getattr(child, "head", None))
+            if head_of_child and (getattr(head_of_child, "deprel", "") or "").lower() == "amod":
+                concept_tokens.append(child)
+
+    # сортировка по id (строковые id вида 0_5 тоже корректно сортируются)
+    concept_tokens.sort(key=lambda x: str(x.id))
+
+    return " ".join(getattr(t, "lemma", "") for t in concept_tokens)
 
 
-# ---- Работа с конъюнктами (сочинение) ----
 def get_conjuncts(token_id, tokens_map):
     """
     Возвращает множество id: сам токен + все конъюнкты, связанные через 'соч'/'conj'/'соч-союзн' и т.п.
@@ -186,211 +209,124 @@ def find_cc_label_for_conj_pair(n1, n2, tokens_map):
     return "и"
 
 
-def find_related_nouns_for_verb(verb_id, tokens_map):
+def get_case_from_xpos(xpos: str):
     """
-    Для заданного глагола возвращаем (subjects_set, objects_set).
-    Эвристика:
-    - Если существительное имеет head == verb_id, то по его deprel решаем: 'компл' -> объект, иначе — кандидат в субъект.
-    - Если существительное имеет head == preposition и preposition.head == verb_id, то это предлог-объект (pobj).
-    - Также считаем существительные, чей путь по head'ам встречает verb_id (в пределах небольшой глубины) — добавляем как кандидатов.
-    - Для каждого найденного кандидата расширяем за счёт конъюнктов (get_conjuncts).
+    Возвращает букву падежа из xpos (Ncfsan и т.п.)
+    n – nom
+    a – acc
+    d – dat
+    g – gen
+    i – instr
+    l – loc
     """
-    subj_candidates = set()
-    obj_candidates = set()
-
-    verb_token = tokens_map[verb_id]
-
-    # 1) прямые дети глагола
-    preposition_children = []
-    for child_id in getattr(verb_token, "children", []):
-        child = tokens_map[child_id]
-        # collect preposition children for later
-        if is_prep(child):
-            preposition_children.append(child_id)
-        # если ребенок — существительное
-        if is_noun(child):
-            dre = (getattr(child, "deprel", None) or "").lower()
-            if ("компл" in dre or "доп" in dre or "obj" in dre or "1-компл" in dre or
-                "вводн" in dre or "предл" in dre or "предик" in dre):
-                obj_candidates.add(child_id)
-            elif "огранич" in dre or "дат-субъект" in dre:
-                subj_candidates.add(child_id)
-            else:
-                # по умолчанию — кандидат в субъект (например номинативные внутри поддерева)
-                subj_candidates.add(child_id)
-    # Теперь ищем объекты среди детей-предлогов
-    for prep_id in preposition_children:
-        prep_token = tokens_map[prep_id]
-        for gc in getattr(prep_token, "children", []):
-            gct = tokens_map[gc]
-            if is_noun(gct):
-                # Любой noun, чей head — этот предлог, считаем объектом глагола через предлог
-                obj_candidates.add(gc)
-
-    # 2) просмотреть все существительные и посмотреть, куда ведёт их путь вверх по head'ам
-    for tid, tok in tokens_map.items():
-        if not is_noun(tok):
-            continue
-        # пройдём вверх по head цепочке (ограничим глубину)
-        current = tid
-        depth = 0
-        found = False
-        max_depth = 20
-        while depth < max_depth:
-            head = getattr(tokens_map[current], "head", None)
-            if head == 0 or head == "0" or head not in tokens_map:
-                break
-            # Если head — сам глагол, или head — это предлог, а этот предлог — ребёнок глагола
-            if head == verb_id:
-                found = True
-                break
-            # Если head — предлог, и этот предлог — ребёнок глагола
-            if is_prep(tokens_map[head]) and verb_id == getattr(tokens_map[head], "head", None):
-                found = "prep"
-                break
-            current = head
-            depth += 1
-        if found == True:
-            dre = (getattr(tok, "deprel", None) or "").lower()
-            if ("компл" in dre or "доп" in dre or "obj" in dre or "прям" in dre or
-                "1-компл" in dre or "вводн" in dre or "предл" in dre or "предик" in dre):
-                obj_candidates.add(tid)
-            elif "огранич" in dre or "дат-субъект" in dre:
-                subj_candidates.add(tid)
-            else:
-                subj_candidates.add(tid)
-        elif found == "prep":
-            obj_candidates.add(tid)
-
-    # 3) расширяем по конъюнктам
-    subj_ids = set()
-    for s in list(subj_candidates):
-        subj_ids.update({x for x in get_conjuncts(s, tokens_map) if is_noun(tokens_map[x])})
-    obj_ids = set()
-    for o in list(obj_candidates):
-        obj_ids.update({x for x in get_conjuncts(o, tokens_map) if is_noun(tokens_map[x])})
-
-    # 4) убираем пересечения (чтобы не было self-loops)
-    subj_ids = subj_ids - obj_ids
+    if not xpos or len(xpos) < 5:
+        return None
+    return xpos[4].lower()
 
 
-    return subj_ids, obj_ids
+def head_chain_contains(start_id, target_id, tokens_map, max_depth=20):
+    """
+    Проверяет, встречается ли target_id в head-цепочке start_id.
+    """
+    current = start_id
+    depth = 0
+
+    while depth < max_depth:
+        head = getattr(tokens_map[current], "head", None)
+        if head == target_id:
+            return True
+        if head == 0 or head == "0" or head not in tokens_map:
+            return False
+        current = head
+        depth += 1
+
+    return False
 
 
-def process_node(token_id, tokens_map, vertices, edges):
-    token = tokens_map[token_id]
-    pos = getattr(token, "pos", "") or ""
-    xpos = getattr(token, "xpos", "") or ""
-    if pos == "SENT" or pos == "PUNCT" or xpos == "SENT" or xpos == "PUNCT":
-        return
 
-    # если глагол — находим связанные субъекты и объекты и создаём рёбра subj -> obj с меткой глагола (+ предлоги)
-    if is_verb(token):
-        subj_ids, obj_ids = find_related_nouns_for_verb(token_id, tokens_map)
-        # Новый способ построения метки глагола с предлогами и наречиями/отрицаниями
-        verb_label = getattr(token, "lemma", None) or getattr(token, "form", None)
-        prep_lemmas = []
 
-        # ВКЛЮЧАЕМ все прямые дочерние предлоги (xpos S*), без head==0 ограничения
-        for cid in getattr(token, "children", []):
-            c = tokens_map[cid]
-            if is_prep(c):
-                prep_lemmas.append(getattr(c, "lemma", None))
-            else:
-                c_xpos = (getattr(c, "xpos", None) or "").upper()
-                if c_xpos.startswith("R") or c_xpos.startswith("Q"):  # наречие или частица отрицания
-                    prep_lemmas.append(getattr(c, "lemma", None))
+def extract_predicates(tokens_map):
+    predicates = []
 
-        # --- Handle case where preposition is attached to noun (e.g., "зайти в комнату") ---
-        for cid in getattr(token, "children", []):
-            child = tokens_map[cid]
-            if is_noun(child):
-                for gcid in getattr(child, "children", []):
-                    grandchild = tokens_map[gcid]
-                    if is_prep(grandchild):
-                        prep_lemmas.append(getattr(grandchild, "lemma", None))
+    verb_ids = [tid for tid, t in tokens_map.items() if is_verb(t)]
+    noun_ids = [tid for tid, t in tokens_map.items() if is_noun(t)]
 
-        # --- Handle infinitive complement (e.g., "начать готовить") ---
-        for cid in getattr(token, "children", []):
-            child = tokens_map[cid]
-            if is_verb(child) and getattr(child, "xpos", "").startswith("Vmn"):
-                verb_label = verb_label + " " + getattr(child, "lemma", "")
+    for vid in verb_ids:
+        subjects = set()
+        objects = set()
+        indirect = set()
+        prep_links = []
 
-        # also check verb under object (case like your tree: verb attached to noun)
-        for oid in obj_ids:
-            obj_tok = tokens_map[oid]
-            for gcid in getattr(obj_tok, "children", []):
-                gc = tokens_map[gcid]
-                if is_verb(gc):
-                    verb_label = verb_label + " " + getattr(gc, "lemma", "")
+        for nid in noun_ids:
+            case = get_case_from_xpos(getattr(tokens_map[nid], "xpos", ""))
+            # локальная связь через head-chain (глубина 5)
+            if head_chain_contains(nid, vid, tokens_map, max_depth=5) or \
+               head_chain_contains(vid, nid, tokens_map, max_depth=5):
 
-        if prep_lemmas:
-            verb_label = verb_label + " " + " ".join(prep_lemmas)
-        # добавляем вершины для всех subj/obj и рёбра для каждой пары subj × obj
-        for sid in subj_ids:
-            if sid not in vertices:
-                vertices[sid] = {"label": build_noun_concept(sid, tokens_map), "type": "noun"}
-        for oid in obj_ids:
-            if oid not in vertices:
-                vertices[oid] = {"label": build_noun_concept(oid, tokens_map), "type": "noun"}
-        for sid in subj_ids:
-            for oid in obj_ids:
-                edges.append((sid, oid, verb_label))
-    # если существительное — добавляем как вершину
-    if is_noun(token):
-        if token_id not in vertices:
-            vertices[token_id] = {"label": build_noun_concept(token_id, tokens_map), "type": "noun"}
+                if case == "n":
+                    subjects.add(nid)
+                elif case == "a":
+                    objects.add(nid)
+                elif case in {"d", "l"}:
+                    indirect.add(nid)
 
-    # добавляем рёбра сочинения между конъюнктными существительными
-    if is_noun(token):
-        conjuncts = [cid for cid in get_conjuncts(token_id, tokens_map) if is_noun(tokens_map[cid])]
-        conjuncts = sorted(conjuncts)
-        if len(conjuncts) > 1:
-            # выбираем cc label для пар
-            for i in range(len(conjuncts)):
-                for j in range(i + 1, len(conjuncts)):
-                    n1 = conjuncts[i]
-                    n2 = conjuncts[j]
-                    # убеждаемся, что вершины созданы
-                    if n1 not in vertices:
-                        vertices[n1] = {"label": build_noun_concept(n1, tokens_map), "type": "noun"}
-                    if n2 not in vertices:
-                        vertices[n2] = {"label": build_noun_concept(n2, tokens_map), "type": "noun"}
-                    cc_label = find_cc_label_for_conj_pair(n1, n2, tokens_map)
-                    # Лемматизируем cc_label
-                    cc_label_lemma = cc_label
-                    # Попробуем найти токен с такой формой и взять его lemma
-                    for t in tokens_map.values():
-                        if getattr(t, "form", None) == cc_label:
-                            cc_label_lemma = getattr(t, "lemma", cc_label)
-                            break
-                    # добавляем двунаправленные рёбра (как в твоём примере)
-                    edges.append((n1, n2, cc_label_lemma))
-                    edges.append((n2, n1, cc_label_lemma))
+        # fallback: if no subjects found, use nominative noun as subject
+        if not subjects:
+            for nid in noun_ids:
+                case = get_case_from_xpos(getattr(tokens_map[nid], "xpos", ""))
+                if case == "n":
+                    subjects.add(nid)
 
-    # Эвристика: если предлог — корень, у него есть дети-существительные с deprel 'предл', то создаём рёбра от этих существительных к его зависимым с меткой предлога
-    if is_prep(token):
-        head = getattr(token, "head", None)
-        if head == 0 or head == "0":
-            # ищем детей, которые являются существительными с deprel 'предл'
-            noun_children = [cid for cid in getattr(token, "children", []) if is_noun(tokens_map[cid]) and ((getattr(tokens_map[cid], "deprel", None) or "").lower() == "предл")]
-            # для каждого такого сущ. создаём рёбра к другим детям предлога (кроме самого сущ.)
-            for noun_cid in noun_children:
-                if noun_cid not in vertices:
-                    vertices[noun_cid] = {"label": build_noun_concept(noun_cid, tokens_map), "type": "noun"}
-                for cid in getattr(token, "children", []):
-                    if cid == noun_cid:
-                        continue
-                    # добавляем вершину для зависимого, если это существительное
-                    if is_noun(tokens_map[cid]):
-                        if cid not in vertices:
-                            vertices[cid] = {"label": build_noun_concept(cid, tokens_map), "type": "noun"}
-                        # Используем lemma предлога как label ребра
-                        edges.append((noun_cid, cid, getattr(token, "lemma", None)))
+        # --- обработка предложных групп ---
+        for nid in noun_ids:
+            noun_tok = tokens_map[nid]
 
-    # рекурсивно обрабатываем детей
-    for child_id in getattr(token, "children", []):
-        process_node(child_id, tokens_map, vertices, edges)
+            # Case 1: noun -> parent is preposition
+            parent_id = getattr(noun_tok, "head", None)
+            if parent_id in tokens_map and is_prep(tokens_map[parent_id]):
+                prep = tokens_map[parent_id]
+                prep_lemma = getattr(prep, "lemma", None)
+                # Добавляем предлог к ребру, если аргумент связан с предлогом
+                prep_links.append((prep_lemma, nid))
+                continue
+
+            # Case 2: noun -> ищем предлог среди всех потомков и модификаторов (BFS)
+            to_visit = [(cid, 0) for cid in getattr(noun_tok, "children", [])]
+            visited = set()
+            prep_found = None
+            while to_visit:
+                cid, depth = to_visit.pop(0)
+                if cid in visited:
+                    continue
+                visited.add(cid)
+                child = tokens_map[cid]
+                if is_prep(child):
+                    # проверяем, что предлог является ребёнком существительного или его модификаторов
+                    # (то есть находится в цепочке модификаторов, а не где-то в другом месте)
+                    # проверяем связь с глаголом через head_chain
+                    if head_chain_contains(nid, vid, tokens_map, max_depth=5) or \
+                       head_chain_contains(vid, nid, tokens_map, max_depth=5):
+                        prep_found = getattr(child, "lemma", None)
+                        break
+                # добавляем детей, если это модификаторы (amod, det, nummod, advmod), чтобы предлог не пропускался
+                child_deprel = getattr(child, "deprel", "")
+                if child_deprel in {"amod", "det", "nummod", "advmod"}:
+                    to_visit.extend([(gcid, depth + 1) for gcid in getattr(child, "children", [])])
+                else:
+                    # добавляем всех детей в обход, чтобы не пропустить предлог
+                    to_visit.extend([(gcid, depth + 1) for gcid in getattr(child, "children", [])])
+            if prep_found:
+                prep_links.append((prep_found, nid))
+
+        predicates.append({
+            "verb": vid,
+            "subjects": subjects,
+            "objects": objects,
+            "indirect": indirect,
+            "prep_links": prep_links
+        })
+
+    return predicates
 
 
 def build_ru_graph(sentences):
@@ -403,7 +339,6 @@ def build_ru_graph(sentences):
     for sent_idx, sent in enumerate(sentences):
         tokens = sent.tokens
 
-        # --- make token ids sentence-unique ---
         local_tokens_map = {}
         for t in tokens:
             original_id = t.id
@@ -434,8 +369,98 @@ def build_ru_graph(sentences):
         if not root_ids:
             root_ids = [t.id for t in tokens if is_verb(t)]
 
-        for rid in root_ids:
-            process_node(rid, tokens_map, vertices, edges)
+        predicates = extract_predicates(tokens_map)
+
+        for pred in predicates:
+            vid = pred["verb"]
+            verb_label = getattr(tokens_map[vid], "lemma", None) or getattr(tokens_map[vid], "form", None)
+
+            for sid in pred["subjects"]:
+                if sid not in vertices:
+                    vertices[sid] = {
+                        "label": build_noun_concept(sid, tokens_map),
+                        "type": "noun"
+                    }
+
+            for oid in pred["objects"] | pred["indirect"]:
+                if oid not in vertices:
+                    vertices[oid] = {
+                        "label": build_noun_concept(oid, tokens_map),
+                        "type": "noun"
+                    }
+
+            # collect nouns that are already linked via preposition
+            prep_nouns = {nid for _, nid in pred.get("prep_links", [])}
+
+            for sid in pred["subjects"]:
+                for oid in (pred["objects"] | pred["indirect"]):
+                    if oid in prep_nouns:
+                        continue
+                    edges.append((sid, oid, verb_label))
+
+            # --- рёбра для предложных групп ---
+            for prep, nid in pred.get("prep_links", []):
+                if nid not in vertices:
+                    vertices[nid] = {
+                        "label": build_noun_concept(nid, tokens_map),
+                        "type": "noun"
+                    }
+                for sid in pred["subjects"]:
+                    if sid == nid:
+                        continue
+                    edges.append((sid, nid, verb_label + " " + prep))
+
+        # --- генитивные связи (NP of NP) ---
+        for nid, tok in tokens_map.items():
+            if not is_noun(tok):
+                continue
+
+            case = get_case_from_xpos(getattr(tok, "xpos", ""))
+            if case != "g":
+                continue
+
+            head = getattr(tok, "head", None)
+
+            # Case 1: standard structure (head noun governs genitive noun)
+            if head in tokens_map and is_noun(tokens_map[head]):
+                if head not in vertices:
+                    vertices[head] = {
+                        "label": build_noun_concept(head, tokens_map),
+                        "type": "noun"
+                    }
+
+                if nid not in vertices:
+                    vertices[nid] = {
+                        "label": build_noun_concept(nid, tokens_map),
+                        "type": "noun"
+                    }
+
+                edges.append((head, nid, "possessive"))
+                continue
+
+            # Case 2: Malt-style reversal: nominative noun is child of genitive noun
+            for cid in getattr(tok, "children", []):
+                child = tokens_map[cid]
+                if not is_noun(child):
+                    continue
+
+                child_case = get_case_from_xpos(getattr(child, "xpos", ""))
+                if child_case != "n":
+                    continue
+
+                if cid not in vertices:
+                    vertices[cid] = {
+                        "label": build_noun_concept(cid, tokens_map),
+                        "type": "noun"
+                    }
+
+                if nid not in vertices:
+                    vertices[nid] = {
+                        "label": build_noun_concept(nid, tokens_map),
+                        "type": "noun"
+                    }
+
+                edges.append((cid, nid, "possessive"))
 
     # Build the custom Graph: keys are concept strings (to merge conjuncts with same text)
     graph = Graph()
@@ -447,11 +472,20 @@ def build_ru_graph(sentences):
             graph.add_vertex(label, [label])
             label_to_vertex_key[label] = label
 
+    seen_edges = set()
+
     for src_id, tgt_id, lbl in edges:
         if src_id not in vertices or tgt_id not in vertices:
             continue
+
         src_label = vertices[src_id]["label"]
         tgt_label = vertices[tgt_id]["label"]
+
+        key = (src_label, tgt_label, lbl)
+        if key in seen_edges:
+            continue
+        seen_edges.add(key)
+
         if src_label in label_to_vertex_key and tgt_label in label_to_vertex_key:
             graph.add_edge(src_label, tgt_label, lbl)
 
@@ -461,7 +495,7 @@ def build_ru_graph(sentences):
 if __name__ == "__main__":
     from sent_class import parse_conll
 
-    sentence_list = parse_conll("resolved_output.conll")
+    sentence_list = parse_conll("output.conll")
     graph_res = build_ru_graph(sentence_list)
     print("Graph edges:")
     for e in graph_res.edges:
