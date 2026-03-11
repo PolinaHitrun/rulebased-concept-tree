@@ -374,6 +374,12 @@ def build_ru_graph(sentences):
         for pred in predicates:
             vid = pred["verb"]
             verb_label = getattr(tokens_map[vid], "lemma", None) or getattr(tokens_map[vid], "form", None)
+            # --- добавим поддержку отрицания ---
+            verb_tok = tokens_map[vid]
+            neg_children = [tokens_map[cid] for cid in getattr(verb_tok, "children", [])
+                            if ((getattr(tokens_map[cid], "deprel", "") or "").lower() == "neg" or getattr(tokens_map[cid], "lemma", "") == "не")]
+            neg_prefix = "не " if neg_children else ""
+            verb_label = neg_prefix + verb_label
 
             for sid in pred["subjects"]:
                 if sid not in vertices:
