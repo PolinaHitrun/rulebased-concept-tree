@@ -17,8 +17,8 @@
     <div id="mynetwork"></div>
 
     <script type="text/javascript">
-    var nodes = new vis.DataSet([{'id': 'мама', 'label': 'мама'}, {'id': 'окно', 'label': 'окно'}]);
-    var edges = new vis.DataSet([{'from': 'мама', 'to': 'окно', 'label': 'подойти к'}]);
+    var nodes = new vis.DataSet([{'id': 'мама', 'label': 'мама'}, {'id': 'комната', 'label': 'комната'}, {'id': 'бабушка', 'label': 'бабушка'}, {'id': 'собака', 'label': 'собака'}]);
+    var edges = new vis.DataSet([{'from': 'мама', 'to': 'комната', 'label': 'зайти'}, {'from': 'мама', 'to': 'комната', 'label': 'зайти в'}, {'from': 'бабушка', 'to': 'собака', 'label': 'увидеть'}, {'from': 'бабушка', 'to': 'комната', 'label': 'увидеть в'}]);
 
     var container = document.getElementById('mynetwork');
     var data = {

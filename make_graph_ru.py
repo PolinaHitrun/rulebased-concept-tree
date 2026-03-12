@@ -257,18 +257,22 @@ def extract_predicates(tokens_map):
         indirect = set()
         prep_links = []
 
+        # Track nouns that are attached to a preposition (for acc)
+        acc_with_prep = set()
+
         for nid in noun_ids:
             case = get_case_from_xpos(getattr(tokens_map[nid], "xpos", ""))
-            # локальная связь через head-chain (глубина 5)
-            if head_chain_contains(nid, vid, tokens_map, max_depth=5) or \
-               head_chain_contains(vid, nid, tokens_map, max_depth=5):
-
-                if case == "n":
-                    subjects.add(nid)
-                elif case == "a":
-                    objects.add(nid)
-                elif case in {"d", "l"}:
-                    indirect.add(nid)
+            # case-driven argument extraction (more robust to bad dependency trees)
+            if case == "n":
+                subjects.add(nid)
+            elif case == "a":
+                # Check if this accusative noun is attached to a preposition
+                parent_id = getattr(tokens_map[nid], "head", None)
+                if parent_id in tokens_map and is_prep(tokens_map[parent_id]):
+                    acc_with_prep.add(nid)
+                objects.add(nid)
+            elif case in {"d", "l"}:
+                indirect.add(nid)
 
         # fallback: if no subjects found, use nominative noun as subject
         if not subjects:
@@ -290,7 +294,8 @@ def extract_predicates(tokens_map):
                 prep_links.append((prep_lemma, nid))
                 continue
 
-            # Case 2: noun -> ищем предлог среди всех потомков и модификаторов (BFS)
+            # Case 2: noun -> ищем предлог среди NP-internal потомков (BFS только внутри NP)
+            # BFS for NP-internal prepositions (only inside the NP)
             to_visit = [(cid, 0) for cid in getattr(noun_tok, "children", [])]
             visited = set()
             prep_found = None
@@ -301,19 +306,16 @@ def extract_predicates(tokens_map):
                 visited.add(cid)
                 child = tokens_map[cid]
                 if is_prep(child):
-                    # проверяем, что предлог является ребёнком существительного или его модификаторов
-                    # (то есть находится в цепочке модификаторов, а не где-то в другом месте)
-                    # проверяем связь с глаголом через head_chain
-                    if head_chain_contains(nid, vid, tokens_map, max_depth=5) or \
-                       head_chain_contains(vid, nid, tokens_map, max_depth=5):
+                    prep_head = getattr(child, "head", None)
+                    if prep_head != nid:
+                        continue
+                    # check if this NP is related to the verb
+                    if head_chain_contains(nid, vid, tokens_map, max_depth=5) or head_chain_contains(vid, nid, tokens_map, max_depth=5):
                         prep_found = getattr(child, "lemma", None)
                         break
-                # добавляем детей, если это модификаторы (amod, det, nummod, advmod), чтобы предлог не пропускался
+                # only continue BFS through children that are part of NP modifiers
                 child_deprel = getattr(child, "deprel", "")
                 if child_deprel in {"amod", "det", "nummod", "advmod"}:
-                    to_visit.extend([(gcid, depth + 1) for gcid in getattr(child, "children", [])])
-                else:
-                    # добавляем всех детей в обход, чтобы не пропустить предлог
                     to_visit.extend([(gcid, depth + 1) for gcid in getattr(child, "children", [])])
             if prep_found:
                 prep_links.append((prep_found, nid))
@@ -323,7 +325,8 @@ def extract_predicates(tokens_map):
             "subjects": subjects,
             "objects": objects,
             "indirect": indirect,
-            "prep_links": prep_links
+            "prep_links": prep_links,
+            "acc_with_prep": acc_with_prep
         })
 
     return predicates
@@ -397,22 +400,58 @@ def build_ru_graph(sentences):
 
             # collect nouns that are already linked via preposition
             prep_nouns = {nid for _, nid in pred.get("prep_links", [])}
+            acc_with_prep = pred.get("acc_with_prep", set())
 
+            # --- 1. Добавляем рёбра для прямых объектов (acc) ---
             for sid in pred["subjects"]:
-                for oid in (pred["objects"] | pred["indirect"]):
+                # subjects that are governed by a preposition should not act as subjects
+                if sid in prep_nouns:
+                    continue
+                for oid in pred["objects"]:
+                    # filter: genitive modifiers (NP-of-NP) should not act as verb arguments
+                    tok = tokens_map.get(oid)
+                    case = get_case_from_xpos(getattr(tok, "xpos", "")) if tok else None
+                    head = getattr(tok, "head", None) if tok else None
+                    if case == "g" and head in tokens_map and is_noun(tokens_map[head]):
+                        continue
+                    # Для acc-объекта: если он висит на предлоге, не добавлять предлог к ребру (т.е. ребро только с глаголом)
+                    if oid in acc_with_prep:
+                        edges.append((sid, oid, verb_label))
+                    else:
+                        # Проверяем, есть ли предлог, реально относящийся к этому объекту (но для acc мы не добавляем его, если есть)
+                        edges.append((sid, oid, verb_label))
+
+            # --- 2. Добавляем рёбра для косвенных объектов (dat, loc) без предлога, если они не прикреплены через предлог ---
+            for sid in pred["subjects"]:
+                if sid in prep_nouns:
+                    continue
+                for oid in pred["indirect"]:
                     if oid in prep_nouns:
+                        continue
+                    tok = tokens_map.get(oid)
+                    case = get_case_from_xpos(getattr(tok, "xpos", "")) if tok else None
+                    head = getattr(tok, "head", None) if tok else None
+                    if case == "g" and head in tokens_map and is_noun(tokens_map[head]):
                         continue
                     edges.append((sid, oid, verb_label))
 
-            # --- рёбра для предложных групп ---
+            # --- 3. Рёбра для предложных групп ---
             for prep, nid in pred.get("prep_links", []):
+                # Only attach preposition to the noun it actually modifies
                 if nid not in vertices:
                     vertices[nid] = {
                         "label": build_noun_concept(nid, tokens_map),
                         "type": "noun"
                     }
+                # Find the subject(s) that are actually connected to this object via the verb
                 for sid in pred["subjects"]:
+                    # skip if subject is the same as the object
                     if sid == nid:
+                        continue
+                    # Для acc-объекта, если он прикреплён через предлог — не добавлять ребро с предлогом (оно уже добавлено выше без предлога)
+                    tok_oid = tokens_map.get(nid)
+                    obj_case = get_case_from_xpos(getattr(tok_oid, "xpos", "")) if tok_oid else None
+                    if obj_case == "a" and nid in acc_with_prep:
                         continue
                     edges.append((sid, nid, verb_label + " " + prep))
 
@@ -467,6 +506,32 @@ def build_ru_graph(sentences):
                     }
 
                 edges.append((cid, nid, "possessive"))
+
+        # --- NP prepositional modifiers (например: "дом с крышей") ---
+        for nid, tok in tokens_map.items():
+            if not is_noun(tok):
+                continue
+
+            head = getattr(tok, "head", None)
+            if head in tokens_map and is_noun(tokens_map[head]):
+                for cid in getattr(tok, "children", []):
+                    child = tokens_map[cid]
+                    if is_prep(child):
+                        prep_label = getattr(child, "lemma", None) or getattr(child, "form", None)
+
+                        if head not in vertices:
+                            vertices[head] = {
+                                "label": build_noun_concept(head, tokens_map),
+                                "type": "noun"
+                            }
+
+                        if nid not in vertices:
+                            vertices[nid] = {
+                                "label": build_noun_concept(nid, tokens_map),
+                                "type": "noun"
+                            }
+
+                        edges.append((head, nid, prep_label))
 
     # Build the custom Graph: keys are concept strings (to merge conjuncts with same text)
     graph = Graph()
