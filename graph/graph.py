@@ -8,7 +8,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 from pyvis.network import Network
-
+import csv
 
 
 class Graph:
@@ -116,6 +116,43 @@ class Graph:
             List of all Edge objects in graph
         """
         return self.edges
+    
+    def convert_to_networkx(self) -> nx.DiGraph:
+        """
+        Convert the graph to a NetworkX directed graph.
+
+        Returns:
+            A NetworkX DiGraph representing the same structure as this Graph.
+        """
+        G = nx.DiGraph()
+
+        # Add nodes (vertices)
+        for concept in self.vertices.keys():
+            G.add_node(concept)
+
+        # Add edges with their meanings
+        for edge in self.edges:
+            G.add_edge(edge.agent_1, edge.agent_2, meaning=edge.meaning)
+
+        return G
+    
+    def save_to_csv(self, path: str) -> None:
+        """
+        Save the graph to a CSV file.
+
+        Args:
+            path: The file path to save the CSV file.
+        """
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["agent_1", "agent_2", "edge"])
+
+            for edge in self.edges:
+                writer.writerow([
+                    edge.agent_1,
+                    edge.agent_2,
+                    edge.meaning,
+                ])
 
     def __str__(self) -> str:
         return f"Graph(vertices={len(self.vertices)}, edges={len(self.edges)})"
@@ -233,3 +270,27 @@ def visualize_graph_interactive(graph, output="graph.html"):
         f.write(html_content)
 
     print(f"Interactive graph saved to {output}")
+
+
+def restore_from_csv(path: str) -> Graph:
+    """
+    Restore a Graph object from a CSV file.
+
+    Args:
+        path: The file path to the CSV file.
+
+    Returns:
+        A Graph object initialized with the data from the CSV file.
+    """
+    graph = Graph()
+    with open(path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            edge = Edge(
+                agent_1=row["agent_1"],
+                agent_2=row["agent_2"],
+                meaning=row["edge"]
+            )
+            graph.add_edge(edge)
+    return graph
+
