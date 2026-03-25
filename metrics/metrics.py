@@ -2,6 +2,12 @@ from graph.graph import Graph
 from typing import Dict
 import networkx as nx
 import matplotlib.pyplot as plt
+from nltk.tokenize import word_tokenize
+import pymorphy3
+import re
+from nltk.stem import WordNetLemmatizer
+import csv
+
 
 def calculate_metrics(graph: Graph) -> Dict[str, float]:
     """
@@ -183,3 +189,113 @@ def degree_centrality(graph: Graph) -> Dict[str, float]:
     """
     G = graph.convert_to_networkx()
     return nx.degree_centrality(G)
+
+# Classic non-graph metrics
+
+# Prepairing
+def get_tokens(text):
+    return re.findall(r'\b[а-яёa-z]+\b', text.lower())
+
+def get_lemmas(text, lang='ru') -> list:
+    tokens = get_tokens(text)
+    if lang == 'ru':
+        morph = pymorphy3.MorphAnalyzer()
+        return [morph.parse(w)[0].normal_form for w in tokens]
+    elif lang == 'en':
+        lemmatizer = WordNetLemmatizer()
+        return [lemmatizer.lemmatize(w) for w in tokens]
+    
+# Metrics
+def average_word_length(text: str) -> float:
+    """
+    Calculate the average word length in the given corpus.
+    Args:
+        corpus: A string containing the text to analyze
+    Returns:
+        The average word length in the corpus.
+    """
+    words = get_tokens(text)
+    if not words:
+        return 0
+    total_length = sum(len(word) for word in words)
+    return total_length / len(words)
+
+
+def calculate_ttr(text, lang='ru') -> float:
+    lemmas = get_lemmas(text, lang)
+    if not lemmas: 
+        return 0
+    return len(set(lemmas)) / len(lemmas)
+
+
+def calculate_mtld(text, lang='ru', threshold=0.72):
+    """Упрощенная реализация MTLD (расчет среднего фактора выживания лексем)"""
+    lemmas = get_lemmas(text, lang)
+    def count_factors(words):
+        if not words: return 0
+        factors = 0
+        ttr_sum = 1.0
+        types = set()
+        tokens = 0
+        for w in words:
+            tokens += 1
+            types.add(w)
+            ttr = len(types) / tokens
+            if ttr < threshold:
+                factors += 1
+                types = set()
+                tokens = 0
+        if tokens > 0:
+            factors += (1 - ttr) / (1 - threshold)
+        return len(words) / factors if factors > 0 else len(words)
+
+    forward = count_factors(lemmas)
+    backward = count_factors(lemmas[::-1])
+    return (forward + backward) / 2
+
+
+def average_word_length(text):
+    words = get_tokens(text)
+    if not words: return 0
+    return sum(len(w) for w in words) / len(words)
+
+
+def syllables_count(text, language='ru'):
+    if language == 'ru':
+        vowels = "аеёиоуыэюя"
+    elif language == 'en':
+        vowels = "aeiou"
+    return len([char for char in text.lower() if char in vowels])
+
+
+def average_syllables_per_word(text, language='ru'):
+    words = get_tokens(text)
+    if not words: return 0
+    return syllables_count(text, language) / len(words)
+
+
+with open('freqrnc2011.csv', 'r', encoding='utf-8') as f:
+        reader = csv.reader(f, delimiter='\t')
+        next(reader)
+        freq_dict = {row[0]: float(row[2]) for row in reader}
+
+
+def calculate_t_score(text):
+    lemmas = get_lemmas(text)
+    bigrams_counts = {}
+    unigrams_counts = {}
+    N = len(lemmas)
+    
+    for i in range(len(lemmas) - 1):
+        w1, w2 = lemmas[i], lemmas[i + 1]
+        bigrams_counts[(w1, w2)] = bigrams_counts.get((w1, w2), 0) + 1
+        unigrams_counts[w1] = unigrams_counts.get(w1, 0) + 1
+    unigrams_counts[lemmas[-1]] = unigrams_counts.get(lemmas[-1], 0) + 1
+    
+    t_scores = {}
+    for (w1, w2), obs in bigrams_counts.items():
+        # expected  E = (f(w1) * f(w2)) / N
+        exp = ((freq_dict.get(w1, 0.1) / (10 ** 6)) * (freq_dict.get(w2, 0.1) / (10 ** 6))) * N
+        # Formula for T-score
+        t_scores[(w1, w2)] = (obs - exp) / obs ** 0.5 if obs > 0 else 0
+    return t_scores
