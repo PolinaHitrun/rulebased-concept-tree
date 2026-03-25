@@ -5,8 +5,8 @@ import io
 import os
 from tqdm import tqdm
 
-INPUT_FILE = '/Users/mac/Desktop/vscode/gromov/corpus/micusp_papers_native.csv'
-OUTPUT_DIR = 'corpus/eng_standard/micusp'
+INPUT_FILE = '/Users/mac/Desktop/vscode/gromov/corpus/micusp_papers_non_native.csv'
+OUTPUT_DIR = 'corpus/eng_non_standard/micusp'
 
 with open(INPUT_FILE, 'r') as f:
     reader = csv.reader(f)
