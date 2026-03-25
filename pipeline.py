@@ -11,12 +11,8 @@ from nltk.tokenize import sent_tokenize
 
 
 if __name__ == "__main__":
-    # nltk.download("punkt_tab")
-
-    # winnie = open('pg67098.txt', 'r', encoding='utf-8')
-    # text = winnie.read().replace('\n', ' ')
-    # winnie.close()
-
+    # раскомментировать при первом запуске
+    # nltk.download("punkt_tab") 
 
     text = 'Мама зашла в комнату. Бабушка увидела собаку в комнате.'
     lang = 'ru'
@@ -44,9 +40,6 @@ if __name__ == "__main__":
         for sent in resolved_sentences:
             print(sent.text)
 
-    # with open("output.conll", "r", encoding="utf-8") as f:
-    #     conllu_example = f.read()
-
     # Строим граф
     if lang == 'en':
         g = build_en_graph(resolved_sentences)
@@ -57,5 +50,4 @@ if __name__ == "__main__":
     for e in g.edges:
         print(f"{e.agent_1} --[{e.meaning}]--> {e.agent_2}")
 
-    # visualize_graph(g)
     visualize_graph_interactive(g, output="graph.html")
