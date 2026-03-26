@@ -51,29 +51,18 @@ def parse_conllu(conllu_text):
 
 
 def is_noun(token):
-    xpos = getattr(token, "xpos", "") or ""
-    pos = getattr(token, "pos", "") or ""
-    # N* — существительные
-    # P* — местоимения (она, он, они...)
     return (
-        xpos.upper().startswith("N") or
-        xpos.upper().startswith("P") or
-        pos.upper().startswith("N") or
-        pos.upper().startswith("P")
+        token.xpos.upper().startswith("N") or
+        token.xpos.upper().startswith("P")
     )
 
 
 def is_verb(token):
-    xpos = getattr(token, "xpos", "") or ""
-    pos = getattr(token, "pos", "") or ""
-    return (xpos.upper().startswith("V") or pos.upper().startswith("V"))
+    return token.xpos.upper().startswith("V")
 
 
 def is_prep(token):
-    xpos = getattr(token, "xpos", "") or ""
-    pos = getattr(token, "pos", "") or ""
-    # Treat only real prepositions (e.g., Sp-*) as prepositions, not SENT
-    return xpos.upper().startswith("SP") or pos.upper() in {"ADP", "PR"}
+    return token.xpos.upper().startswith("SP")
 
 
 def is_conjunction(token):
@@ -219,9 +208,19 @@ def get_case_from_xpos(xpos: str):
     i – instr
     l – loc
     """
-    if not xpos or len(xpos) < 5:
+    xpos = xpos.strip()
+    if not xpos:
         return None
-    return xpos[4].lower()
+    
+    # существительные
+    if xpos.startswith("N") and len(xpos) > 4:
+        return xpos[4].lower()
+
+    # местоимения
+    if xpos.startswith("P") and len(xpos) > 5:
+        return xpos[5].lower()
+    
+    return None
 
 
 def head_chain_contains(start_id, target_id, tokens_map, max_depth=20):
@@ -245,31 +244,93 @@ def head_chain_contains(start_id, target_id, tokens_map, max_depth=20):
 
 
 
-def extract_predicates(tokens_map):
+def extract_predicates(tokens_map) -> list:
     predicates = []
 
     verb_ids = [tid for tid, t in tokens_map.items() if is_verb(t)]
     noun_ids = [tid for tid, t in tokens_map.items() if is_noun(t)]
+
+    def get_closest_verb(nid):
+        current = nid
+        while True:
+            head = getattr(tokens_map[current], "head", None)
+            if head == 0 or head not in tokens_map:
+                return None
+            tok = tokens_map[head]
+            if is_verb(tok):
+                return head
+            current = head
 
     for vid in verb_ids:
         subjects = set()
         objects = set()
         indirect = set()
         prep_links = []
-
-        # Track nouns that are attached to a preposition (for acc)
         acc_with_prep = set()
 
         for nid in noun_ids:
-            case = get_case_from_xpos(getattr(tokens_map[nid], "xpos", ""))
-            # case-driven argument extraction (more robust to bad dependency trees)
+            if get_closest_verb(nid) != vid:
+                continue
+            noun_tok = tokens_map[nid]
+            case = get_case_from_xpos(getattr(noun_tok, "xpos", ""))
+            # skip preposition search for nominative nouns
             if case == "n":
+                prep_links = []
+                acc_with_prep = set()
                 subjects.add(nid)
-            elif case == "a":
-                # Check if this accusative noun is attached to a preposition
-                parent_id = getattr(tokens_map[nid], "head", None)
+                continue
+            found_prep = False
+            prep_label = None
+
+            parent_id = getattr(noun_tok, "head", None)
+            if parent_id in tokens_map and is_prep(tokens_map[parent_id]):
+                prep = tokens_map[parent_id]
+                prep_label = getattr(prep, "lemma", None)
+                prep_links.append((prep_label, nid))
+                found_prep = True
+
+            if not found_prep:
+                to_visit = [(cid, 0) for cid in getattr(noun_tok, "children", [])]
+                visited = set()
+                prep_found = None
+                while to_visit:
+                    cid, depth = to_visit.pop(0)
+                    if cid in visited:
+                        continue
+                    visited.add(cid)
+                    child = tokens_map[cid]
+                    if is_prep(child):
+                        prep_head = getattr(child, "head", None)
+                        if prep_head != nid:
+                            continue
+                        if head_chain_contains(nid, vid, tokens_map, max_depth=5) or head_chain_contains(vid, nid, tokens_map, max_depth=5):
+                            prep_found = getattr(child, "lemma", None)
+                            break
+                    child_deprel = getattr(child, "deprel", "")
+                    if child_deprel in {"det", "nummod", "advmod"}:
+                        to_visit.extend([(gcid, depth + 1) for gcid in getattr(child, "children", [])])
+                    elif child_deprel == "amod" and depth < 1:
+                        to_visit.extend([(gcid, depth + 1) for gcid in getattr(child, "children", [])])
+                if prep_found:
+                    prep_links.append((prep_found, nid))
+                    found_prep = True
+
+            if case == "a":
+                has_prep = False
+                # Case 1: parent is a preposition
                 if parent_id in tokens_map and is_prep(tokens_map[parent_id]):
+                    has_prep = True
+                # Case 2: child is a preposition
+                if not has_prep:
+                    for cid in getattr(noun_tok, "children", []):
+                        child = tokens_map[cid]
+                        if is_prep(child):
+                            has_prep = True
+                            break
+                if has_prep:
                     acc_with_prep.add(nid)
+
+            if case == "a":
                 objects.add(nid)
             elif case in {"d", "l"}:
                 indirect.add(nid)
@@ -280,45 +341,6 @@ def extract_predicates(tokens_map):
                 case = get_case_from_xpos(getattr(tokens_map[nid], "xpos", ""))
                 if case == "n":
                     subjects.add(nid)
-
-        # --- обработка предложных групп ---
-        for nid in noun_ids:
-            noun_tok = tokens_map[nid]
-
-            # Case 1: noun -> parent is preposition
-            parent_id = getattr(noun_tok, "head", None)
-            if parent_id in tokens_map and is_prep(tokens_map[parent_id]):
-                prep = tokens_map[parent_id]
-                prep_lemma = getattr(prep, "lemma", None)
-                # Добавляем предлог к ребру, если аргумент связан с предлогом
-                prep_links.append((prep_lemma, nid))
-                continue
-
-            # Case 2: noun -> ищем предлог среди NP-internal потомков (BFS только внутри NP)
-            # BFS for NP-internal prepositions (only inside the NP)
-            to_visit = [(cid, 0) for cid in getattr(noun_tok, "children", [])]
-            visited = set()
-            prep_found = None
-            while to_visit:
-                cid, depth = to_visit.pop(0)
-                if cid in visited:
-                    continue
-                visited.add(cid)
-                child = tokens_map[cid]
-                if is_prep(child):
-                    prep_head = getattr(child, "head", None)
-                    if prep_head != nid:
-                        continue
-                    # check if this NP is related to the verb
-                    if head_chain_contains(nid, vid, tokens_map, max_depth=5) or head_chain_contains(vid, nid, tokens_map, max_depth=5):
-                        prep_found = getattr(child, "lemma", None)
-                        break
-                # only continue BFS through children that are part of NP modifiers
-                child_deprel = getattr(child, "deprel", "")
-                if child_deprel in {"amod", "det", "nummod", "advmod"}:
-                    to_visit.extend([(gcid, depth + 1) for gcid in getattr(child, "children", [])])
-            if prep_found:
-                prep_links.append((prep_found, nid))
 
         predicates.append({
             "verb": vid,
@@ -342,12 +364,12 @@ def build_ru_graph(sentences):
     for sent_idx, sent in enumerate(sentences):
         tokens = sent.tokens
 
-        local_tokens_map = {}
+        tokens_map = {}
         for t in tokens:
             original_id = t.id
             new_id = f"{sent_idx}_{original_id}"
             t.id = new_id
-            local_tokens_map[new_id] = t
+            tokens_map[new_id] = t
 
         # rebuild heads with sentence prefix
         for t in tokens:
@@ -356,8 +378,6 @@ def build_ru_graph(sentences):
                 t.head = 0
             else:
                 t.head = f"{sent_idx}_{head}"
-
-        tokens_map = local_tokens_map
 
         # rebuild children per sentence
         for t in tokens:
@@ -376,8 +396,42 @@ def build_ru_graph(sentences):
 
         for pred in predicates:
             vid = pred["verb"]
-            verb_label = getattr(tokens_map[vid], "lemma", None) or getattr(tokens_map[vid], "form", None)
-            # --- добавим поддержку отрицания ---
+            # Build verb chain (composite predicate)
+            def get_verb_chain(start_id):
+                verbs = []
+                current = start_id
+
+                while True:
+                    head = getattr(tokens_map[current], "head", None)
+                    if head == 0 or head not in tokens_map:
+                        break
+
+                    tok = tokens_map[head]
+                    deprel = getattr(tok, "deprel", "") or ""
+
+                    # Stop at conjunction boundaries
+                    if "соч" in deprel or "conj" in deprel:
+                        break
+
+                    if is_verb(tok):
+                        verbs.append(head)
+
+                    current = head
+
+                return verbs[::-1]  # top-down order
+
+            # collect full chain including current verb
+            chain_ids = get_verb_chain(vid)
+            chain_ids.append(vid)
+
+            # remove duplicates while preserving order
+            seen = set()
+            chain_ids = [v for v in chain_ids if not (v in seen or seen.add(v))]
+
+            verb_label = " ".join(
+                getattr(tokens_map[v], "lemma", None) or getattr(tokens_map[v], "form", None)
+                for v in chain_ids
+            )
             verb_tok = tokens_map[vid]
             neg_children = [tokens_map[cid] for cid in getattr(verb_tok, "children", [])
                             if ((getattr(tokens_map[cid], "deprel", "") or "").lower() == "neg" or getattr(tokens_map[cid], "lemma", "") == "не")]
@@ -402,7 +456,6 @@ def build_ru_graph(sentences):
             prep_nouns = {nid for _, nid in pred.get("prep_links", [])}
             acc_with_prep = pred.get("acc_with_prep", set())
 
-            # --- 1. Добавляем рёбра для прямых объектов (acc) ---
             for sid in pred["subjects"]:
                 # subjects that are governed by a preposition should not act as subjects
                 if sid in prep_nouns:
@@ -414,12 +467,10 @@ def build_ru_graph(sentences):
                     head = getattr(tok, "head", None) if tok else None
                     if case == "g" and head in tokens_map and is_noun(tokens_map[head]):
                         continue
-                    # Для acc-объекта: если он висит на предлоге, не добавлять предлог к ребру (т.е. ребро только с глаголом)
+                    # If this is accusative with preposition, skip here (it will be added with preposition later)
                     if oid in acc_with_prep:
-                        edges.append((sid, oid, verb_label))
-                    else:
-                        # Проверяем, есть ли предлог, реально относящийся к этому объекту (но для acc мы не добавляем его, если есть)
-                        edges.append((sid, oid, verb_label))
+                        continue
+                    edges.append((sid, oid, verb_label))
 
             # --- 2. Добавляем рёбра для косвенных объектов (dat, loc) без предлога, если они не прикреплены через предлог ---
             for sid in pred["subjects"]:
@@ -448,11 +499,7 @@ def build_ru_graph(sentences):
                     # skip if subject is the same as the object
                     if sid == nid:
                         continue
-                    # Для acc-объекта, если он прикреплён через предлог — не добавлять ребро с предлогом (оно уже добавлено выше без предлога)
-                    tok_oid = tokens_map.get(nid)
-                    obj_case = get_case_from_xpos(getattr(tok_oid, "xpos", "")) if tok_oid else None
-                    if obj_case == "a" and nid in acc_with_prep:
-                        continue
+                    # For accusative with preposition, this is the correct place to add the edge
                     edges.append((sid, nid, verb_label + " " + prep))
 
         # --- генитивные связи (NP of NP) ---
