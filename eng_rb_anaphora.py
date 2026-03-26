@@ -348,6 +348,10 @@ def resolve_anaphora_en(conll_file: str):
         pronouns = [t for t in sent if t.pos == "PP"]
 
         for pron in pronouns:
+            # не разрешаем местоимения 1 и 2 лица
+            if pron.lemma.lower() in {"i", "we", "you"}:
+                continue
+
             if pron.lemma == "it" and pleonastic.is_pleonastic(pron, sent):
                 continue  # leave pleonastic it unchanged
 

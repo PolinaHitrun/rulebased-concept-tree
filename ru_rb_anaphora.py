@@ -293,6 +293,13 @@ def resolve_anaphora_ru(conll_file: str):
         pronouns = [t for t in sent if t.pos.startswith("P-")]
 
         for pron in pronouns:
+            # морфологический анализ местоимения
+            pron_parse = morph_filter.morph.parse(pron.form)[0]
+
+            # не разрешаем местоимения 1 и 2 лица
+            if pron_parse.tag.person in {1, 2}:
+                continue
+
             # берем кандидатов из предыдущих предложений
             candidates = [
                 np for np in dm.get_candidates(sent.sent_id)
@@ -310,9 +317,6 @@ def resolve_anaphora_ru(conll_file: str):
 
             if scored:
                 best = scored[0][0]
-
-                # морфологический анализ местоимения
-                pron_parse = morph_filter.morph.parse(pron.form)[0]
 
                 target_case = pron_parse.tag.case
                 target_number = pron_parse.tag.number
