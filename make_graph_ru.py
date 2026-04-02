@@ -117,7 +117,13 @@ def build_noun_concept(token_id, tokens):
     # сортировка по id (строковые id вида 0_5 тоже корректно сортируются)
     concept_tokens.sort(key=lambda x: str(x.id))
 
-    return " ".join(getattr(t, "lemma", "") for t in concept_tokens)
+    def _lemma_or_form(tok):
+        lemma = getattr(tok, "lemma", "") or ""
+        if lemma == "<unknown>":
+            return getattr(tok, "form", "") or ""
+        return lemma or (getattr(tok, "form", "") or "")
+
+    return " ".join(_lemma_or_form(t) for t in concept_tokens)
 
 
 def get_conjuncts(token_id, tokens_map):
@@ -428,8 +434,14 @@ def build_ru_graph(sentences):
             seen = set()
             chain_ids = [v for v in chain_ids if not (v in seen or seen.add(v))]
 
+            def _lemma_or_form(tok):
+                lemma = getattr(tok, "lemma", None)
+                if not lemma or lemma == "<unknown>":
+                    return getattr(tok, "form", None)
+                return lemma
+
             verb_label = " ".join(
-                getattr(tokens_map[v], "lemma", None) or getattr(tokens_map[v], "form", None)
+                _lemma_or_form(tokens_map[v])
                 for v in chain_ids
             )
             verb_tok = tokens_map[vid]
@@ -564,7 +576,8 @@ def build_ru_graph(sentences):
                 for cid in getattr(tok, "children", []):
                     child = tokens_map[cid]
                     if is_prep(child):
-                        prep_label = getattr(child, "lemma", None) or getattr(child, "form", None)
+                        lemma = getattr(child, "lemma", None)
+                        prep_label = child.form if not lemma or lemma == "<unknown>" else lemma
 
                         if head not in vertices:
                             vertices[head] = {

@@ -117,14 +117,15 @@ class Graph:
         """
         return self.edges
     
-    def convert_to_networkx(self) -> nx.DiGraph:
+    def convert_to_networkx(self) -> nx.Graph:
         """
         Convert the graph to a NetworkX directed graph.
 
         Returns:
             A NetworkX DiGraph representing the same structure as this Graph.
         """
-        G = nx.DiGraph()
+        # G = nx.DiGraph()
+        G = nx.Graph()
 
         # Add nodes (vertices)
         for concept in self.vertices.keys():
@@ -285,12 +286,21 @@ def restore_from_csv(path: str) -> Graph:
     graph = Graph()
     with open(path, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        for row in reader:
-            edge = Edge(
-                agent_1=row["agent_1"],
-                agent_2=row["agent_2"],
-                meaning=row["edge"]
-            )
-            graph.add_edge(edge)
+        rows = list(reader)
+        concepts = []
+        for row in rows:
+            if row["agent_1"] not in concepts:
+                graph.add_vertex(row["agent_1"])
+                concepts.append(row["agent_1"])
+            if row["agent_2"] not in concepts:
+                graph.add_vertex(row["agent_2"])
+                concepts.append(row["agent_2"])
+        for row in rows:
+            graph.add_edge(agent_1=row["agent_1"],
+                           agent_2=row["agent_2"],
+                           meaning=row["edge"],
+                           edge_type=1,
+                           parent_subgraph=1)
     return graph
 
+# g = restore_from_csv('winnie_ru_graph.csv')

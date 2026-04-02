@@ -7,6 +7,8 @@ from graph.union_edge import UnionEdge
 
 from typing import List, Optional, Set, Dict
 from collections import defaultdict
+import networkx as nx
+import csv
 
 
 class Graph:
@@ -169,3 +171,49 @@ class Graph:
     def __repr__(self) -> str:
         return (f"Graph(\n\tvertices={list(self.vertices.values())},\n"
                 f"\tedges={self.edges}\n)")
+    
+    def convert_to_networkx(self) -> nx.DiGraph:
+        """
+        Convert the graph to a NetworkX directed graph.
+
+        Returns:
+            A NetworkX DiGraph representing the same structure as this Graph.
+        """
+        G = nx.DiGraph()
+
+        # Add nodes (vertices)
+        for concept in self.vertices.keys():
+            G.add_node(concept)
+
+        # Add edges with their meanings
+        for edge in self.edges:
+            G.add_edge(edge.agent_1, edge.agent_2, meaning=edge.meaning)
+
+        return G
+    
+    def save_to_csv(self, path: str) -> None:
+        """
+        Save the graph to a CSV file.
+
+        Args:
+            path: The file path to save the CSV file.
+        """
+        with open(path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["agent_1", "agent_2", "edge"])
+
+            for edge in self.edges:
+                writer.writerow([
+                    edge.agent_1,
+                    edge.agent_2,
+                    edge.meaning,
+                ])
+
+    def __str__(self) -> str:
+        return f"Graph(vertices={len(self.vertices)}, edges={len(self.edges)})"
+
+    def __repr__(self) -> str:
+        return (
+            f"Graph(\n\tvertices={list(self.vertices.values())},\n"
+            f"\tedges={self.edges}\n)"
+        )

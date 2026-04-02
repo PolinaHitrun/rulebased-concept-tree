@@ -7,6 +7,7 @@ import pymorphy3
 import re
 from nltk.stem import WordNetLemmatizer
 import csv
+import os
 
 
 def calculate_metrics(graph: Graph) -> Dict[str, float]:
@@ -20,13 +21,15 @@ def calculate_metrics(graph: Graph) -> Dict[str, float]:
         A dictionary containing the calculated metrics.
     """
     G = graph.convert_to_networkx()
+    largest_cc = max(nx.connected_components(G), key=len)
+    G_giant = G.subgraph(largest_cc).copy()
     metrics = {
         # degree metrics
         "num_vertices": len(graph.vertices),
         "num_edges": len(graph.edges),
         "average_degree": (2 * len(graph.edges)) / len(graph.vertices) if graph.vertices else 0,
-        "average_in_degree": sum(dict(G.in_degree()).values()) / len(graph.vertices) if graph.vertices else 0,
-        "average_out_degree": sum(dict(G.out_degree()).values()) / len(graph.vertices) if graph.vertices else 0,
+        # "average_in_degree": sum(dict(G.in_degree()).values()) / len(graph.vertices) if graph.vertices else 0,
+        # "average_out_degree": sum(dict(G.out_degree()).values()) / len(graph.vertices) if graph.vertices else 0,
         "density": (2 * len(graph.edges)) / (len(graph.vertices) * (len(graph.vertices) - 1)) if graph.vertices else 0,
         # other metrics
         "average_clustering_coefficient": nx.average_clustering(G) if graph.vertices else 0,
@@ -34,8 +37,8 @@ def calculate_metrics(graph: Graph) -> Dict[str, float]:
         "connected_components": nx.number_connected_components(G) if graph.vertices else 0,
         "giant_component_size": len(max(nx.connected_components(G), key=len)) if graph.vertices else 0,
         # path metrics
-        "average_shortest_path_length": nx.average_shortest_path_length(G) if nx.is_connected(G) else float('inf'),
-        "diameter": nx.diameter(G) if nx.is_connected(G) else float('inf'),
+        "average_shortest_path_length": nx.average_shortest_path_length(G_giant) if nx.is_connected(G_giant) else float('inf'),
+        "diameter": nx.diameter(G_giant) if nx.is_connected(G_giant) else float('inf'),
         # centrality metrics
         "average_degree_centrality": sum(nx.degree_centrality(G).values()) / len(graph.vertices) if graph.vertices else 0,
         "average_betweenness_centrality": sum(nx.betweenness_centrality(G).values()) / len(graph.vertices) if graph.vertices else 0,
@@ -273,8 +276,9 @@ def average_syllables_per_word(text, language='ru'):
     if not words: return 0
     return syllables_count(text, language) / len(words)
 
-
-with open('freqrnc2011.csv', 'r', encoding='utf-8') as f:
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE_PATH = os.path.join(CURRENT_DIR, 'freqrnc2011.csv')
+with open(DATA_FILE_PATH, 'r', encoding='utf-8') as f:
         reader = csv.reader(f, delimiter='\t')
         next(reader)
         freq_dict = {row[0]: float(row[2]) for row in reader}
