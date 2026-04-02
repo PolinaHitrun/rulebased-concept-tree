@@ -63,7 +63,8 @@ def build_noun_concept(token, tokens_map):
             child = tokens_map[child_id]
             if child["deprel"] in {"compound", "amod"}:
                 collect_modifiers(child_id, collected)
-        collected.append(token_obj["form"])
+        word = token_obj["lemma"] if token_obj.get("lemma") != "<unknown>" else token_obj.get("form")
+        collected.append(word)
 
     collected = []
     collect_modifiers(token["id"], collected)
@@ -207,7 +208,7 @@ def process_node(token_id, tokens_map, vertices, edges):
                     vertices[obj_id] = build_noun_concept(obj_token, tokens_map)
                 obj_label = vertices[obj_id]
 
-                verb_label = token["lemma"]
+                verb_label = token["lemma"] if token["lemma"] != "<unknown>" else token["form"]
                 if prep_chain:
                     verb_label = f"{verb_label} {prep_chain}"
                 edges.append((subj_label, obj_label, verb_label))
