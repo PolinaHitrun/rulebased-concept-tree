@@ -87,7 +87,7 @@ def distribution_of_clustering_coefficients(graph: Graph, log_scale: bool = Fals
         log_scale: Whether to use a logarithmic scale for the y-axis
     """
     G = graph.convert_to_networkx()
-    clustering_distribution = {}
+    clustering_distribution = nx.clustering(G, nodes=G.nodes())
     
     for node in G.nodes():
         clustering_coeff = nx.clustering(G, node)

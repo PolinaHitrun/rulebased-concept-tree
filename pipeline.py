@@ -16,7 +16,7 @@ if __name__ == "__main__":
     # раскомментировать при первом запуске
     # nltk.download("punkt_tab") 
 
-    with open("corpus/test/winnie_ru.txt", "r") as f:
+    with open("corpus/test/UN_ru.txt", "r") as f:
         text = f.read()
     lang = 'ru'
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     for e in g.edges:
         print(f"{e.agent_1} --[{e.meaning}]--> {e.agent_2}")
 
-    g.save_to_csv("winnie_ru_graph.csv")
-    print("Graph saved to winnie_ru_graph.csv")
+    g.save_to_csv("UN_ru_graph.csv")
+    print("Graph saved to UN_ru_graph.csv")
 
     visualize_graph_interactive(g, output="graph_ru.html")

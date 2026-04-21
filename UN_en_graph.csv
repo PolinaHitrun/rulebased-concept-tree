@@ -1,0 +1,5899 @@
+agent_1,agent_2,edge
+pulse,full preamble,unite
+people,unite nation,of
+strength,generation,succeed
+strength,scourge,succeed from
+international peace,generation,succeed
+international peace,scourge,succeed from
+security,generation,succeed
+security,scourge,succeed from
+full preamble,generation,succeed
+full preamble,scourge,succeed from
+acceptance,generation,succeed
+acceptance,scourge,succeed from
+people,generation,succeed
+people,scourge,succeed from
+principle,generation,succeed
+principle,scourge,succeed from
+institution,generation,succeed
+institution,scourge,succeed from
+method,generation,succeed
+method,scourge,succeed from
+armed force,generation,succeed
+armed force,scourge,succeed from
+which war,generation,succeed
+which war,scourge,succeed from
+common interest,generation,succeed
+common interest,scourge,succeed from
+lifetime,generation,succeed
+lifetime,scourge,succeed from
+bring untold sorrow,generation,succeed
+bring untold sorrow,scourge,succeed from
+international machinery,generation,succeed
+international machinery,scourge,succeed from
+mankind,generation,succeed
+mankind,scourge,succeed from
+promotion,generation,succeed
+promotion,scourge,succeed from
+faith,generation,succeed
+faith,scourge,succeed from
+fundamental human right,generation,succeed
+fundamental human right,scourge,succeed from
+economic advancement,generation,succeed
+economic advancement,scourge,succeed from
+dignity,generation,succeed
+dignity,scourge,succeed from
+people,generation,succeed
+people,scourge,succeed from
+worth,generation,succeed
+worth,scourge,succeed from
+human person,generation,succeed
+human person,scourge,succeed from
+effort,generation,succeed
+effort,scourge,succeed from
+aim,generation,succeed
+aim,scourge,succeed from
+equal right,generation,succeed
+equal right,scourge,succeed from
+man,generation,succeed
+man,scourge,succeed from
+woman,generation,succeed
+woman,scourge,succeed from
+nation,generation,succeed
+nation,scourge,succeed from
+large condition,generation,succeed
+large condition,scourge,succeed from
+justice,generation,succeed
+justice,scourge,succeed from
+respect,generation,succeed
+respect,scourge,succeed from
+obligation,generation,succeed
+obligation,scourge,succeed from
+treaty,generation,succeed
+treaty,scourge,succeed from
+other source,generation,succeed
+other source,scourge,succeed from
+international law,generation,succeed
+international law,scourge,succeed from
+social progress,generation,succeed
+social progress,scourge,succeed from
+good standard,generation,succeed
+good standard,scourge,succeed from
+life,generation,succeed
+life,scourge,succeed from
+large freedom,generation,succeed
+large freedom,scourge,succeed from
+end,generation,succeed
+end,scourge,succeed from
+tolerance,generation,succeed
+tolerance,scourge,succeed from
+peace,generation,succeed
+peace,scourge,succeed from
+good neighbour,generation,succeed
+good neighbour,scourge,succeed from
+scourge,which war,of
+strength,faith,reaffirm
+strength,dignity,reaffirm in
+strength,worth,reaffirm in
+strength,equal right,reaffirm in
+international peace,faith,reaffirm
+international peace,dignity,reaffirm in
+international peace,worth,reaffirm in
+international peace,equal right,reaffirm in
+security,faith,reaffirm
+security,dignity,reaffirm in
+security,worth,reaffirm in
+security,equal right,reaffirm in
+full preamble,faith,reaffirm
+full preamble,dignity,reaffirm in
+full preamble,worth,reaffirm in
+full preamble,equal right,reaffirm in
+acceptance,faith,reaffirm
+acceptance,dignity,reaffirm in
+acceptance,worth,reaffirm in
+acceptance,equal right,reaffirm in
+people,faith,reaffirm
+people,dignity,reaffirm in
+people,worth,reaffirm in
+people,equal right,reaffirm in
+principle,faith,reaffirm
+principle,dignity,reaffirm in
+principle,worth,reaffirm in
+principle,equal right,reaffirm in
+institution,faith,reaffirm
+institution,dignity,reaffirm in
+institution,worth,reaffirm in
+institution,equal right,reaffirm in
+method,faith,reaffirm
+method,dignity,reaffirm in
+method,worth,reaffirm in
+method,equal right,reaffirm in
+armed force,faith,reaffirm
+armed force,dignity,reaffirm in
+armed force,worth,reaffirm in
+armed force,equal right,reaffirm in
+scourge,faith,reaffirm
+scourge,dignity,reaffirm in
+scourge,worth,reaffirm in
+scourge,equal right,reaffirm in
+which war,faith,reaffirm
+which war,dignity,reaffirm in
+which war,worth,reaffirm in
+which war,equal right,reaffirm in
+common interest,faith,reaffirm
+common interest,dignity,reaffirm in
+common interest,worth,reaffirm in
+common interest,equal right,reaffirm in
+international machinery,faith,reaffirm
+international machinery,dignity,reaffirm in
+international machinery,worth,reaffirm in
+international machinery,equal right,reaffirm in
+promotion,faith,reaffirm
+promotion,dignity,reaffirm in
+promotion,worth,reaffirm in
+promotion,equal right,reaffirm in
+fundamental human right,faith,reaffirm
+fundamental human right,dignity,reaffirm in
+fundamental human right,worth,reaffirm in
+fundamental human right,equal right,reaffirm in
+economic advancement,faith,reaffirm
+economic advancement,dignity,reaffirm in
+economic advancement,worth,reaffirm in
+economic advancement,equal right,reaffirm in
+people,faith,reaffirm
+people,dignity,reaffirm in
+people,worth,reaffirm in
+people,equal right,reaffirm in
+human person,faith,reaffirm
+human person,dignity,reaffirm in
+human person,worth,reaffirm in
+human person,equal right,reaffirm in
+effort,faith,reaffirm
+effort,dignity,reaffirm in
+effort,worth,reaffirm in
+effort,equal right,reaffirm in
+aim,faith,reaffirm
+aim,dignity,reaffirm in
+aim,worth,reaffirm in
+aim,equal right,reaffirm in
+man,faith,reaffirm
+man,dignity,reaffirm in
+man,worth,reaffirm in
+man,equal right,reaffirm in
+woman,faith,reaffirm
+woman,dignity,reaffirm in
+woman,worth,reaffirm in
+woman,equal right,reaffirm in
+nation,faith,reaffirm
+nation,dignity,reaffirm in
+nation,worth,reaffirm in
+nation,equal right,reaffirm in
+large condition,faith,reaffirm
+large condition,dignity,reaffirm in
+large condition,worth,reaffirm in
+large condition,equal right,reaffirm in
+justice,faith,reaffirm
+justice,dignity,reaffirm in
+justice,worth,reaffirm in
+justice,equal right,reaffirm in
+respect,faith,reaffirm
+respect,dignity,reaffirm in
+respect,worth,reaffirm in
+respect,equal right,reaffirm in
+obligation,faith,reaffirm
+obligation,dignity,reaffirm in
+obligation,worth,reaffirm in
+obligation,equal right,reaffirm in
+treaty,faith,reaffirm
+treaty,dignity,reaffirm in
+treaty,worth,reaffirm in
+treaty,equal right,reaffirm in
+other source,faith,reaffirm
+other source,dignity,reaffirm in
+other source,worth,reaffirm in
+other source,equal right,reaffirm in
+international law,faith,reaffirm
+international law,dignity,reaffirm in
+international law,worth,reaffirm in
+international law,equal right,reaffirm in
+social progress,faith,reaffirm
+social progress,dignity,reaffirm in
+social progress,worth,reaffirm in
+social progress,equal right,reaffirm in
+good standard,faith,reaffirm
+good standard,dignity,reaffirm in
+good standard,worth,reaffirm in
+good standard,equal right,reaffirm in
+life,faith,reaffirm
+life,dignity,reaffirm in
+life,worth,reaffirm in
+life,equal right,reaffirm in
+large freedom,faith,reaffirm
+large freedom,dignity,reaffirm in
+large freedom,worth,reaffirm in
+large freedom,equal right,reaffirm in
+end,faith,reaffirm
+end,dignity,reaffirm in
+end,worth,reaffirm in
+end,equal right,reaffirm in
+tolerance,faith,reaffirm
+tolerance,dignity,reaffirm in
+tolerance,worth,reaffirm in
+tolerance,equal right,reaffirm in
+peace,faith,reaffirm
+peace,dignity,reaffirm in
+peace,worth,reaffirm in
+peace,equal right,reaffirm in
+good neighbour,faith,reaffirm
+good neighbour,dignity,reaffirm in
+good neighbour,worth,reaffirm in
+good neighbour,equal right,reaffirm in
+faith,fundamental human right,in
+dignity,worth,and
+worth,dignity,and
+worth,human person,of
+equal right,man,of
+equal right,woman,of
+man,woman,and
+woman,man,and
+justice,respect,and
+respect,justice,and
+justice,obligation,for
+respect,obligation,for
+large condition,treaty,arise from
+large condition,other source,arise from
+full preamble,treaty,arise from
+full preamble,other source,arise from
+justice,treaty,arise from
+justice,other source,arise from
+people,treaty,arise from
+people,other source,arise from
+respect,treaty,arise from
+respect,other source,arise from
+obligation,treaty,arise from
+obligation,other source,arise from
+scourge,treaty,arise from
+scourge,other source,arise from
+international law,treaty,arise from
+international law,other source,arise from
+which war,treaty,arise from
+which war,other source,arise from
+treaty,other source,and
+other source,treaty,and
+other source,international law,of
+strength,social progress,promote
+strength,good standard,promote
+international peace,social progress,promote
+international peace,good standard,promote
+security,social progress,promote
+security,good standard,promote
+large condition,social progress,promote
+large condition,good standard,promote
+full preamble,social progress,promote
+full preamble,good standard,promote
+acceptance,social progress,promote
+acceptance,good standard,promote
+people,social progress,promote
+people,good standard,promote
+principle,social progress,promote
+principle,good standard,promote
+institution,social progress,promote
+institution,good standard,promote
+method,social progress,promote
+method,good standard,promote
+armed force,social progress,promote
+armed force,good standard,promote
+scourge,social progress,promote
+scourge,good standard,promote
+which war,social progress,promote
+which war,good standard,promote
+common interest,social progress,promote
+common interest,good standard,promote
+international machinery,social progress,promote
+international machinery,good standard,promote
+life,social progress,promote
+life,good standard,promote
+promotion,social progress,promote
+promotion,good standard,promote
+large freedom,social progress,promote
+large freedom,good standard,promote
+economic advancement,social progress,promote
+economic advancement,good standard,promote
+end,social progress,promote
+end,good standard,promote
+people,social progress,promote
+people,good standard,promote
+tolerance,social progress,promote
+tolerance,good standard,promote
+peace,social progress,promote
+peace,good standard,promote
+effort,social progress,promote
+effort,good standard,promote
+aim,social progress,promote
+aim,good standard,promote
+good neighbour,social progress,promote
+good neighbour,good standard,promote
+social progress,good standard,and
+good standard,social progress,and
+good standard,life,of
+good standard,large freedom,in
+strength,tolerance,practice
+international peace,tolerance,practice
+security,tolerance,practice
+large condition,tolerance,practice
+full preamble,tolerance,practice
+acceptance,tolerance,practice
+people,tolerance,practice
+principle,tolerance,practice
+institution,tolerance,practice
+method,tolerance,practice
+armed force,tolerance,practice
+scourge,tolerance,practice
+which war,tolerance,practice
+common interest,tolerance,practice
+social progress,tolerance,practice
+good standard,tolerance,practice
+international machinery,tolerance,practice
+promotion,tolerance,practice
+economic advancement,tolerance,practice
+people,tolerance,practice
+peace,tolerance,practice
+effort,tolerance,practice
+aim,tolerance,practice
+good neighbour,tolerance,practice
+social progress,peace,live in
+good standard,peace,live in
+large condition,peace,live in
+full preamble,peace,live in
+people,peace,live in
+scourge,peace,live in
+which war,peace,live in
+good neighbour,peace,live in
+strength,international peace,maintain
+strength,security,maintain
+large condition,international peace,maintain
+large condition,security,maintain
+full preamble,international peace,maintain
+full preamble,security,maintain
+acceptance,international peace,maintain
+acceptance,security,maintain
+people,international peace,maintain
+people,security,maintain
+principle,international peace,maintain
+principle,security,maintain
+institution,international peace,maintain
+institution,security,maintain
+method,international peace,maintain
+method,security,maintain
+armed force,international peace,maintain
+armed force,security,maintain
+scourge,international peace,maintain
+scourge,security,maintain
+which war,international peace,maintain
+which war,security,maintain
+common interest,international peace,maintain
+common interest,security,maintain
+social progress,international peace,maintain
+social progress,security,maintain
+good standard,international peace,maintain
+good standard,security,maintain
+international machinery,international peace,maintain
+international machinery,security,maintain
+promotion,international peace,maintain
+promotion,security,maintain
+economic advancement,international peace,maintain
+economic advancement,security,maintain
+people,international peace,maintain
+people,security,maintain
+effort,international peace,maintain
+effort,security,maintain
+aim,international peace,maintain
+aim,security,maintain
+international peace,security,and
+security,international peace,and
+strength,institution,ensure by
+strength,acceptance,ensure by
+large condition,institution,ensure by
+large condition,acceptance,ensure by
+full preamble,institution,ensure by
+full preamble,acceptance,ensure by
+people,institution,ensure by
+people,acceptance,ensure by
+principle,institution,ensure by
+principle,acceptance,ensure by
+method,institution,ensure by
+method,acceptance,ensure by
+armed force,institution,ensure by
+armed force,acceptance,ensure by
+scourge,institution,ensure by
+scourge,acceptance,ensure by
+which war,institution,ensure by
+which war,acceptance,ensure by
+common interest,institution,ensure by
+common interest,acceptance,ensure by
+social progress,institution,ensure by
+social progress,acceptance,ensure by
+international machinery,institution,ensure by
+international machinery,acceptance,ensure by
+good standard,institution,ensure by
+good standard,acceptance,ensure by
+promotion,institution,ensure by
+promotion,acceptance,ensure by
+economic advancement,institution,ensure by
+economic advancement,acceptance,ensure by
+people,institution,ensure by
+people,acceptance,ensure by
+effort,institution,ensure by
+effort,acceptance,ensure by
+aim,institution,ensure by
+aim,acceptance,ensure by
+acceptance,institution,and
+institution,acceptance,and
+institution,principle,of
+acceptance,principle,of
+institution,method,of
+strength,international machinery,employ
+social progress,international machinery,employ
+good standard,international machinery,employ
+promotion,international machinery,employ
+large condition,international machinery,employ
+full preamble,international machinery,employ
+acceptance,international machinery,employ
+people,international machinery,employ
+economic advancement,international machinery,employ
+people,international machinery,employ
+institution,international machinery,employ
+scourge,international machinery,employ
+which war,international machinery,employ
+international machinery,promotion,for
+promotion,economic advancement,of
+economic advancement,people,of
+strength,aim,accomplish
+social progress,aim,accomplish
+good standard,aim,accomplish
+large condition,aim,accomplish
+full preamble,aim,accomplish
+acceptance,aim,accomplish
+people,aim,accomplish
+institution,aim,accomplish
+effort,aim,accomplish
+scourge,aim,accomplish
+which war,aim,accomplish
+respective government,present charter,agree to
+unite nation,present charter,agree to
+representative,present charter,agree to
+city,present charter,agree to
+international organization,present charter,agree to
+san francisco,present charter,agree to
+full power,present charter,agree to
+unite nation,present charter,agree to
+good form,present charter,agree to
+san francisco,city,assemble in
+representative,city,assemble in
+city,san francisco,of
+representative,good form,be in
+present charter,unite nation,of
+unite nation,international organization,establish
+international organization,unite nation,know as
+purpose,article,and
+article,purpose,and
+purpose,unite nation,of
+economic social cultural character,international peace,maintain
+economic social cultural character,security,maintain
+respect,international peace,maintain
+respect,security,maintain
+human right,international peace,maintain
+human right,security,maintain
+fundamental freedom,international peace,maintain
+fundamental freedom,security,maintain
+distinction,international peace,maintain
+distinction,security,maintain
+end,international peace,maintain
+end,security,maintain
+race,international peace,maintain
+race,security,maintain
+sex,international peace,maintain
+sex,security,maintain
+language,international peace,maintain
+language,security,maintain
+effective collective measure,international peace,maintain
+effective collective measure,security,maintain
+religion,international peace,maintain
+religion,security,maintain
+prevention,international peace,maintain
+prevention,security,maintain
+removal,international peace,maintain
+removal,security,maintain
+centre,international peace,maintain
+centre,security,maintain
+threat,international peace,maintain
+threat,security,maintain
+action,international peace,maintain
+action,security,maintain
+peace,international peace,maintain
+peace,security,maintain
+nation,international peace,maintain
+nation,security,maintain
+suppression,international peace,maintain
+suppression,security,maintain
+attainment,international peace,maintain
+attainment,security,maintain
+act,international peace,maintain
+act,security,maintain
+aggression,international peace,maintain
+aggression,security,maintain
+common end,international peace,maintain
+common end,security,maintain
+other breach,international peace,maintain
+other breach,security,maintain
+peace,international peace,maintain
+peace,security,maintain
+peaceful mean,international peace,maintain
+peaceful mean,security,maintain
+conformity,international peace,maintain
+conformity,security,maintain
+principle,international peace,maintain
+principle,security,maintain
+justice,international peace,maintain
+justice,security,maintain
+law,international peace,maintain
+law,security,maintain
+adjustment,international peace,maintain
+adjustment,security,maintain
+settlement,international peace,maintain
+settlement,security,maintain
+international dispute,international peace,maintain
+international dispute,security,maintain
+situation,international peace,maintain
+situation,security,maintain
+breach,international peace,maintain
+breach,security,maintain
+peace,international peace,maintain
+peace,security,maintain
+friendly relation,international peace,maintain
+friendly relation,security,maintain
+nation,international peace,maintain
+nation,security,maintain
+respect,international peace,maintain
+respect,security,maintain
+principle,international peace,maintain
+principle,security,maintain
+equal right,international peace,maintain
+equal right,security,maintain
+selfdetermination,international peace,maintain
+selfdetermination,security,maintain
+people,international peace,maintain
+people,security,maintain
+other appropriate measure,international peace,maintain
+other appropriate measure,security,maintain
+universal peace,international peace,maintain
+universal peace,security,maintain
+international cooperation,international peace,maintain
+international cooperation,security,maintain
+international problem,international peace,maintain
+international problem,security,maintain
+international peace,security,and
+security,international peace,and
+prevention,end,take to
+prevention,effective collective measure,take
+removal,end,take to
+removal,effective collective measure,take
+threat,end,take to
+threat,effective collective measure,take
+peace,end,take to
+peace,effective collective measure,take
+suppression,end,take to
+suppression,effective collective measure,take
+act,end,take to
+act,effective collective measure,take
+aggression,end,take to
+aggression,effective collective measure,take
+other breach,end,take to
+other breach,effective collective measure,take
+international peace,end,take to
+international peace,effective collective measure,take
+security,end,take to
+security,effective collective measure,take
+peace,end,take to
+peace,effective collective measure,take
+effective collective measure,prevention,for
+effective collective measure,removal,for
+prevention,removal,and
+removal,prevention,and
+removal,threat,of
+removal,peace,to
+suppression,act,of
+act,other breach,of
+act,aggression,of
+aggression,other breach,or
+other breach,aggression,or
+other breach,peace,of
+aggression,peace,of
+economic social cultural character,peaceful mean,bring by
+respect,peaceful mean,bring by
+human right,peaceful mean,bring by
+fundamental freedom,peaceful mean,bring by
+distinction,peaceful mean,bring by
+race,peaceful mean,bring by
+sex,peaceful mean,bring by
+language,peaceful mean,bring by
+religion,peaceful mean,bring by
+centre,peaceful mean,bring by
+action,peaceful mean,bring by
+nation,peaceful mean,bring by
+attainment,peaceful mean,bring by
+common end,peaceful mean,bring by
+conformity,peaceful mean,bring by
+principle,peaceful mean,bring by
+justice,peaceful mean,bring by
+law,peaceful mean,bring by
+adjustment,peaceful mean,bring by
+settlement,peaceful mean,bring by
+international dispute,peaceful mean,bring by
+situation,peaceful mean,bring by
+breach,peaceful mean,bring by
+peace,peaceful mean,bring by
+friendly relation,peaceful mean,bring by
+nation,peaceful mean,bring by
+respect,peaceful mean,bring by
+principle,peaceful mean,bring by
+equal right,peaceful mean,bring by
+selfdetermination,peaceful mean,bring by
+people,peaceful mean,bring by
+other appropriate measure,peaceful mean,bring by
+universal peace,peaceful mean,bring by
+international cooperation,peaceful mean,bring by
+international problem,peaceful mean,bring by
+conformity,principle,with
+principle,adjustment,of
+principle,settlement,of
+adjustment,settlement,or
+settlement,adjustment,or
+settlement,international dispute,of
+settlement,situation,of
+international dispute,situation,or
+situation,international dispute,or
+economic social cultural character,breach,lead to
+respect,breach,lead to
+human right,breach,lead to
+fundamental freedom,breach,lead to
+distinction,breach,lead to
+race,breach,lead to
+sex,breach,lead to
+language,breach,lead to
+religion,breach,lead to
+centre,breach,lead to
+action,breach,lead to
+nation,breach,lead to
+attainment,breach,lead to
+common end,breach,lead to
+conformity,breach,lead to
+principle,breach,lead to
+adjustment,breach,lead to
+settlement,breach,lead to
+international dispute,breach,lead to
+situation,breach,lead to
+peace,breach,lead to
+friendly relation,breach,lead to
+nation,breach,lead to
+respect,breach,lead to
+principle,breach,lead to
+equal right,breach,lead to
+selfdetermination,breach,lead to
+people,breach,lead to
+other appropriate measure,breach,lead to
+universal peace,breach,lead to
+international cooperation,breach,lead to
+international problem,breach,lead to
+breach,peace,of
+principle,friendly relation,develop
+economic social cultural character,friendly relation,develop
+adjustment,friendly relation,develop
+settlement,friendly relation,develop
+respect,friendly relation,develop
+international dispute,friendly relation,develop
+human right,friendly relation,develop
+situation,friendly relation,develop
+fundamental freedom,friendly relation,develop
+distinction,friendly relation,develop
+race,friendly relation,develop
+sex,friendly relation,develop
+language,friendly relation,develop
+religion,friendly relation,develop
+nation,friendly relation,develop
+respect,friendly relation,develop
+centre,friendly relation,develop
+principle,friendly relation,develop
+action,friendly relation,develop
+equal right,friendly relation,develop
+nation,friendly relation,develop
+selfdetermination,friendly relation,develop
+attainment,friendly relation,develop
+people,friendly relation,develop
+common end,friendly relation,develop
+other appropriate measure,friendly relation,develop
+universal peace,friendly relation,develop
+international cooperation,friendly relation,develop
+international problem,friendly relation,develop
+conformity,friendly relation,develop
+friendly relation,nation,among
+principle,respect,base on
+principle,respect,base on
+equal right,respect,base on
+adjustment,respect,base on
+selfdetermination,respect,base on
+settlement,respect,base on
+people,respect,base on
+international dispute,respect,base on
+situation,respect,base on
+friendly relation,respect,base on
+conformity,respect,base on
+respect,principle,for
+principle,selfdetermination,of
+principle,equal right,of
+equal right,selfdetermination,and
+selfdetermination,equal right,and
+selfdetermination,people,of
+principle,other appropriate measure,take
+economic social cultural character,other appropriate measure,take
+adjustment,other appropriate measure,take
+settlement,other appropriate measure,take
+respect,other appropriate measure,take
+international dispute,other appropriate measure,take
+human right,other appropriate measure,take
+situation,other appropriate measure,take
+fundamental freedom,other appropriate measure,take
+distinction,other appropriate measure,take
+race,other appropriate measure,take
+sex,other appropriate measure,take
+language,other appropriate measure,take
+religion,other appropriate measure,take
+centre,other appropriate measure,take
+action,other appropriate measure,take
+nation,other appropriate measure,take
+attainment,other appropriate measure,take
+common end,other appropriate measure,take
+universal peace,other appropriate measure,take
+international cooperation,other appropriate measure,take
+international problem,other appropriate measure,take
+conformity,other appropriate measure,take
+principle,universal peace,strengthen
+economic social cultural character,universal peace,strengthen
+adjustment,universal peace,strengthen
+settlement,universal peace,strengthen
+respect,universal peace,strengthen
+international dispute,universal peace,strengthen
+human right,universal peace,strengthen
+situation,universal peace,strengthen
+fundamental freedom,universal peace,strengthen
+distinction,universal peace,strengthen
+race,universal peace,strengthen
+sex,universal peace,strengthen
+language,universal peace,strengthen
+religion,universal peace,strengthen
+centre,universal peace,strengthen
+action,universal peace,strengthen
+nation,universal peace,strengthen
+attainment,universal peace,strengthen
+common end,universal peace,strengthen
+other appropriate measure,universal peace,strengthen
+international cooperation,universal peace,strengthen
+international problem,universal peace,strengthen
+conformity,universal peace,strengthen
+principle,international cooperation,achieve
+economic social cultural character,international cooperation,achieve
+adjustment,international cooperation,achieve
+settlement,international cooperation,achieve
+respect,international cooperation,achieve
+international dispute,international cooperation,achieve
+human right,international cooperation,achieve
+situation,international cooperation,achieve
+fundamental freedom,international cooperation,achieve
+distinction,international cooperation,achieve
+race,international cooperation,achieve
+sex,international cooperation,achieve
+language,international cooperation,achieve
+religion,international cooperation,achieve
+centre,international cooperation,achieve
+action,international cooperation,achieve
+nation,international cooperation,achieve
+attainment,international cooperation,achieve
+common end,international cooperation,achieve
+other appropriate measure,international cooperation,achieve
+universal peace,international cooperation,achieve
+international problem,international cooperation,achieve
+conformity,international cooperation,achieve
+principle,international problem,solve
+economic social cultural character,international problem,solve
+adjustment,international problem,solve
+settlement,international problem,solve
+international dispute,international problem,solve
+situation,international problem,solve
+other appropriate measure,international problem,solve
+universal peace,international problem,solve
+conformity,international problem,solve
+international problem,economic social cultural character,of
+principle,respect,encourage
+principle,distinction,encourage without
+adjustment,respect,encourage
+adjustment,distinction,encourage without
+settlement,respect,encourage
+settlement,distinction,encourage without
+international dispute,respect,encourage
+international dispute,distinction,encourage without
+human right,respect,encourage
+human right,distinction,encourage without
+situation,respect,encourage
+situation,distinction,encourage without
+other appropriate measure,respect,encourage
+other appropriate measure,distinction,encourage without
+fundamental freedom,respect,encourage
+fundamental freedom,distinction,encourage without
+universal peace,respect,encourage
+universal peace,distinction,encourage without
+race,respect,encourage
+race,distinction,encourage without
+sex,respect,encourage
+sex,distinction,encourage without
+language,respect,encourage
+language,distinction,encourage without
+religion,respect,encourage
+religion,distinction,encourage without
+conformity,respect,encourage
+conformity,distinction,encourage without
+respect,human right,for
+language,religion,or
+religion,language,or
+centre,action,harmonize
+centre,attainment,harmonize in
+principle,action,harmonize
+principle,attainment,harmonize in
+adjustment,action,harmonize
+adjustment,attainment,harmonize in
+nation,action,harmonize
+nation,attainment,harmonize in
+settlement,action,harmonize
+settlement,attainment,harmonize in
+international dispute,action,harmonize
+international dispute,attainment,harmonize in
+common end,action,harmonize
+common end,attainment,harmonize in
+situation,action,harmonize
+situation,attainment,harmonize in
+other appropriate measure,action,harmonize
+other appropriate measure,attainment,harmonize in
+universal peace,action,harmonize
+universal peace,attainment,harmonize in
+conformity,action,harmonize
+conformity,attainment,harmonize in
+action,nation,of
+attainment,common end,of
+article,accordance,act in
+article,follow principle,act with
+its member,accordance,act in
+its member,follow principle,act with
+article,its member,and
+its member,article,and
+article,pursuit,in
+its member,pursuit,in
+pursuit,purpose,of
+pursuit,article,state in
+purpose,article,state in
+article,article,state in
+its member,article,state in
+organization,principle,base on
+sovereign equality,principle,base on
+member,principle,base on
+principle,sovereign equality,of
+right,benefit,and
+benefit,right,and
+membership,good faith,fulfill in
+membership,obligation,fulfill
+obligation,accordance,assume in
+obligation,present charter,assume with
+member,accordance,assume in
+member,present charter,assume with
+right,accordance,assume in
+right,present charter,assume with
+benefit,accordance,assume in
+benefit,present charter,assume with
+international dispute,peaceful mean,by
+peaceful mean,manner,in
+international peace,security,and
+security,international peace,and
+international peace,justice,and
+justice,international peace,and
+security,justice,conj
+justice,security,conj
+international relation,threat,from
+international relation,use,from
+threat,use,or
+use,threat,or
+use,force,of
+use,territorial integrity,against
+use,political independence,against
+territorial integrity,political independence,or
+political independence,territorial integrity,or
+territorial integrity,state,of
+political independence,state,of
+purpose,unite nation,of
+member,unite nation,give
+assistance,accordance,take in
+assistance,present charter,take with
+assistance,action,in
+unite nation,assistance,give
+unite nation,state,give to
+preventive,action,take
+enforcement,action,take
+preventive,enforcement,or
+enforcement,preventive,or
+state,accordance,in
+state,principle,with
+member,unite act,of
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+nothing,present charter,contain in
+unite nation,matter,intervene in
+such matter,domestic jurisdiction,be within
+settlement,domestic jurisdiction,be within
+present charter,domestic jurisdiction,be within
+matter,domestic jurisdiction,be within
+state,domestic jurisdiction,be within
+member,domestic jurisdiction,be within
+domestic jurisdiction,state,of
+member,such matter,submit
+member,settlement,submit to
+member,present charter,submit under
+principle,application,prejudice
+application,measure,of
+measure,vll,under
+original member,unite nation,of
+article,unite conference,participate in
+declaration,unite conference,participate in
+unite nation,unite conference,participate in
+January,unite conference,participate in
+sign,unite conference,participate in
+present charter,unite conference,participate in
+state,unite conference,participate in
+accordance,unite conference,participate in
+article,unite conference,participate in
+nation,unite conference,participate in
+international organization,unite conference,participate in
+san francisco,unite conference,participate in
+unite conference,international organization,on
+international organization,san francisco,at
+article,declaration,sign
+unite nation,declaration,sign
+January,declaration,sign
+sign,declaration,sign
+present charter,declaration,sign
+state,declaration,sign
+declaration,unite nation,by
+unite nation,January,of
+state,article,ratify with
+article,article,ratify with
+accordance,article,ratify with
+membership,unite nation,in
+obligation,present charter,contain in
+judgment,present charter,contain in
+other state,present charter,contain in
+organization,present charter,contain in
+judgment,organization,of
+other state,obligation,carry
+admission,decision,effect by
+such state,decision,effect by
+membership,decision,effect by
+unite nation,decision,effect by
+general assembly,decision,effect by
+recommendation,decision,effect by
+security,decision,effect by
+council,decision,effect by
+admission,such state,of
+admission,membership,to
+membership,unite nation,in
+decision,general assembly,of
+decision,recommendation,upon
+recommendation,council,of
+privilege,exercise,suspend from
+privilege,general assembly,suspend by
+privilege,recommendation,suspend upon
+article,exercise,suspend from
+article,general assembly,suspend by
+article,recommendation,suspend upon
+membership,exercise,suspend from
+membership,general assembly,suspend by
+membership,recommendation,suspend upon
+member,exercise,suspend from
+member,general assembly,suspend by
+member,recommendation,suspend upon
+unite nation,exercise,suspend from
+unite nation,general assembly,suspend by
+unite nation,recommendation,suspend upon
+preventive,exercise,suspend from
+preventive,general assembly,suspend by
+preventive,recommendation,suspend upon
+security,exercise,suspend from
+security,general assembly,suspend by
+security,recommendation,suspend upon
+enforcement,exercise,suspend from
+enforcement,general assembly,suspend by
+enforcement,recommendation,suspend upon
+action,exercise,suspend from
+action,general assembly,suspend by
+action,recommendation,suspend upon
+council,exercise,suspend from
+council,general assembly,suspend by
+council,recommendation,suspend upon
+security,exercise,suspend from
+security,general assembly,suspend by
+security,recommendation,suspend upon
+council,exercise,suspend from
+council,general assembly,suspend by
+council,recommendation,suspend upon
+right,exercise,suspend from
+right,general assembly,suspend by
+right,recommendation,suspend upon
+article,council,take by
+member,council,take by
+unite nation,council,take by
+preventive,council,take by
+enforcement,council,take by
+action,council,take by
+security,council,take by
+member,unite nation,of
+unite nation,action,against
+preventive,enforcement,or
+enforcement,preventive,or
+exercise,privilege,of
+exercise,right,of
+right,privilege,and
+privilege,right,and
+privilege,membership,of
+right,membership,of
+recommendation,council,of
+exercise,council,restore by
+security,council,restore by
+right,council,restore by
+privilege,council,restore by
+exercise,right,of
+exercise,privilege,of
+right,privilege,and
+privilege,right,and
+member,unite nation,of
+security,organization,expel from
+security,general assembly,expel by
+security,recommendation,expel upon
+member,organization,expel from
+member,general assembly,expel by
+member,recommendation,expel upon
+council,organization,expel from
+council,general assembly,expel by
+council,recommendation,expel upon
+principle,organization,expel from
+principle,general assembly,expel by
+principle,recommendation,expel upon
+present charter,organization,expel from
+present charter,general assembly,expel by
+present charter,recommendation,expel upon
+member,present charter,contain in
+principle,present charter,contain in
+recommendation,council,of
+international court,principal organ,establish as
+chapter,principal organ,establish as
+iii,principal organ,establish as
+organ,principal organ,establish as
+article,principal organ,establish as
+justice,principal organ,establish as
+secretariat,principal organ,establish as
+unite nation,principal organ,establish as
+general assembly,principal organ,establish as
+security,principal organ,establish as
+council,principal organ,establish as
+economic council,principal organ,establish as
+trusteeship,principal organ,establish as
+council,principal organ,establish as
+principal organ,unite nation,of
+council,secretariat,and
+secretariat,council,and
+international court,justice,of
+such find organ,accordance,establish in
+such find organ,present charter,establish with
+united nation,restriction,place
+restriction,eligibility,on
+eligibility,woman,of
+eligibility,man,of
+man,woman,and
+woman,man,and
+condition,equality,of
+equality,organ,in
+principal,subsidiary,and
+subsidiary,principal,and
+general article,member,consist of
+member,unite nation,of
+member,representative,have
+member,general assembly,have in
+function,power,and
+power,function,and
+article,question,discuss
+article,matter,discuss
+article,scope,discuss within
+question,matter,or
+matter,question,or
+scope,present charter,of
+organ,recommendation,make
+organ,member,make to
+function,recommendation,make
+function,member,make to
+power,recommendation,make
+power,member,make to
+such question,recommendation,make
+such question,member,make to
+matter,recommendation,make
+matter,member,make to
+present charter,recommendation,make
+present charter,member,make to
+security,recommendation,make
+security,member,make to
+article,recommendation,make
+article,member,make to
+unite nation,recommendation,make
+unite nation,member,make to
+power,recommendation,make
+power,member,make to
+council,recommendation,make
+council,member,make to
+function,recommendation,make
+function,member,make to
+organ,power,relate to
+organ,function,relate to
+function,power,relate to
+function,function,relate to
+power,power,relate to
+power,function,relate to
+present charter,power,relate to
+present charter,function,relate to
+article,power,relate to
+article,function,relate to
+power,function,and
+function,power,and
+power,organ,of
+function,organ,of
+organ,present charter,provide in
+function,present charter,provide in
+power,present charter,provide in
+article,present charter,provide in
+power,present charter,provide in
+function,present charter,provide in
+organ,article,provide in
+function,article,provide in
+power,article,provide in
+power,article,provide in
+function,article,provide in
+member,unite nation,of
+such question,matter,or
+matter,such question,or
+article,general principle,consider
+general principle,cooperation,of
+cooperation,maintenance,in
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+security,principle,including
+general principle,principle,include
+cooperation,principle,include
+maintenance,principle,include
+international peace,principle,include
+security,principle,include
+disarmament,principle,include
+regulation,principle,include
+armament,principle,include
+general principle,disarmament,govern
+general principle,regulation,govern
+cooperation,disarmament,govern
+cooperation,regulation,govern
+maintenance,disarmament,govern
+maintenance,regulation,govern
+international peace,disarmament,govern
+international peace,regulation,govern
+security,disarmament,govern
+security,regulation,govern
+principle,disarmament,govern
+principle,regulation,govern
+armament,disarmament,govern
+armament,regulation,govern
+disarmament,regulation,and
+regulation,disarmament,and
+regulation,armament,of
+member,recommendation,make
+member,regard,make with
+council,recommendation,make
+council,regard,make with
+security,recommendation,make
+security,regard,make with
+such principle,recommendation,make
+such principle,regard,make with
+regard,such principle,to
+such principle,member,to
+general assembly,question,discuss
+state,maintenance,relate to
+question,maintenance,relate to
+member,maintenance,relate to
+unite nation,maintenance,relate to
+accordance,maintenance,relate to
+international peace,maintenance,relate to
+security,maintenance,relate to
+article,maintenance,relate to
+paragraph,maintenance,relate to
+member,maintenance,relate to
+article,maintenance,relate to
+unite nation,maintenance,relate to
+security,maintenance,relate to
+council,maintenance,relate to
+maintenance,security,of
+maintenance,international peace,of
+international peace,security,and
+security,international peace,and
+state,member,bring by
+question,member,bring by
+member,member,bring by
+maintenance,member,bring by
+unite nation,member,bring by
+accordance,member,bring by
+international peace,member,bring by
+security,member,bring by
+article,member,bring by
+paragraph,member,bring by
+article,member,bring by
+unite nation,member,bring by
+security,member,bring by
+council,member,bring by
+member,unite nation,of
+member,unite nation,of
+member,accordance,in
+member,paragraph,with
+security,article,provide in
+maintenance,article,provide in
+international peace,article,provide in
+question,article,provide in
+such question,recommendation,make
+such question,regard,make with
+state,recommendation,make
+state,regard,make with
+state,recommendation,make
+state,regard,make with
+security,recommendation,make
+security,regard,make with
+council,recommendation,make
+council,regard,make with
+regard,such question,to
+such question,state,to
+such question,state,to
+state,state,or
+state,state,or
+discussion,council,refer to
+discussion,general assembly,refer by
+such question,council,refer to
+such question,general assembly,refer by
+action,council,refer to
+action,general assembly,refer by
+security,council,refer to
+security,general assembly,refer by
+general assembly,attention,call
+attention,council,of
+council,situation,to
+council,international peace,endanger
+council,security,endanger
+situation,international peace,endanger
+situation,security,endanger
+attention,international peace,endanger
+attention,security,endanger
+international peace,security,and
+security,international peace,and
+power,general scope,limit
+power,general assembly,of
+power,article,set in
+general assembly,article,set in
+general scope,article,of
+council,respect,exercise in
+respect,dispute,of
+respect,situation,of
+dispute,situation,or
+situation,dispute,or
+article,present charter,assign in
+respect,present charter,assign in
+dispute,present charter,assign in
+situation,present charter,assign in
+function,present charter,assign in
+general assembly,recommendation,make
+general assembly,regard,make with
+regard,dispute,to
+regard,situation,to
+dispute,situation,or
+situation,dispute,or
+dispute,council,unless
+situation,council,unless
+secretarygeneral,general assembly,notify
+secretarygeneral,session,notify at
+secretarygeneral,consent,with
+consent,council,of
+session,matter,of
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+council,council,deal by
+security,council,deal by
+such matter,council,deal by
+general assembly,council,deal by
+member,council,deal by
+unite nation,council,deal by
+maintenance,council,deal by
+general assembly,council,deal by
+international peace,council,deal by
+session,council,deal by
+security,council,deal by
+security,council,deal by
+council,member,notify
+council,general assembly,notify
+such matter,member,notify
+such matter,general assembly,notify
+unite nation,member,notify
+unite nation,general assembly,notify
+maintenance,member,notify
+maintenance,general assembly,notify
+general assembly,member,notify
+general assembly,general assembly,notify
+international peace,member,notify
+international peace,general assembly,notify
+session,member,notify
+session,general assembly,notify
+security,member,notify
+security,general assembly,notify
+security,member,notify
+security,general assembly,notify
+general assembly,member,or
+member,general assembly,or
+member,unite nation,of
+general assembly,session,be in
+maintenance,such matter,deal with
+international peace,such matter,deal with
+security,such matter,deal with
+article,study,initiate
+sex,recommendation,make
+language,recommendation,make
+religion,recommendation,make
+purpose,recommendation,make
+international cooperation,recommendation,make
+political field,recommendation,make
+progressive development,recommendation,make
+international law,recommendation,make
+codification,recommendation,make
+international cooperation,recommendation,make
+health,recommendation,make
+economic social cultural educational field,recommendation,make
+realization,recommendation,make
+human right,recommendation,make
+fundamental freedom,recommendation,make
+distinction,recommendation,make
+race,recommendation,make
+recommendation,purpose,for
+sex,international cooperation,promote
+sex,political field,promote in
+language,international cooperation,promote
+language,political field,promote in
+religion,international cooperation,promote
+religion,political field,promote in
+recommendation,international cooperation,promote
+recommendation,political field,promote in
+purpose,international cooperation,promote
+purpose,political field,promote in
+progressive development,international cooperation,promote
+progressive development,political field,promote in
+international law,international cooperation,promote
+international law,political field,promote in
+codification,international cooperation,promote
+codification,political field,promote in
+international cooperation,international cooperation,promote
+international cooperation,political field,promote in
+health,international cooperation,promote
+health,political field,promote in
+economic social cultural educational field,international cooperation,promote
+economic social cultural educational field,political field,promote in
+realization,international cooperation,promote
+realization,political field,promote in
+human right,international cooperation,promote
+human right,political field,promote in
+fundamental freedom,international cooperation,promote
+fundamental freedom,political field,promote in
+distinction,international cooperation,promote
+distinction,political field,promote in
+race,international cooperation,promote
+race,political field,promote in
+sex,progressive development,encourage
+codification,progressive development,encourage
+language,progressive development,encourage
+religion,progressive development,encourage
+international cooperation,progressive development,encourage
+recommendation,progressive development,encourage
+health,progressive development,encourage
+economic social cultural educational field,progressive development,encourage
+purpose,progressive development,encourage
+realization,progressive development,encourage
+human right,progressive development,encourage
+fundamental freedom,progressive development,encourage
+distinction,progressive development,encourage
+international law,progressive development,encourage
+race,progressive development,encourage
+progressive development,international law,of
+sex,international cooperation,promote
+codification,international cooperation,promote
+language,international cooperation,promote
+religion,international cooperation,promote
+recommendation,international cooperation,promote
+health,international cooperation,promote
+economic social cultural educational field,international cooperation,promote
+purpose,international cooperation,promote
+realization,international cooperation,promote
+human right,international cooperation,promote
+fundamental freedom,international cooperation,promote
+progressive development,international cooperation,promote
+distinction,international cooperation,promote
+race,international cooperation,promote
+international cooperation,economic social cultural educational field,in
+sex,realization,assist in
+sex,distinction,assist without
+language,realization,assist in
+language,distinction,assist without
+religion,realization,assist in
+religion,distinction,assist without
+recommendation,realization,assist in
+recommendation,distinction,assist without
+purpose,realization,assist in
+purpose,distinction,assist without
+human right,realization,assist in
+human right,distinction,assist without
+fundamental freedom,realization,assist in
+fundamental freedom,distinction,assist without
+progressive development,realization,assist in
+progressive development,distinction,assist without
+race,realization,assist in
+race,distinction,assist without
+realization,fundamental freedom,of
+realization,human right,of
+human right,fundamental freedom,and
+fundamental freedom,human right,and
+language,religion,or
+religion,language,or
+further function,power,and
+power,further function,and
+further function,general assembly,of
+power,general assembly,of
+further function,respect,with
+power,respect,with
+further function,ix,set in
+further function,x,set in
+power,ix,set in
+power,x,set in
+respect,ix,set in
+respect,x,set in
+matter,ix,set in
+matter,x,set in
+paragraph,ix,set in
+paragraph,x,set in
+chapter,ix,set in
+chapter,x,set in
+respect,paragraph,mention in
+further function,paragraph,mention in
+power,paragraph,mention in
+matter,paragraph,mention in
+ix,x,and
+x,ix,and
+subject,provision,to
+provision,article,of
+general assembly,measure,recommend
+measure,peaceful adjustment,for
+peaceful adjustment,situation,of
+subject,general welfare,impair
+subject,friendly relation,impair
+nation,general welfare,impair
+nation,friendly relation,impair
+situation,general welfare,impair
+situation,friendly relation,impair
+violation,general welfare,impair
+violation,friendly relation,impair
+measure,general welfare,impair
+measure,friendly relation,impair
+provision,general welfare,impair
+provision,friendly relation,impair
+peaceful adjustment,general welfare,impair
+peaceful adjustment,friendly relation,impair
+present charter,general welfare,impair
+present charter,friendly relation,impair
+situation,general welfare,impair
+situation,friendly relation,impair
+purpose,general welfare,impair
+purpose,friendly relation,impair
+origin,general welfare,impair
+origin,friendly relation,impair
+principle,general welfare,impair
+principle,friendly relation,impair
+unite nation,general welfare,impair
+unite nation,friendly relation,impair
+general welfare,friendly relation,or
+friendly relation,general welfare,or
+general welfare,nation,among
+friendly relation,nation,among
+nation,situation,including
+general welfare,situation,include
+subject,situation,include
+friendly relation,situation,include
+nation,situation,include
+violation,situation,include
+measure,situation,include
+provision,situation,include
+peaceful adjustment,situation,include
+present charter,situation,include
+situation,situation,include
+purpose,situation,include
+origin,situation,include
+principle,situation,include
+unite nation,situation,include
+general welfare,violation,result from
+subject,violation,result from
+friendly relation,violation,result from
+nation,violation,result from
+situation,violation,result from
+measure,violation,result from
+provision,violation,result from
+peaceful adjustment,violation,result from
+present charter,violation,result from
+situation,violation,result from
+purpose,violation,result from
+origin,violation,result from
+principle,violation,result from
+unite nation,violation,result from
+violation,provision,of
+provision,present charter,of
+general welfare,purpose,set
+general welfare,principle,set
+subject,purpose,set
+subject,principle,set
+friendly relation,purpose,set
+friendly relation,principle,set
+nation,purpose,set
+nation,principle,set
+situation,purpose,set
+situation,principle,set
+violation,purpose,set
+violation,principle,set
+measure,purpose,set
+measure,principle,set
+provision,purpose,set
+provision,principle,set
+peaceful adjustment,purpose,set
+peaceful adjustment,principle,set
+situation,purpose,set
+situation,principle,set
+origin,purpose,set
+origin,principle,set
+unite nation,purpose,set
+unite nation,principle,set
+purpose,principle,and
+principle,purpose,and
+purpose,unite nation,of
+principle,unite nation,of
+international peace,annual report,consider
+security,annual report,consider
+security,annual report,consider
+council,annual report,consider
+report,annual report,consider
+account,annual report,consider
+measure,annual report,consider
+security,annual report,consider
+council,annual report,consider
+annual report,council,from
+report,account,include
+account,measure,of
+measure,security,maintain
+measure,international peace,maintain
+annual report,security,maintain
+annual report,international peace,maintain
+account,security,maintain
+account,international peace,maintain
+international peace,security,and
+security,international peace,and
+unite nation,report,consider
+other organ,report,consider
+report,other organ,from
+other organ,unite nation,of
+article,such function,perform
+article,respect,perform with
+respect,international system,to
+trusteeship,xii,assign under
+trusteeship,xiii,assign under
+agreement,xii,assign under
+agreement,xiii,assign under
+area,xii,assign under
+area,xiii,assign under
+chapter,xii,assign under
+chapter,xiii,assign under
+approval,xii,assign under
+approval,xiii,assign under
+xii,xiii,and
+xiii,xii,and
+xiii,approval,including
+trusteeship,approval,include
+agreement,approval,include
+area,approval,include
+xii,approval,include
+xiii,approval,include
+approval,agreement,of
+agreement,area,for
+organization,budget,approve
+budget,organization,of
+general assembly,member,bear by
+expense,member,bear by
+organization,member,bear by
+expense,organization,of
+member,general assembly,apportion by
+view,administrative budget,examine
+recommendation,administrative budget,examine
+such specialized agency,administrative budget,examine
+concern agency,administrative budget,examine
+administrative budget,such specialized agency,of
+such specialized agency,view,with
+article,vote,have
+article,general assembly,of
+decision,majority,make by
+general assembly,majority,make by
+important question,majority,make by
+twothird,majority,make by
+member,majority,make by
+present,majority,make by
+voting,majority,make by
+decision,general assembly,of
+decision,important question,on
+majority,present,of
+majority,voting,of
+present,voting,and
+voting,present,and
+question,recommendation,include
+recommendation,respect,with
+respect,maintenance,to
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+election,nonpermanent member,of
+nonpermanent member,council,of
+election,member,of
+member,economic council,of
+election,member,of
+election,accordance,in
+election,c,with
+member,council,of
+c,article,of
+admission,new member,of
+admission,unite nation,to
+suspension,right,of
+suspension,privilege,of
+right,privilege,and
+privilege,right,and
+right,membership,of
+privilege,membership,of
+expulsion,question,of
+suspension,operation,relate to
+right,operation,relate to
+recommendation,operation,relate to
+privilege,operation,relate to
+respect,operation,relate to
+membership,operation,relate to
+expulsion,operation,relate to
+maintenance,operation,relate to
+question,operation,relate to
+international peace,operation,relate to
+security,operation,relate to
+election,operation,relate to
+trusteeship,operation,relate to
+system,operation,relate to
+budgetary question,operation,relate to
+election,operation,relate to
+election,operation,relate to
+admission,operation,relate to
+operation,system,of
+operation,budgetary question,of
+system,budgetary question,and
+budgetary question,system,and
+decision,other question,on
+decision,majority,make by
+other question,majority,make by
+determination,majority,make by
+additional category,majority,make by
+question,majority,make by
+twothird,majority,make by
+majority,majority,make by
+member,majority,make by
+present,majority,make by
+voting,majority,make by
+determination,additional category,of
+additional category,question,of
+decision,majority,decide by
+other question,majority,decide by
+determination,majority,decide by
+additional category,majority,decide by
+question,majority,decide by
+twothird,majority,decide by
+majority,present,of
+majority,voting,of
+present,voting,and
+voting,present,and
+member,unite nation,of
+amount,arrears,be in
+amount,payment,be in
+member,arrears,be in
+member,payment,be in
+its arrears,arrears,be in
+its arrears,payment,be in
+amount,arrears,be in
+amount,payment,be in
+due contribution,arrears,be in
+due contribution,payment,be in
+financial contribution,arrears,be in
+financial contribution,payment,be in
+precede full year,arrears,be in
+precede full year,payment,be in
+organization,arrears,be in
+organization,payment,be in
+vote,arrears,be in
+vote,payment,be in
+general assembly,arrears,be in
+general assembly,payment,be in
+financial contribution,vote,have
+financial contribution,general assembly,have in
+financial contribution,organization,to
+amount,its arrears,of
+member,amount,exceed
+precede full year,amount,exceed
+due contribution,amount,exceed
+payment,amount,exceed
+amount,due contribution,of
+condition,control,beyond
+control,member,of
+article,regular annual session,meet in
+article,occasion,meet as
+special session,secretarygeneral,convoke by
+special session,request,convoke at
+security,secretarygeneral,convoke by
+security,request,convoke at
+council,secretarygeneral,convoke by
+council,request,convoke at
+majority,secretarygeneral,convoke by
+majority,request,convoke at
+member,secretarygeneral,convoke by
+member,request,convoke at
+unite nation,secretarygeneral,convoke by
+unite nation,request,convoke at
+request,council,of
+majority,member,of
+member,unite nation,of
+article,own rule,adopt its
+own rule,procedure,of
+president,session,for
+article,such organ,establish
+council,member,consist of
+member,unite nation,of
+republic,france,of
+union,soviet socialist republic,of
+permanent member,council,of
+unite kingdom,unite state,of
+unite kingdom,great britain,of
+unite kingdom,northern ireland,of
+great britain,unite state,and
+unite state,great britain,and
+great britain,northern ireland,and
+northern ireland,great britain,and
+unite state,northern ireland,conj
+northern ireland,unite state,conj
+unite state,america,of
+general assembly,other member,elect
+other member,unite nation,of
+nonpermanent member,council,of
+member,first instance,pay in
+member,contribution,pay to
+unite nation,first instance,pay in
+unite nation,contribution,pay to
+other member,first instance,pay in
+other member,contribution,pay to
+maintenance,first instance,pay in
+maintenance,contribution,pay to
+international peace,first instance,pay in
+international peace,contribution,pay to
+security,first instance,pay in
+security,contribution,pay to
+nonpermanent member,first instance,pay in
+nonpermanent member,contribution,pay to
+other purpose,first instance,pay in
+other purpose,contribution,pay to
+council,first instance,pay in
+council,contribution,pay to
+due regard,first instance,pay in
+due regard,contribution,pay to
+organization,first instance,pay in
+organization,contribution,pay to
+equitable geographical distribution,first instance,pay in
+equitable geographical distribution,contribution,pay to
+contribution,member,of
+member,unite nation,of
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+other purpose,organization,of
+year,term,elect for
+nonpermanent member,term,elect for
+security,term,elect for
+council,term,elect for
+nonpermanent member,council,of
+term,year,of
+first election,nonpermanent member,of
+year,term,choose for
+increase,term,choose for
+membership,term,choose for
+security,term,choose for
+council,term,choose for
+eleven,term,choose for
+additional member,term,choose for
+increase,membership,of
+increase,eleven,from
+membership,council,of
+term,year,of
+member,representative,have
+member,council,of
+function,article,and
+article,function,and
+article,order,in
+international peace,prompt action,ensure
+international peace,united nation,ensure by
+function,prompt action,ensure
+function,united nation,ensure by
+security,prompt action,ensure
+security,united nation,ensure by
+article,prompt action,ensure
+article,united nation,ensure by
+duty,prompt action,ensure
+duty,united nation,ensure by
+responsibility,prompt action,ensure
+responsibility,united nation,ensure by
+security,prompt action,ensure
+security,united nation,ensure by
+council,prompt action,ensure
+council,united nation,ensure by
+member,prompt action,ensure
+member,united nation,ensure by
+their behalf,prompt action,ensure
+their behalf,united nation,ensure by
+security,prompt action,ensure
+security,united nation,ensure by
+council,prompt action,ensure
+council,united nation,ensure by
+primary responsibility,prompt action,ensure
+primary responsibility,united nation,ensure by
+maintenance,prompt action,ensure
+maintenance,united nation,ensure by
+member,primary responsibility,confer on
+primary responsibility,maintenance,for
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+duty,responsibility,under
+council,their behalf,act on
+security,duty,discharge
+council,duty,discharge
+accordance,duty,discharge
+purpose,duty,discharge
+principle,duty,discharge
+unite nation,duty,discharge
+council,accordance,act in
+council,principle,act with
+council,purpose,act with
+purpose,principle,and
+principle,purpose,and
+principle,unite nation,of
+purpose,unite nation,of
+specific power,chapter,lay in
+security,chapter,lay in
+council,chapter,lay in
+discharge,chapter,lay in
+duty,chapter,lay in
+Vi,chapter,lay in
+vii,chapter,lay in
+viii,chapter,lay in
+xii,chapter,lay in
+specific power,council,grant to
+specific power,discharge,grant for
+duty,council,grant to
+duty,discharge,grant for
+security,council,grant to
+security,discharge,grant for
+discharge,duty,of
+viii,xii,and
+xii,viii,and
+necessary special report,general assembly,to
+member,unite nation,of
+article,decision,carry
+article,accordance,carry in
+article,present charter,carry with
+security,decision,carry
+security,accordance,carry in
+security,present charter,carry with
+council,decision,carry
+council,accordance,carry in
+council,present charter,carry with
+decision,council,of
+article,establishment,promote
+article,maintenance,promote
+system,establishment,promote
+system,maintenance,promote
+order,establishment,promote
+order,maintenance,promote
+regulation,establishment,promote
+regulation,maintenance,promote
+armament,establishment,promote
+armament,maintenance,promote
+international peace,establishment,promote
+international peace,maintenance,promote
+security,establishment,promote
+security,maintenance,promote
+least diversion,establishment,promote
+least diversion,maintenance,promote
+armament,establishment,promote
+armament,maintenance,promote
+world,establishment,promote
+world,maintenance,promote
+human resource,establishment,promote
+human resource,maintenance,promote
+security,establishment,promote
+security,maintenance,promote
+council,establishment,promote
+council,maintenance,promote
+assistance,establishment,promote
+assistance,maintenance,promote
+staff,establishment,promote
+staff,maintenance,promote
+military committee,establishment,promote
+military committee,maintenance,promote
+article,establishment,promote
+article,maintenance,promote
+member,establishment,promote
+member,maintenance,promote
+unite nation,establishment,promote
+unite nation,maintenance,promote
+establishment,establishment,promote
+establishment,maintenance,promote
+establishment,maintenance,and
+maintenance,establishment,and
+establishment,international peace,of
+establishment,security,of
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+international peace,armament,for
+security,armament,for
+security,least diversion,with
+armament,world,of
+assistance,military committee,of
+article,article,plan in
+system,article,plan in
+regulation,article,plan in
+armament,article,plan in
+establishment,article,plan in
+maintenance,article,plan in
+international peace,article,plan in
+human resource,article,plan in
+security,article,plan in
+armament,article,plan in
+world,article,plan in
+member,article,plan in
+unite nation,article,plan in
+establishment,article,plan in
+article,member,submit to
+article,establishment,submit for
+system,member,submit to
+system,establishment,submit for
+regulation,member,submit to
+regulation,establishment,submit for
+armament,member,submit to
+armament,establishment,submit for
+establishment,member,submit to
+establishment,establishment,submit for
+maintenance,member,submit to
+maintenance,establishment,submit for
+international peace,member,submit to
+international peace,establishment,submit for
+human resource,member,submit to
+human resource,establishment,submit for
+security,member,submit to
+security,establishment,submit for
+armament,member,submit to
+armament,establishment,submit for
+world,member,submit to
+world,establishment,submit for
+unite nation,member,submit to
+unite nation,establishment,submit for
+member,unite nation,of
+establishment,system,of
+system,regulation,for
+regulation,armament,of
+member,vote,have
+member,council,of
+decision,affirmative vote,make by
+security,affirmative vote,make by
+council,affirmative vote,make by
+procedural matter,affirmative vote,make by
+member,affirmative vote,make by
+decision,council,of
+decision,procedural matter,on
+affirmative vote,member,of
+decision,affirmative vote,make by
+vi,affirmative vote,make by
+chapter,affirmative vote,make by
+security,affirmative vote,make by
+council,affirmative vote,make by
+paragraph,affirmative vote,make by
+article,affirmative vote,make by
+other matter,affirmative vote,make by
+party,affirmative vote,make by
+dispute,affirmative vote,make by
+member,affirmative vote,make by
+concur vote,affirmative vote,make by
+permanent member,affirmative vote,make by
+decision,affirmative vote,make by
+decision,council,of
+decision,other matter,on
+affirmative vote,member,of
+member,concur vote,including
+affirmative vote,concur vote,include
+permanent member,concur vote,include
+member,concur vote,include
+concur vote,permanent member,of
+chapter,decision,vote in
+vi,decision,vote in
+paragraph,decision,vote in
+article,decision,vote in
+party,decision,vote in
+dispute,decision,vote in
+decision,vi,under
+party,paragraph,abstain under
+paragraph,article,of
+party,dispute,to
+member,purpose,represent for
+member,time,represent at
+member,seat,represent at
+organization,purpose,represent for
+organization,time,represent at
+organization,seat,represent at
+security,purpose,represent for
+security,time,represent at
+security,seat,represent at
+council,purpose,represent for
+council,time,represent at
+council,seat,represent at
+member,council,of
+seat,organization,of
+council,periodic meeting,hold
+other designate representative,member,represent by
+periodic meeting,member,represent by
+member,member,represent by
+desire,member,represent by
+government,member,represent by
+member,government,of
+council,meeting,hold
+meeting,such other place,at
+seat,organization,of
+judgment,its work,facilitate
+council,such organ,establish
+council,own rule,adopt its
+own rule,procedure,of
+own rule,method,including
+own rule,method,include
+president,method,include
+article,vote,participate without
+member,unite nation,of
+member,council,of
+vote,discussion,in
+discussion,question,of
+interest,member,of
+member,unite nation,of
+member,council,of
+member,state,of
+council,state,or
+state,council,or
+member,unite nation,of
+party,dispute,to
+party,consideration,under
+party,council,by
+article,vote,participate without
+member,vote,participate without
+member,vote,participate without
+discussion,vote,participate without
+dispute,vote,participate without
+vote,discussion,in
+article,dispute,relate to
+member,dispute,relate to
+member,dispute,relate to
+vote,dispute,relate to
+discussion,dispute,relate to
+council,such condition,lay
+state,participation,deem for
+unite nation,participation,deem for
+member,participation,deem for
+participation,state,of
+member,unite nation,of
+pacific settlement,article,of
+vi,maintenance,endanger
+pacific settlement,maintenance,endanger
+party,maintenance,endanger
+dispute,maintenance,endanger
+international peace,maintenance,endanger
+security,maintenance,endanger
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+vi,solution,seek
+pacific settlement,solution,seek
+negotiation,solution,seek
+enquiry,solution,seek
+mediation,solution,seek
+conciliation,solution,seek
+arbitration,solution,seek
+party,solution,seek
+settlement,solution,seek
+judicial resort,solution,seek
+regional agency,solution,seek
+arrangement,solution,seek
+other peaceful mean,solution,seek
+own choice,solution,seek
+solution,judicial resort,by
+solution,arrangement,to
+solution,other peaceful mean,to
+solution,regional agency,to
+regional agency,arrangement,or
+arrangement,regional agency,or
+regional agency,other peaceful mean,or
+other peaceful mean,regional agency,or
+arrangement,other peaceful mean,conj
+other peaceful mean,arrangement,conj
+dispute,necessary call,deem
+dispute,party,deem upon
+such mean,necessary call,deem
+such mean,party,deem upon
+council,necessary call,deem
+council,party,deem upon
+dispute,such mean,by
+council,dispute,investigate
+council,situation,investigate
+dispute,situation,or
+situation,dispute,or
+article,international friction,lead to
+dispute,international friction,lead to
+situation,international friction,lead to
+dispute,international friction,lead to
+maintenance,international friction,lead to
+situation,international friction,lead to
+international peace,international friction,lead to
+security,international friction,lead to
+rise,international friction,lead to
+dispute,international friction,lead to
+order,international friction,lead to
+continuance,international friction,lead to
+article,rise,give
+article,dispute,give to
+dispute,rise,give
+dispute,dispute,give to
+situation,rise,give
+situation,dispute,give to
+dispute,rise,give
+dispute,dispute,give to
+maintenance,rise,give
+maintenance,dispute,give to
+situation,rise,give
+situation,dispute,give to
+international peace,rise,give
+international peace,dispute,give to
+security,rise,give
+security,dispute,give to
+order,rise,give
+order,dispute,give to
+continuance,rise,give
+continuance,dispute,give to
+continuance,dispute,of
+continuance,situation,of
+dispute,situation,or
+situation,dispute,or
+article,maintenance,endanger
+dispute,maintenance,endanger
+situation,maintenance,endanger
+international peace,maintenance,endanger
+security,maintenance,endanger
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+member,unite nation,of
+dispute,situation,or
+situation,dispute,or
+situation,nature,of
+attention,council,of
+state,attention,bring to
+member,unite nation,of
+attention,council,of
+party,advance,accept in
+party,purpose,accept for
+dispute,advance,accept in
+dispute,purpose,accept for
+obligation,advance,accept in
+obligation,purpose,accept for
+attention,advance,accept in
+attention,purpose,accept for
+pacific settlement,advance,accept in
+pacific settlement,purpose,accept for
+present charter,advance,accept in
+present charter,purpose,accept for
+general assembly,advance,accept in
+general assembly,purpose,accept for
+dispute,advance,accept in
+dispute,purpose,accept for
+purpose,dispute,of
+obligation,pacific settlement,of
+party,present charter,provide in
+purpose,present charter,provide in
+dispute,present charter,provide in
+obligation,present charter,provide in
+attention,present charter,provide in
+pacific settlement,present charter,provide in
+general assembly,present charter,provide in
+dispute,present charter,provide in
+proceeding,general assembly,of
+proceeding,respect,in
+respect,matter,of
+respect,its attention,bring to
+respect,article,bring under
+matter,its attention,bring to
+matter,article,bring under
+proceeding,its attention,bring to
+proceeding,article,bring under
+provision,article,of
+stage,dispute,of
+dispute,nature,of
+situation,article,recommend in
+situation,method,recommend
+situation,appropriate procedure,recommend
+situation,like nature,of
+appropriate procedure,method,or
+method,appropriate procedure,or
+method,adjustment,of
+appropriate procedure,adjustment,of
+council,consideration,take into
+council,procedure,take
+procedure,settlement,for
+settlement,dispute,of
+procedure,party,adopt by
+settlement,party,adopt by
+dispute,party,adopt by
+justice,recommendation,make
+accordance,recommendation,make
+provision,recommendation,make
+article,recommendation,make
+security,recommendation,make
+council,recommendation,make
+statute,recommendation,make
+court,recommendation,make
+consideration,recommendation,make
+legal dispute,recommendation,make
+general rule,recommendation,make
+party,recommendation,make
+international court,recommendation,make
+council,article,take under
+council,consideration,take into
+justice,party,refer by
+justice,international court,refer to
+justice,provision,refer with
+accordance,party,refer by
+accordance,international court,refer to
+accordance,provision,refer with
+statute,party,refer by
+statute,international court,refer to
+statute,provision,refer with
+court,party,refer by
+court,international court,refer to
+court,provision,refer with
+legal dispute,party,refer by
+legal dispute,international court,refer to
+legal dispute,provision,refer with
+general rule,party,refer by
+general rule,international court,refer to
+general rule,provision,refer with
+international court,justice,of
+international court,accordance,in
+provision,statute,of
+statute,court,of
+party,dispute,to
+dispute,nature,of
+security,council,refer to
+article,council,refer to
+mean,council,refer to
+continuance,fact,be in
+continuance,dispute,of
+article,maintenance,endanger
+such term,maintenance,endanger
+settlement,maintenance,endanger
+international peace,maintenance,endanger
+security,maintenance,endanger
+action,maintenance,endanger
+maintenance,security,of
+maintenance,international peace,of
+international peace,security,and
+security,international peace,and
+such term,action,take
+such term,article,take under
+settlement,action,take
+settlement,article,take under
+maintenance,action,take
+maintenance,article,take under
+international peace,action,take
+international peace,article,take under
+security,action,take
+security,article,take under
+security,such term,recommend
+settlement,such term,recommend
+maintenance,such term,recommend
+international peace,such term,recommend
+such term,settlement,of
+article,prejudice,without
+article,provision,to
+provision,council,of
+party,dispute,to
+request,recommendation,make
+request,party,make to
+request,view,make with
+view,pacific settlement,to
+pacific settlement,dispute,of
+action,respect,with
+respect,threat,to
+respect,breach,to
+breach,act,of
+breach,peace,of
+peace,act,and
+act,peace,and
+act,article,of
+council,existence,determine
+council,breach,determine to
+existence,threat,of
+breach,peace,of
+breach,act,of
+peace,act,or
+act,peace,or
+peace,aggression,of
+act,aggression,of
+action,recommendation,make
+respect,recommendation,make
+breach,recommendation,make
+peace,recommendation,make
+act,recommendation,make
+measure,accordance,take in
+accordance,article,with
+action,international peace,maintain
+action,security,maintain
+respect,international peace,maintain
+respect,security,maintain
+breach,international peace,maintain
+breach,security,maintain
+peace,international peace,maintain
+peace,security,maintain
+act,international peace,maintain
+act,security,maintain
+international peace,security,and
+security,international peace,and
+article,aggravation,prevent
+party,aggravation,prevent
+order,aggravation,prevent
+such provisional measure,aggravation,prevent
+situation,aggravation,prevent
+security,aggravation,prevent
+council,aggravation,prevent
+recommendation,aggravation,prevent
+measure,aggravation,prevent
+article,aggravation,prevent
+call,aggravation,prevent
+aggravation,situation,of
+article,recommendation,make
+party,recommendation,make
+aggravation,recommendation,make
+such provisional measure,recommendation,make
+measure,recommendation,make
+article,recommendation,make
+call,recommendation,make
+article,measure,decide upon
+party,measure,decide upon
+aggravation,measure,decide upon
+such provisional measure,measure,decide upon
+article,measure,decide upon
+call,measure,decide upon
+article,call,provide in
+article,party,provide upon
+such provisional measure,call,provide in
+such provisional measure,party,provide upon
+aggravation,call,provide in
+aggravation,party,provide upon
+measure,call,provide in
+measure,party,provide upon
+article,call,provide in
+article,party,provide upon
+measure,such provisional measure,comply with
+party,such provisional measure,comply with
+aggravation,such provisional measure,comply with
+article,such provisional measure,comply with
+such provisional measure,prejudice,be without
+claim,position,or
+position,claim,or
+position,party,of
+council,account,take
+account,failure,of
+failure,such provisional measure,comply with
+account,such provisional measure,comply with
+armed force,use,involve
+measure,use,involve
+article,use,involve
+use,armed force,of
+article,effect,give
+article,decision,give to
+article,member,call upon
+unite nation,member,call upon
+such measure,member,call upon
+member,unite nation,of
+article,such measure,apply
+economic relation,complete interruption,include
+rail,complete interruption,include
+sea,complete interruption,include
+air,complete interruption,include
+postal telegraphic radio,complete interruption,include
+other mean,complete interruption,include
+communication,complete interruption,include
+severance,complete interruption,include
+diplomatic relation,complete interruption,include
+complete interruption,economic relation,of
+air,severance,and
+severance,air,and
+postal telegraphic radio,other mean,and
+other mean,postal telegraphic radio,and
+other mean,communication,of
+severance,diplomatic relation,of
+measure,article,provide in
+land,such action,take
+land,force,take by
+land,sea,take by
+international peace,such action,take
+international peace,force,take by
+international peace,sea,take by
+security,such action,take
+security,force,take by
+security,sea,take by
+air,such action,take
+air,force,take by
+air,sea,take by
+sea,force,or
+force,sea,or
+international peace,security,and
+security,international peace,and
+such action,other operation,include
+such action,blockade,include
+blockade,other operation,and
+other operation,blockade,and
+other operation,sea,by
+other operation,force,by
+sea,force,or
+force,sea,or
+force,member,of
+member,unite nation,of
+member,unite nation,of
+article,maintenance,contribute to
+order,maintenance,contribute to
+international peace,maintenance,contribute to
+security,maintenance,contribute to
+security,maintenance,contribute to
+council,maintenance,contribute to
+its call,maintenance,contribute to
+accordance,maintenance,contribute to
+special agreement,maintenance,contribute to
+agreement,maintenance,contribute to
+force,maintenance,contribute to
+armed assistance,maintenance,contribute to
+facility,maintenance,contribute to
+right,maintenance,contribute to
+necessary passage,maintenance,contribute to
+purpose,maintenance,contribute to
+international peace,maintenance,contribute to
+security,maintenance,contribute to
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+council,its call,on
+council,agreement,with
+council,special agreement,with
+special agreement,agreement,or
+agreement,special agreement,or
+armed assistance,facility,and
+facility,armed assistance,and
+facility,right,including
+article,right,include
+special agreement,right,include
+agreement,right,include
+armed assistance,right,include
+facility,right,include
+necessary passage,right,include
+purpose,right,include
+international peace,right,include
+security,right,include
+council,right,include
+right,necessary passage,of
+article,international peace,maintain
+article,security,maintain
+special agreement,international peace,maintain
+special agreement,security,maintain
+agreement,international peace,maintain
+agreement,security,maintain
+armed assistance,international peace,maintain
+armed assistance,security,maintain
+facility,international peace,maintain
+facility,security,maintain
+right,international peace,maintain
+right,security,maintain
+necessary passage,international peace,maintain
+necessary passage,security,maintain
+purpose,international peace,maintain
+purpose,security,maintain
+council,international peace,maintain
+council,security,maintain
+international peace,security,and
+security,international peace,and
+such agreement,number,govern
+such agreement,type,govern
+agreement,number,govern
+agreement,type,govern
+such agreement,agreement,or
+agreement,such agreement,or
+number,type,and
+type,number,and
+type,force,of
+degree,nature,and
+nature,degree,and
+degree,location,of
+nature,location,of
+degree,facility,of
+degree,assistance,of
+nature,facility,of
+nature,assistance,of
+facility,assistance,and
+assistance,facility,and
+security,initiative,negotiate on
+agreement,initiative,negotiate on
+council,initiative,negotiate on
+agreement,initiative,negotiate on
+agreement,agreement,or
+agreement,agreement,or
+initiative,council,of
+respective constitutional process,council,conclude between
+respective constitutional process,member,conclude between
+security,council,conclude between
+security,member,conclude between
+security,council,conclude between
+security,member,conclude between
+council,council,conclude between
+council,member,conclude between
+group,council,conclude between
+group,member,conclude between
+member,council,conclude between
+member,member,conclude between
+ratification,council,conclude between
+ratification,member,conclude between
+signatory,council,conclude between
+signatory,member,conclude between
+state,council,conclude between
+state,member,conclude between
+accordance,council,conclude between
+accordance,member,conclude between
+council,member,and
+member,council,and
+council,group,and
+group,council,and
+group,member,of
+ratification,state,by
+ratification,accordance,in
+article,force,use
+member,force,use
+armed force,force,use
+fulfilment,force,use
+obligation,force,use
+article,force,use
+invite,force,use
+member,force,use
+member,force,use
+decision,force,use
+security,force,use
+council,force,use
+employment,force,use
+contingent,force,use
+member,force,use
+force,force,use
+article,armed force,provide
+article,fulfilment,provide in
+article,armed force,provide
+article,fulfilment,provide in
+invite,armed force,provide
+invite,fulfilment,provide in
+member,armed force,provide
+member,fulfilment,provide in
+member,armed force,provide
+member,fulfilment,provide in
+decision,armed force,provide
+decision,fulfilment,provide in
+security,armed force,provide
+security,fulfilment,provide in
+council,armed force,provide
+council,fulfilment,provide in
+employment,armed force,provide
+employment,fulfilment,provide in
+contingent,armed force,provide
+contingent,fulfilment,provide in
+member,armed force,provide
+member,fulfilment,provide in
+force,armed force,provide
+force,fulfilment,provide in
+obligation,armed force,provide
+obligation,fulfilment,provide in
+fulfilment,obligation,of
+article,invite,assume under
+article,invite,assume under
+member,invite,assume under
+member,invite,assume under
+fulfilment,invite,assume under
+decision,invite,assume under
+security,invite,assume under
+council,invite,assume under
+employment,invite,assume under
+contingent,invite,assume under
+member,invite,assume under
+force,invite,assume under
+obligation,invite,assume under
+article,decision,participate in
+fulfilment,decision,participate in
+security,decision,participate in
+council,decision,participate in
+employment,decision,participate in
+contingent,decision,participate in
+member,decision,participate in
+force,decision,participate in
+obligation,decision,participate in
+decision,council,of
+employment,force,arm
+employment,contingent,of
+contingent,member,of
+article,available national contingent,hold
+unite nation,urgent military member,take
+available national contingent,combined international action,for
+strength,degree,and
+degree,strength,and
+degree,readiness,of
+readiness,contingent,of
+readiness,plan,of
+contingent,plan,and
+plan,contingent,and
+limit,council,refer by
+strength,special agreement,lay in
+strength,agreement,lay in
+degree,special agreement,lay in
+degree,agreement,lay in
+limit,special agreement,lay in
+limit,agreement,lay in
+special agreement,agreement,or
+agreement,special agreement,or
+council,assistance,with
+assistance,military committee,of
+article,council,make by
+plan,council,make by
+application,council,make by
+armed force,council,make by
+security,council,make by
+assistance,council,make by
+staff,council,make by
+military committee,council,make by
+plan,application,for
+application,armed force,of
+council,assistance,with
+assistance,military committee,of
+article,military committee,establish
+international peace,council,assist
+international peace,question,assist on
+security,council,assist
+security,question,assist on
+employment,council,assist
+employment,question,assist on
+command,council,assist
+command,question,assist on
+force,council,assist
+force,question,assist on
+military committee,council,assist
+military committee,question,assist on
+disposal,council,assist
+disposal,question,assist on
+regulation,council,assist
+regulation,question,assist on
+security,council,assist
+security,question,assist on
+armament,council,assist
+armament,question,assist on
+possible disarmament,council,assist
+possible disarmament,question,assist on
+security,council,assist
+security,question,assist on
+council,council,assist
+council,question,assist on
+military requirement,council,assist
+military requirement,question,assist on
+maintenance,council,assist
+maintenance,question,assist on
+international peace,council,relate to
+security,council,relate to
+employment,council,relate to
+command,council,relate to
+force,council,relate to
+military committee,council,relate to
+disposal,council,relate to
+regulation,council,relate to
+armament,council,relate to
+possible disarmament,council,relate to
+question,council,relate to
+security,council,relate to
+military requirement,council,relate to
+maintenance,council,relate to
+military requirement,maintenance,for
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+employment,command,and
+command,employment,and
+employment,force,of
+command,force,of
+regulation,armament,of
+regulation,possible disarmament,of
+armament,possible disarmament,and
+possible disarmament,armament,and
+military committee,chief,consist of
+chief,staff,of
+staff,permanent member,of
+permanent member,council,of
+member,committee,invite by
+participation,committee,invite by
+member,committee,invite by
+unite nation,committee,invite by
+its work,committee,invite by
+committee,committee,invite by
+efficient discharge,committee,invite by
+committee,committee,invite by
+responsibility,committee,invite by
+member,unite nation,of
+member,committee,represent on
+unite nation,committee,represent on
+member,participation,require
+its work,participation,require
+committee,participation,require
+efficient discharge,participation,require
+committee,participation,require
+responsibility,participation,require
+efficient discharge,committee,of
+participation,member,of
+participation,its work,in
+council,strategic direction,for
+strategic direction,armed force,of
+council,disposal,place at
+strategic direction,disposal,place at
+armed force,disposal,place at
+security,disposal,place at
+council,disposal,place at
+disposal,council,of
+such force,command,relate to
+question,command,relate to
+command,such force,of
+military committee,regional subcommittee,establish
+military committee,authorization,with
+authorization,council,of
+consultation,appropriate regional agency,with
+article,council,as
+article,member,take by
+unite nation,member,take by
+action,member,take by
+decision,member,take by
+security,member,take by
+council,member,take by
+maintenance,member,take by
+international peace,member,take by
+security,member,take by
+article,decision,carry
+article,maintenance,carry for
+action,decision,carry
+action,maintenance,carry for
+security,decision,carry
+security,maintenance,carry for
+council,decision,carry
+council,maintenance,carry for
+international peace,decision,carry
+international peace,maintenance,carry for
+security,decision,carry
+security,maintenance,carry for
+decision,council,of
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+member,unite nation,of
+such decision,member,carry by
+unite nation,member,carry by
+action,member,carry by
+appropriate international agency,member,carry by
+member,member,carry by
+member,unite nation,of
+action,appropriate international agency,in
+member,article,join
+member,unite nation,of
+security,mutual assistance,afford
+council,mutual assistance,afford
+measure,mutual assistance,afford
+security,measure,carry
+council,measure,carry
+security,council,decide by
+measure,council,decide by
+article,council,take by
+preventive,council,take by
+enforcement,council,take by
+measure,council,take by
+state,council,take by
+security,council,take by
+other state,council,take by
+member,council,take by
+unite nation,council,take by
+special economic problem,council,take by
+measure,council,take by
+right,council,take by
+security,council,take by
+council,council,take by
+regard,council,take by
+solution,council,take by
+problem,council,take by
+measure,state,against
+preventive,enforcement,or
+enforcement,preventive,or
+other state,member,whether
+member,unite nation,of
+article,special economic problem,confront with
+measure,special economic problem,confront with
+council,special economic problem,confront with
+right,special economic problem,confront with
+other state,special economic problem,confront with
+security,special economic problem,confront with
+council,special economic problem,confront with
+member,special economic problem,confront with
+regard,special economic problem,confront with
+solution,special economic problem,confront with
+problem,special economic problem,confront with
+article,right,have
+special economic problem,right,have
+measure,right,have
+council,right,have
+other state,right,have
+security,right,have
+council,right,have
+member,right,have
+regard,right,have
+solution,right,have
+problem,right,have
+article,council,consult
+article,regard,consult with
+special economic problem,council,consult
+special economic problem,regard,consult with
+right,council,consult
+right,regard,consult with
+council,council,consult
+council,regard,consult with
+other state,council,consult
+other state,regard,consult with
+security,council,consult
+security,regard,consult with
+member,council,consult
+member,regard,consult with
+solution,council,consult
+solution,regard,consult with
+problem,council,consult
+problem,regard,consult with
+regard,solution,to
+solution,problem,of
+nothing,inherent right,impair
+nothing,present charter,in
+inherent right,individual selfdefence,of
+armed attack,member,occur against
+member,unite nation,of
+council,necessary measure,take
+necessary measure,international peace,maintain
+necessary measure,security,maintain
+international peace,security,and
+security,international peace,and
+measure,council,report to
+member,council,report to
+exercise,council,report to
+right,council,report to
+selfdefence,council,report to
+security,council,report to
+way,council,report to
+authority,council,report to
+responsibility,council,report to
+security,council,report to
+council,council,report to
+present charter,council,report to
+time,council,report to
+such action,council,report to
+order,council,report to
+international peace,council,report to
+security,council,report to
+measure,member,take by
+measure,exercise,take in
+right,member,take by
+right,exercise,take in
+selfdefence,member,take by
+selfdefence,exercise,take in
+exercise,right,of
+right,selfdefence,of
+security,way,affect in
+security,authority,affect
+security,responsibility,affect
+security,present charter,affect under
+council,way,affect in
+council,authority,affect
+council,responsibility,affect
+council,present charter,affect under
+time,way,affect in
+time,authority,affect
+time,responsibility,affect
+time,present charter,affect under
+such action,way,affect in
+such action,authority,affect
+such action,responsibility,affect
+such action,present charter,affect under
+order,way,affect in
+order,authority,affect
+order,responsibility,affect
+order,present charter,affect under
+international peace,way,affect in
+international peace,authority,affect
+international peace,responsibility,affect
+international peace,present charter,affect under
+security,way,affect in
+security,authority,affect
+security,responsibility,affect
+security,present charter,affect under
+authority,responsibility,and
+responsibility,authority,and
+authority,council,of
+responsibility,council,of
+such action,time,take at
+international peace,time,take at
+order,time,take at
+security,time,take at
+time,international peace,maintain
+time,security,maintain
+such action,international peace,maintain
+such action,security,maintain
+order,international peace,maintain
+order,security,maintain
+international peace,security,and
+security,international peace,and
+regional nothing,existence,preclude
+regional nothing,present charter,in
+existence,regional arrangement,of
+existence,agency,of
+regional arrangement,agency,or
+agency,regional arrangement,or
+security,such matter,deal with
+viii,such matter,deal with
+existence,such matter,deal with
+maintenance,such matter,deal with
+international peace,such matter,deal with
+security,maintenance,relate to
+viii,maintenance,relate to
+existence,maintenance,relate to
+such matter,maintenance,relate to
+international peace,maintenance,relate to
+maintenance,security,of
+maintenance,international peace,of
+international peace,security,and
+security,international peace,and
+such arrangement,agency,or
+agency,such arrangement,or
+purpose,principle,and
+principle,purpose,and
+purpose,unite nation,of
+principle,unite nation,of
+member,unite nation,of
+member,such arrangement,enter into
+such regional agency,such arrangement,enter into
+unite nation,such arrangement,enter into
+security,such arrangement,enter into
+council,such arrangement,enter into
+such agency,such arrangement,enter into
+effort,such arrangement,enter into
+pacific settlement,such arrangement,enter into
+local dispute,such arrangement,enter into
+such regional arrangement,such arrangement,enter into
+member,effort,make
+such regional agency,effort,make
+unite nation,effort,make
+security,effort,make
+council,effort,make
+such arrangement,effort,make
+such agency,effort,make
+pacific settlement,effort,make
+local dispute,effort,make
+such regional arrangement,effort,make
+such arrangement,such agency,constitute
+member,such agency,constitute
+unite nation,such agency,constitute
+member,pacific settlement,achieve
+member,such regional arrangement,achieve through
+such regional agency,pacific settlement,achieve
+such regional agency,such regional arrangement,achieve through
+unite nation,pacific settlement,achieve
+unite nation,such regional arrangement,achieve through
+security,pacific settlement,achieve
+security,such regional arrangement,achieve through
+council,pacific settlement,achieve
+council,such regional arrangement,achieve through
+such arrangement,pacific settlement,achieve
+such arrangement,such regional arrangement,achieve through
+effort,pacific settlement,achieve
+effort,such regional arrangement,achieve through
+local dispute,pacific settlement,achieve
+local dispute,such regional arrangement,achieve through
+pacific settlement,local dispute,of
+member,council,refer to
+unite nation,council,refer to
+security,council,refer to
+such arrangement,council,refer to
+effort,council,refer to
+council,development,encourage
+council,such regional arrangement,encourage through
+development,pacific settlement,of
+pacific settlement,local dispute,of
+initiative,state,of
+reference,council,from
+article,application,impair
+article,way,in
+application,article,of
+council,such regional arrangement,utilize
+council,agency,utilize
+such regional arrangement,agency,or
+agency,such regional arrangement,or
+such regional arrangement,action,for
+agency,action,for
+action,its authority,under
+such time,regional arrangement,take under
+such time,authorization,take without
+organization,regional arrangement,take under
+organization,authorization,take without
+enforcement,regional arrangement,take under
+enforcement,authorization,take without
+action,regional arrangement,take under
+action,authorization,take without
+government,regional arrangement,take under
+government,authorization,take without
+regional agency,regional arrangement,take under
+regional agency,authorization,take without
+responsibility,regional arrangement,take under
+responsibility,authorization,take without
+further aggression,regional arrangement,take under
+further aggression,authorization,take without
+security,regional arrangement,take under
+security,authorization,take without
+council,regional arrangement,take under
+council,authorization,take without
+state,regional arrangement,take under
+state,authorization,take without
+exception,regional arrangement,take under
+exception,authorization,take without
+measure,regional arrangement,take under
+measure,authorization,take without
+enemy,regional arrangement,take under
+enemy,authorization,take without
+state,regional arrangement,take under
+state,authorization,take without
+paragraph,regional arrangement,take under
+paragraph,authorization,take without
+article,regional arrangement,take under
+article,authorization,take without
+article,regional arrangement,take under
+article,authorization,take without
+regional arrangement,regional arrangement,take under
+regional arrangement,authorization,take without
+renewal,regional arrangement,take under
+renewal,authorization,take without
+aggressive policy,regional arrangement,take under
+aggressive policy,authorization,take without
+part,regional arrangement,take under
+part,authorization,take without
+such state,regional arrangement,take under
+such state,authorization,take without
+authorization,council,of
+authorization,exception,with
+exception,measure,of
+measure,state,against
+such time,paragraph,define in
+organization,paragraph,define in
+article,paragraph,define in
+government,paragraph,define in
+article,paragraph,define in
+responsibility,paragraph,define in
+regional arrangement,paragraph,define in
+authorization,paragraph,define in
+renewal,paragraph,define in
+further aggression,paragraph,define in
+aggressive policy,paragraph,define in
+state,paragraph,define in
+part,paragraph,define in
+such state,paragraph,define in
+paragraph,article,of
+paragraph,renewal,direct against
+paragraph,part,direct on
+paragraph,such time,direct until
+organization,renewal,direct against
+organization,part,direct on
+organization,such time,direct until
+article,renewal,direct against
+article,part,direct on
+article,such time,direct until
+regional arrangement,renewal,direct against
+regional arrangement,part,direct on
+regional arrangement,such time,direct until
+authorization,renewal,direct against
+authorization,part,direct on
+authorization,such time,direct until
+aggressive policy,renewal,direct against
+aggressive policy,part,direct on
+aggressive policy,such time,direct until
+such state,renewal,direct against
+such state,part,direct on
+such state,such time,direct until
+renewal,aggressive policy,of
+part,such state,of
+such time,organization,as
+authorization,government,request of
+further aggression,government,request of
+state,government,request of
+responsibility,government,request of
+government,responsibility,charge with
+further aggression,responsibility,charge with
+authorization,responsibility,charge with
+state,responsibility,charge with
+government,further aggression,prevent
+government,state,prevent by
+authorization,further aggression,prevent
+authorization,state,prevent by
+responsibility,further aggression,prevent
+responsibility,state,prevent by
+state,state,apply to
+state,paragraph,use in
+article,paragraph,use in
+paragraph,article,of
+enemy,second war,during
+enemy,signatory,of
+signatory,present charter,of
+international peace,time,keep at
+article,time,keep at
+security,time,keep at
+security,time,keep at
+council,time,keep at
+activity,time,keep at
+contemplation,time,keep at
+regional arrangement,time,keep at
+regional agency,time,keep at
+maintenance,time,keep at
+international peace,activity,inform of
+article,activity,inform of
+security,activity,inform of
+contemplation,activity,inform of
+regional arrangement,activity,inform of
+regional agency,activity,inform of
+maintenance,activity,inform of
+contemplation,regional arrangement,under
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+international economic article,view,with
+international economic article,creation,to
+creation,condition,of
+condition,stability,of
+condition,wellbeing,of
+stability,wellbeing,and
+wellbeing,stability,and
+peaceful relation,nation,among
+development,respect,base on
+solution,respect,base on
+ix,respect,base on
+international economic social health,respect,base on
+international economic article,respect,base on
+related problem,respect,base on
+international cultural cooperation,respect,base on
+creation,respect,base on
+condition,respect,base on
+universal respect,respect,base on
+stability,respect,base on
+wellbeing,respect,base on
+observance,respect,base on
+human right,respect,base on
+fundamental freedom,respect,base on
+peaceful relation,respect,base on
+distinction,respect,base on
+race,respect,base on
+sex,respect,base on
+language,respect,base on
+principle,respect,base on
+religion,respect,base on
+equal right,respect,base on
+selfdetermination,respect,base on
+people,respect,base on
+unite nation,respect,base on
+high standard,respect,base on
+live full employment,respect,base on
+condition,respect,base on
+economic progress,respect,base on
+respect,principle,for
+principle,equal right,of
+principle,selfdetermination,of
+equal right,selfdetermination,and
+selfdetermination,equal right,and
+selfdetermination,people,of
+unite nation,high standard,promote
+high standard,condition,of
+high standard,live full employment,of
+live full employment,condition,and
+condition,live full employment,and
+condition,solution,of
+condition,economic progress,of
+economic progress,solution,and
+solution,economic progress,and
+solution,related problem,of
+solution,universal respect,of
+solution,international economic social health,of
+solution,international cultural cooperation,of
+international economic social health,related problem,and
+related problem,international economic social health,and
+international economic social health,universal respect,and
+universal respect,international economic social health,and
+international economic social health,international cultural cooperation,and
+international cultural cooperation,international economic social health,and
+related problem,universal respect,conj
+universal respect,related problem,conj
+related problem,international cultural cooperation,conj
+international cultural cooperation,related problem,conj
+universal respect,international cultural cooperation,conj
+international cultural cooperation,universal respect,conj
+observance,human right,of
+observance,fundamental freedom,of
+observance,distinction,without
+human right,fundamental freedom,and
+fundamental freedom,human right,and
+language,religion,or
+religion,language,or
+article,joint action,take
+article,cooperation,take in
+organization,joint action,take
+organization,cooperation,take in
+achievement,joint action,take
+achievement,cooperation,take in
+purpose,joint action,take
+purpose,cooperation,take in
+article,joint action,take
+article,cooperation,take in
+cooperation,organization,with
+organization,achievement,for
+achievement,purpose,of
+article,article,set in
+cooperation,article,set in
+organization,article,set in
+achievement,article,set in
+purpose,article,set in
+article,relationship,bring into
+article,accordance,bring in
+various specialized agency,relationship,bring into
+various specialized agency,accordance,bring in
+unite nation,relationship,bring into
+unite nation,accordance,bring in
+intergovernmental agreement,relationship,bring into
+intergovernmental agreement,accordance,bring in
+provision,relationship,bring into
+provision,accordance,bring in
+article,relationship,bring into
+article,accordance,bring in
+wide international responsibility,relationship,bring into
+wide international responsibility,accordance,bring in
+basic instrument,relationship,bring into
+basic instrument,accordance,bring in
+economic social cultural educational health,relationship,bring into
+economic social cultural educational health,accordance,bring in
+related field,relationship,bring into
+related field,accordance,bring in
+article,intergovernmental agreement,establish by
+various specialized agency,intergovernmental agreement,establish by
+article,wide international responsibility,have
+economic social cultural educational health,wide international responsibility,have
+basic instrument,wide international responsibility,have
+related field,wide international responsibility,have
+article,basic instrument,define in
+article,economic social cultural educational health,define in
+article,related field,define in
+economic social cultural educational health,related field,and
+related field,economic social cultural educational health,and
+relationship,unite nation,with
+accordance,provision,with
+provision,article,of
+such agency,specialized agency,refer as
+unite nation,specialized agency,refer as
+relationship,specialized agency,refer as
+such agency,relationship,bring into
+unite nation,relationship,bring into
+relationship,unite nation,with
+article,recommendation,make
+recommendation,coordination,for
+coordination,policy,of
+coordination,activity,of
+policy,activity,and
+activity,policy,and
+policy,specialized agency,of
+activity,specialized agency,of
+appropriate initiate negotiation,state,among
+article,creation,concern for
+article,creation,concern for
+organization,creation,concern for
+appropriate initiate negotiation,creation,concern for
+state,creation,concern for
+new specialized agency,creation,concern for
+accomplishment,creation,concern for
+purpose,creation,concern for
+creation,new specialized agency,of
+article,accomplishment,require for
+article,accomplishment,require for
+organization,accomplishment,require for
+appropriate initiate negotiation,accomplishment,require for
+state,accomplishment,require for
+creation,accomplishment,require for
+new specialized agency,accomplishment,require for
+purpose,accomplishment,require for
+accomplishment,purpose,of
+article,article,set in
+organization,article,set in
+appropriate initiate negotiation,article,set in
+state,article,set in
+creation,article,set in
+new specialized agency,article,set in
+accomplishment,article,set in
+purpose,article,set in
+general assembly,general assembly,vest in
+article,general assembly,vest in
+responsibility,general assembly,vest in
+discharge,general assembly,vest in
+economic council,general assembly,vest in
+function,general assembly,vest in
+organization,general assembly,vest in
+purpose,general assembly,vest in
+power,general assembly,vest in
+chapter,general assembly,vest in
+chapter,general assembly,vest in
+x,general assembly,vest in
+authority,general assembly,vest in
+responsibility,discharge,for
+discharge,function,of
+organization,chapter,set in
+authority,general assembly,of
+authority,economic council,in
+chapter,purpose,have for
+chapter,power,have
+x,purpose,have for
+x,power,have
+authority,purpose,have for
+authority,power,have
+economic council,purpose,have for
+economic council,power,have
+economic council,x,set in
+chapter,x,set in
+authority,x,set in
+power,x,set in
+economic council,member,consist of
+member,unite nation,of
+unite nation,general assembly,elect by
+economic article,general assembly,elect by
+member,general assembly,elect by
+chapter,general assembly,elect by
+provision,term,elect for
+paragraph,term,elect for
+member,term,elect for
+economic council,term,elect for
+year,term,elect for
+year,term,elect for
+provision,member,of
+member,economic council,of
+term,year,of
+increase,membership,in
+increase,twentyseven,from
+increase,member,to
+increase,addition,in
+membership,economic council,of
+addition,member,to
+member,place,elect in
+term,place,elect in
+office,place,elect in
+increase,place,elect in
+end,place,elect in
+year,place,elect in
+twentyseven additional member,place,elect in
+addition,place,elect in
+member,place,elect in
+place,member,of
+term,end,expire at
+term,office,of
+end,twentyseven additional member,of
+term,twentyseven additional member,expire of
+term,end,expire at
+term,office,of
+office,member,of
+end,year,of
+end,year,of
+year,accordance,in
+accordance,arrangement,with
+year,general assembly,make by
+accordance,general assembly,make by
+arrangement,general assembly,make by
+end,general assembly,make by
+member,representative,have
+member,economic council,of
+function,article,and
+article,function,and
+function,report,initiate
+function,study,initiate
+function,respect,initiate with
+international economic social cultural educational health,report,initiate
+international economic social cultural educational health,study,initiate
+international economic social cultural educational health,respect,initiate with
+article,report,initiate
+article,study,initiate
+article,respect,initiate with
+related matter,report,initiate
+related matter,study,initiate
+related matter,respect,initiate with
+study,report,and
+report,study,and
+respect,international economic social cultural educational health,to
+respect,related matter,to
+international economic social cultural educational health,related matter,and
+related matter,international economic social cultural educational health,and
+function,recommendation,make
+function,respect,make with
+article,recommendation,make
+article,respect,make with
+such matter,recommendation,make
+such matter,respect,make with
+general assembly,recommendation,make
+general assembly,respect,make with
+member,recommendation,make
+member,respect,make with
+unite nation,recommendation,make
+unite nation,respect,make with
+specialized concern agency,recommendation,make
+specialized concern agency,respect,make with
+respect,such matter,to
+respect,general assembly,to
+member,unite nation,of
+purpose,recommendation,make
+respect,recommendation,make
+observance,recommendation,make
+human right,recommendation,make
+fundamental freedom,recommendation,make
+recommendation,purpose,for
+observance,human right,of
+observance,fundamental freedom,of
+human right,fundamental freedom,and
+fundamental freedom,human right,and
+draft,convention,prepare
+submission,convention,prepare
+general assembly,convention,prepare
+respect,convention,prepare
+matter,convention,prepare
+competence,convention,prepare
+convention,submission,for
+submission,general assembly,to
+submission,respect,with
+respect,matter,to
+rule,accordance,call in
+unite nation,accordance,call in
+international conference,accordance,call in
+matter,accordance,call in
+competence,accordance,call in
+accordance,rule,with
+rule,unite nation,prescribe by
+rule,international conference,prescribe
+matter,unite nation,prescribe by
+matter,international conference,prescribe
+competence,unite nation,prescribe by
+competence,international conference,prescribe
+accordance,unite nation,prescribe by
+accordance,international conference,prescribe
+international conference,matter,on
+economic council,agreement,enter into
+relationship,term,define
+article,term,define
+agency,term,define
+unite nation,term,define
+term,relationship,bring into
+article,relationship,bring into
+agency,relationship,bring into
+unite nation,relationship,bring into
+relationship,unite nation,with
+approval,general assembly,by
+unite nation,activity,coordinate
+unite nation,consultation,coordinate through
+unite nation,general assembly,coordinate to
+specialized agency,activity,coordinate
+specialized agency,consultation,coordinate through
+specialized agency,general assembly,coordinate to
+recommendation,activity,coordinate
+recommendation,consultation,coordinate through
+recommendation,general assembly,coordinate to
+such agency,activity,coordinate
+such agency,consultation,coordinate through
+such agency,general assembly,coordinate to
+recommendation,activity,coordinate
+recommendation,consultation,coordinate through
+recommendation,general assembly,coordinate to
+member,activity,coordinate
+member,consultation,coordinate through
+member,general assembly,coordinate to
+activity,specialized agency,of
+recommendation,such agency,to
+member,unite nation,of
+article,appropriate step,take
+appropriate step,regular report,obtain
+appropriate step,specialized agency,obtain from
+recommendation,arrangement,make
+recommendation,member,make with
+matter,arrangement,make
+matter,member,make with
+competence,arrangement,make
+competence,member,make with
+unite nation,arrangement,make
+unite nation,member,make with
+general assembly,arrangement,make
+general assembly,member,make with
+specialized agency,arrangement,make
+specialized agency,member,make with
+report,arrangement,make
+report,member,make with
+step,arrangement,make
+step,member,make with
+effect,arrangement,make
+effect,member,make with
+own recommendation,arrangement,make
+own recommendation,member,make with
+member,unite nation,of
+recommendation,report,obtain
+matter,report,obtain
+competence,report,obtain
+general assembly,report,obtain
+step,report,obtain
+effect,report,obtain
+own recommendation,report,obtain
+report,step,on
+recommendation,effect,give
+recommendation,own recommendation,give to
+matter,effect,give
+matter,own recommendation,give to
+competence,effect,give
+competence,own recommendation,give to
+general assembly,effect,give
+general assembly,own recommendation,give to
+report,effect,give
+report,own recommendation,give to
+step,effect,give
+step,own recommendation,give to
+recommendation,matter,on
+recommendation,general assembly,make by
+matter,general assembly,make by
+competence,general assembly,make by
+report,general assembly,make by
+step,general assembly,make by
+observation,report,on
+article,information,furnish
+article,council,furnish to
+security,council,assist
+request,council,assist
+economic council,such function,perform
+economic council,fall,perform as
+fall,its competence,within
+fall,connection,in
+recommendation,general assembly,of
+general assembly,approval,perform with
+general assembly,service,perform
+general assembly,request,perform at
+member,approval,perform with
+member,service,perform
+member,request,perform at
+unite nation,approval,perform with
+unite nation,service,perform
+unite nation,request,perform at
+request,approval,perform with
+request,service,perform
+request,request,perform at
+specialized agency,approval,perform with
+specialized agency,service,perform
+specialized agency,request,perform at
+approval,general assembly,of
+request,member,of
+member,unite nation,of
+request,specialized agency,of
+general assembly,such other function,perform
+present charter,such other function,perform
+present charter,general assembly,specify by
+member,vote,have
+member,economic council,of
+decision,majority,make by
+economic council,majority,make by
+member,majority,make by
+present,majority,make by
+voting,majority,make by
+decision,economic council,of
+majority,present,of
+majority,voting,of
+present,voting,and
+voting,present,and
+economic council,commission,set
+economic council,economic field,set in
+human right,promotion,require for
+human right,performance,require for
+article,promotion,require for
+article,performance,require for
+such other commission,promotion,require for
+such other commission,performance,require for
+function,promotion,require for
+function,performance,require for
+promotion,human right,of
+promotion,such other commission,of
+human right,such other commission,and
+such other commission,human right,and
+economic council,member,invite
+member,unite nation,of
+matter,vote,participate without
+matter,member,participate to
+particular concern,vote,participate without
+particular concern,member,participate to
+its deliberation,vote,participate without
+its deliberation,member,participate to
+vote,its deliberation,in
+vote,matter,on
+matter,particular concern,of
+arrangement,vote,participate without
+arrangement,representative,for
+representative,specialized agency,of
+vote,its deliberation,in
+specialized agency,deliberation,participate in
+vote,deliberation,participate in
+commission,deliberation,participate in
+representative,deliberation,participate in
+deliberation,specialized agency,of
+article,suitable arrangement,make
+suitable arrangement,consultation,for
+consultation,nongovernmental organization,with
+nongovernmental organization,matter,concern with
+competence,matter,concern with
+suitable arrangement,matter,concern with
+consultation,matter,concern with
+such arrangement,international organization,make with
+national organization,international organization,make with
+consultation,international organization,make with
+member,international organization,make with
+unite nation,international organization,make with
+consultation,member,with
+member,unite nation,of
+economic council,own rule,adopt its
+own rule,procedure,of
+own rule,method,including
+own rule,method,include
+president,method,include
+member,accordance,require in
+rule,accordance,require in
+provision,accordance,require in
+meeting,accordance,require in
+request,accordance,require in
+majority,accordance,require in
+member,provision,include
+rule,provision,include
+meeting,provision,include
+request,provision,include
+majority,provision,include
+meeting,request,on
+request,majority,of
+declaration,article,regard
+nonselfgoverning,article,regard
+territory,article,regard
+member,article,regard
+unite nation,article,regard
+member,unite nation,of
+responsibility,principle,recognize
+responsibility,administration,for
+administration,territory,of
+people,full measure,attain
+full measure,selfgovernment,of
+interest,inhabitant,of
+inhabitant,territory,of
+xii,sacred trust,accept as
+declaration,sacred trust,accept as
+xiii,sacred trust,accept as
+territory,sacred trust,accept as
+progressive development,sacred trust,accept as
+free political institution,sacred trust,accept as
+particular circumstance,sacred trust,accept as
+territory,sacred trust,accept as
+people,sacred trust,accept as
+vary stage,sacred trust,accept as
+advancement,sacred trust,accept as
+further international peace,sacred trust,accept as
+security,sacred trust,accept as
+principle,sacred trust,accept as
+constructive measure,sacred trust,accept as
+development,sacred trust,accept as
+research,sacred trust,accept as
+obligation,sacred trust,accept as
+specialized international body,sacred trust,accept as
+utmost,sacred trust,accept as
+view,sacred trust,accept as
+system,sacred trust,accept as
+practical achievement,sacred trust,accept as
+international peace,sacred trust,accept as
+security,sacred trust,accept as
+social economic purpose,sacred trust,accept as
+present charter,sacred trust,accept as
+wellbeing,sacred trust,accept as
+article,sacred trust,accept as
+inhabitant,sacred trust,accept as
+territory,sacred trust,accept as
+secretarygeneral,sacred trust,accept as
+end,sacred trust,accept as
+information,sacred trust,accept as
+subject purpose,sacred trust,accept as
+due respect,sacred trust,accept as
+such limitation,sacred trust,accept as
+culture,sacred trust,accept as
+security,sacred trust,accept as
+constitutional consideration,sacred trust,accept as
+people,sacred trust,accept as
+statistical information,sacred trust,accept as
+political economic social advancement,sacred trust,accept as
+technical nature,sacred trust,accept as
+just treatment,sacred trust,accept as
+protection,sacred trust,accept as
+abuse,sacred trust,accept as
+economic social condition,sacred trust,accept as
+selfgovernment,sacred trust,accept as
+territory,sacred trust,accept as
+due account,sacred trust,accept as
+political aspiration,sacred trust,accept as
+people,sacred trust,accept as
+xii,utmost,promote to
+xii,system,promote within
+declaration,utmost,promote to
+declaration,system,promote within
+xiii,utmost,promote to
+xiii,system,promote within
+territory,utmost,promote to
+territory,system,promote within
+progressive development,utmost,promote to
+progressive development,system,promote within
+free political institution,utmost,promote to
+free political institution,system,promote within
+particular circumstance,utmost,promote to
+particular circumstance,system,promote within
+territory,utmost,promote to
+territory,system,promote within
+people,utmost,promote to
+people,system,promote within
+vary stage,utmost,promote to
+vary stage,system,promote within
+advancement,utmost,promote to
+advancement,system,promote within
+further international peace,utmost,promote to
+further international peace,system,promote within
+security,utmost,promote to
+security,system,promote within
+principle,utmost,promote to
+principle,system,promote within
+constructive measure,utmost,promote to
+constructive measure,system,promote within
+development,utmost,promote to
+development,system,promote within
+research,utmost,promote to
+research,system,promote within
+sacred trust,utmost,promote to
+sacred trust,system,promote within
+obligation,utmost,promote to
+obligation,system,promote within
+specialized international body,utmost,promote to
+specialized international body,system,promote within
+view,utmost,promote to
+view,system,promote within
+practical achievement,utmost,promote to
+practical achievement,system,promote within
+international peace,utmost,promote to
+international peace,system,promote within
+security,utmost,promote to
+security,system,promote within
+social economic purpose,utmost,promote to
+social economic purpose,system,promote within
+present charter,utmost,promote to
+present charter,system,promote within
+wellbeing,utmost,promote to
+wellbeing,system,promote within
+article,utmost,promote to
+article,system,promote within
+inhabitant,utmost,promote to
+inhabitant,system,promote within
+territory,utmost,promote to
+territory,system,promote within
+secretarygeneral,utmost,promote to
+secretarygeneral,system,promote within
+end,utmost,promote to
+end,system,promote within
+information,utmost,promote to
+information,system,promote within
+subject purpose,utmost,promote to
+subject purpose,system,promote within
+due respect,utmost,promote to
+due respect,system,promote within
+such limitation,utmost,promote to
+such limitation,system,promote within
+culture,utmost,promote to
+culture,system,promote within
+security,utmost,promote to
+security,system,promote within
+constitutional consideration,utmost,promote to
+constitutional consideration,system,promote within
+people,utmost,promote to
+people,system,promote within
+statistical information,utmost,promote to
+statistical information,system,promote within
+political economic social advancement,utmost,promote to
+political economic social advancement,system,promote within
+technical nature,utmost,promote to
+technical nature,system,promote within
+just treatment,utmost,promote to
+just treatment,system,promote within
+protection,utmost,promote to
+protection,system,promote within
+abuse,utmost,promote to
+abuse,system,promote within
+economic social condition,utmost,promote to
+economic social condition,system,promote within
+selfgovernment,utmost,promote to
+selfgovernment,system,promote within
+territory,utmost,promote to
+territory,system,promote within
+due account,utmost,promote to
+due account,system,promote within
+political aspiration,utmost,promote to
+political aspiration,system,promote within
+people,utmost,promote to
+people,system,promote within
+system,international peace,of
+system,security,of
+international peace,security,and
+security,international peace,and
+system,present charter,establish by
+system,wellbeing,establish
+international peace,present charter,establish by
+international peace,wellbeing,establish
+declaration,present charter,establish by
+declaration,wellbeing,establish
+principle,present charter,establish by
+principle,wellbeing,establish
+security,present charter,establish by
+security,wellbeing,establish
+inhabitant,present charter,establish by
+inhabitant,wellbeing,establish
+territory,present charter,establish by
+territory,wellbeing,establish
+sacred trust,present charter,establish by
+sacred trust,wellbeing,establish
+obligation,present charter,establish by
+obligation,wellbeing,establish
+wellbeing,inhabitant,of
+inhabitant,territory,of
+due respect,culture,for
+culture,people,of
+protection,abuse,against
+xii,selfgovernment,develop
+declaration,selfgovernment,develop
+xiii,selfgovernment,develop
+territory,selfgovernment,develop
+progressive development,selfgovernment,develop
+free political institution,selfgovernment,develop
+particular circumstance,selfgovernment,develop
+territory,selfgovernment,develop
+people,selfgovernment,develop
+vary stage,selfgovernment,develop
+advancement,selfgovernment,develop
+further international peace,selfgovernment,develop
+security,selfgovernment,develop
+principle,selfgovernment,develop
+constructive measure,selfgovernment,develop
+development,selfgovernment,develop
+research,selfgovernment,develop
+sacred trust,selfgovernment,develop
+obligation,selfgovernment,develop
+specialized international body,selfgovernment,develop
+view,selfgovernment,develop
+practical achievement,selfgovernment,develop
+social economic purpose,selfgovernment,develop
+article,selfgovernment,develop
+secretarygeneral,selfgovernment,develop
+information,selfgovernment,develop
+subject purpose,selfgovernment,develop
+such limitation,selfgovernment,develop
+security,selfgovernment,develop
+constitutional consideration,selfgovernment,develop
+statistical information,selfgovernment,develop
+political economic social advancement,selfgovernment,develop
+technical nature,selfgovernment,develop
+just treatment,selfgovernment,develop
+protection,selfgovernment,develop
+economic social condition,selfgovernment,develop
+territory,selfgovernment,develop
+due account,selfgovernment,develop
+political aspiration,selfgovernment,develop
+people,selfgovernment,develop
+xii,due account,take
+declaration,due account,take
+xiii,due account,take
+territory,due account,take
+progressive development,due account,take
+free political institution,due account,take
+particular circumstance,due account,take
+territory,due account,take
+people,due account,take
+vary stage,due account,take
+advancement,due account,take
+further international peace,due account,take
+security,due account,take
+principle,due account,take
+constructive measure,due account,take
+development,due account,take
+research,due account,take
+sacred trust,due account,take
+obligation,due account,take
+specialized international body,due account,take
+view,due account,take
+practical achievement,due account,take
+social economic purpose,due account,take
+article,due account,take
+secretarygeneral,due account,take
+information,due account,take
+subject purpose,due account,take
+such limitation,due account,take
+security,due account,take
+constitutional consideration,due account,take
+statistical information,due account,take
+political economic social advancement,due account,take
+technical nature,due account,take
+just treatment,due account,take
+protection,due account,take
+economic social condition,due account,take
+selfgovernment,due account,take
+territory,due account,take
+political aspiration,due account,take
+people,due account,take
+due account,political aspiration,of
+political aspiration,people,of
+free political institution,people,and
+people,free political institution,and
+particular circumstance,territory,of
+vary stage,advancement,of
+further international peace,security,and
+security,further international peace,and
+xii,constructive measure,promote
+declaration,constructive measure,promote
+xiii,constructive measure,promote
+progressive development,constructive measure,promote
+free political institution,constructive measure,promote
+people,constructive measure,promote
+further international peace,constructive measure,promote
+security,constructive measure,promote
+principle,constructive measure,promote
+development,constructive measure,promote
+research,constructive measure,promote
+sacred trust,constructive measure,promote
+obligation,constructive measure,promote
+specialized international body,constructive measure,promote
+view,constructive measure,promote
+practical achievement,constructive measure,promote
+social economic purpose,constructive measure,promote
+article,constructive measure,promote
+secretarygeneral,constructive measure,promote
+information,constructive measure,promote
+subject purpose,constructive measure,promote
+such limitation,constructive measure,promote
+security,constructive measure,promote
+constitutional consideration,constructive measure,promote
+statistical information,constructive measure,promote
+political economic social advancement,constructive measure,promote
+technical nature,constructive measure,promote
+just treatment,constructive measure,promote
+protection,constructive measure,promote
+economic social condition,constructive measure,promote
+selfgovernment,constructive measure,promote
+territory,constructive measure,promote
+territory,constructive measure,promote
+constructive measure,development,of
+practical achievement,research,encourage
+xii,research,encourage
+declaration,research,encourage
+xiii,research,encourage
+progressive development,research,encourage
+social economic purpose,research,encourage
+free political institution,research,encourage
+article,research,encourage
+secretarygeneral,research,encourage
+people,research,encourage
+subject purpose,research,encourage
+information,research,encourage
+such limitation,research,encourage
+security,research,encourage
+constitutional consideration,research,encourage
+further international peace,research,encourage
+security,research,encourage
+principle,research,encourage
+statistical information,research,encourage
+political economic social advancement,research,encourage
+technical nature,research,encourage
+just treatment,research,encourage
+protection,research,encourage
+economic social condition,research,encourage
+selfgovernment,research,encourage
+territory,research,encourage
+sacred trust,research,encourage
+obligation,research,encourage
+specialized international body,research,encourage
+view,research,encourage
+territory,research,encourage
+specialized international body,view,with
+view,practical achievement,to
+practical achievement,social economic purpose,of
+practical achievement,article,set in
+declaration,article,set in
+progressive development,article,set in
+social economic purpose,article,set in
+free political institution,article,set in
+people,article,set in
+further international peace,article,set in
+security,article,set in
+principle,article,set in
+political economic social advancement,article,set in
+just treatment,article,set in
+protection,article,set in
+selfgovernment,article,set in
+sacred trust,article,set in
+obligation,article,set in
+specialized international body,article,set in
+view,article,set in
+xii,statistical information,require
+declaration,statistical information,require
+xiii,statistical information,require
+progressive development,statistical information,require
+free political institution,statistical information,require
+secretarygeneral,statistical information,require
+people,statistical information,require
+subject purpose,statistical information,require
+information,statistical information,require
+such limitation,statistical information,require
+security,statistical information,require
+constitutional consideration,statistical information,require
+further international peace,statistical information,require
+security,statistical information,require
+principle,statistical information,require
+political economic social advancement,statistical information,require
+technical nature,statistical information,require
+just treatment,statistical information,require
+protection,statistical information,require
+economic social condition,statistical information,require
+selfgovernment,statistical information,require
+territory,statistical information,require
+sacred trust,statistical information,require
+obligation,statistical information,require
+territory,statistical information,require
+declaration,secretarygeneral,transmit to
+declaration,subject purpose,transmit for
+progressive development,secretarygeneral,transmit to
+progressive development,subject purpose,transmit for
+free political institution,secretarygeneral,transmit to
+free political institution,subject purpose,transmit for
+people,secretarygeneral,transmit to
+people,subject purpose,transmit for
+information,secretarygeneral,transmit to
+information,subject purpose,transmit for
+such limitation,secretarygeneral,transmit to
+such limitation,subject purpose,transmit for
+security,secretarygeneral,transmit to
+security,subject purpose,transmit for
+further international peace,secretarygeneral,transmit to
+further international peace,subject purpose,transmit for
+constitutional consideration,secretarygeneral,transmit to
+constitutional consideration,subject purpose,transmit for
+security,secretarygeneral,transmit to
+security,subject purpose,transmit for
+principle,secretarygeneral,transmit to
+principle,subject purpose,transmit for
+political economic social advancement,secretarygeneral,transmit to
+political economic social advancement,subject purpose,transmit for
+just treatment,secretarygeneral,transmit to
+just treatment,subject purpose,transmit for
+protection,secretarygeneral,transmit to
+protection,subject purpose,transmit for
+selfgovernment,secretarygeneral,transmit to
+selfgovernment,subject purpose,transmit for
+sacred trust,secretarygeneral,transmit to
+sacred trust,subject purpose,transmit for
+obligation,secretarygeneral,transmit to
+obligation,subject purpose,transmit for
+such limitation,constitutional consideration,as
+such limitation,security,as
+security,constitutional consideration,and
+constitutional consideration,security,and
+statistical information,technical nature,of
+declaration,economic social condition,relate to
+xii,economic social condition,relate to
+xiii,economic social condition,relate to
+progressive development,economic social condition,relate to
+free political institution,economic social condition,relate to
+people,economic social condition,relate to
+further international peace,economic social condition,relate to
+security,economic social condition,relate to
+principle,economic social condition,relate to
+statistical information,economic social condition,relate to
+political economic social advancement,economic social condition,relate to
+technical nature,economic social condition,relate to
+just treatment,economic social condition,relate to
+protection,economic social condition,relate to
+selfgovernment,economic social condition,relate to
+territory,economic social condition,relate to
+sacred trust,economic social condition,relate to
+obligation,economic social condition,relate to
+territory,economic social condition,relate to
+economic social condition,territory,in
+xii,xiii,and
+xiii,xii,and
+member,unite nation,of
+their policy,respect,in
+respect,territory,of
+goodneighbourliness,general principle,base on
+due account,general principle,base on
+their policy,general principle,base on
+respect,general principle,base on
+interest,general principle,base on
+wellbeing,general principle,base on
+rest,general principle,base on
+world,general principle,base on
+respect,general principle,base on
+social economic matter,general principle,base on
+metropolitan area,general principle,base on
+general principle,due account,of
+general principle,wellbeing,take of
+general principle,interest,take of
+their policy,wellbeing,take of
+their policy,interest,take of
+respect,wellbeing,take of
+respect,interest,take of
+rest,wellbeing,take of
+rest,interest,take of
+world,wellbeing,take of
+world,interest,take of
+respect,wellbeing,take of
+respect,interest,take of
+social economic matter,wellbeing,take of
+social economic matter,interest,take of
+interest,wellbeing,and
+wellbeing,interest,and
+wellbeing,rest,of
+interest,rest,of
+rest,world,of
+rest,social economic matter,in
+international article,xii,establish
+international article,its international system,establish under
+its international system,supervision,for
+its international system,administration,for
+administration,supervision,and
+supervision,administration,and
+supervision,such territory,of
+article,international peace,be to
+article,security,be to
+article,accordance,in
+article,purpose,with
+basic objective,system,of
+purpose,unite nation,of
+article,article,lay in
+present charter,article,lay in
+purpose,article,lay in
+article,present charter,of
+international peace,security,and
+security,international peace,and
+trust,political economic social advancement,promote
+territory,political economic social advancement,promote
+inhabitant,political economic social advancement,promote
+political economic social advancement,inhabitant,of
+inhabitant,territory,of
+progressive appropriate development,selfgovernment,towards
+progressive appropriate development,independence,towards
+selfgovernment,independence,or
+independence,selfgovernment,or
+particular circumstance,territory,of
+people,express wish,and
+express wish,people,and
+express wish,concern people,of
+world,term,provide by
+equal treatment,term,provide by
+social economic matter,term,provide by
+member,term,provide by
+unite nation,term,provide by
+their national,term,provide by
+progressive appropriate development,term,provide by
+equal treatment,term,provide by
+latter,term,provide by
+trusteeship,term,provide by
+agreement,term,provide by
+administration,term,provide by
+justice,term,provide by
+respect,term,provide by
+prejudice,term,provide by
+human right,term,provide by
+attainment,term,provide by
+fundamental freedom,term,provide by
+foregoing objective,term,provide by
+distinction,term,provide by
+provision,term,provide by
+race,term,provide by
+article,term,provide by
+sex,term,provide by
+language,term,provide by
+religion,term,provide by
+recognition,term,provide by
+interdependence,term,provide by
+people,term,provide by
+term,agreement,of
+world,respect,encourage
+world,distinction,encourage without
+equal treatment,respect,encourage
+equal treatment,distinction,encourage without
+social economic matter,respect,encourage
+social economic matter,distinction,encourage without
+member,respect,encourage
+member,distinction,encourage without
+unite nation,respect,encourage
+unite nation,distinction,encourage without
+their national,respect,encourage
+their national,distinction,encourage without
+progressive appropriate development,respect,encourage
+progressive appropriate development,distinction,encourage without
+equal treatment,respect,encourage
+equal treatment,distinction,encourage without
+term,respect,encourage
+term,distinction,encourage without
+latter,respect,encourage
+latter,distinction,encourage without
+agreement,respect,encourage
+agreement,distinction,encourage without
+administration,respect,encourage
+administration,distinction,encourage without
+justice,respect,encourage
+justice,distinction,encourage without
+prejudice,respect,encourage
+prejudice,distinction,encourage without
+human right,respect,encourage
+human right,distinction,encourage without
+attainment,respect,encourage
+attainment,distinction,encourage without
+fundamental freedom,respect,encourage
+fundamental freedom,distinction,encourage without
+foregoing objective,respect,encourage
+foregoing objective,distinction,encourage without
+race,respect,encourage
+race,distinction,encourage without
+sex,respect,encourage
+sex,distinction,encourage without
+language,respect,encourage
+language,distinction,encourage without
+religion,respect,encourage
+religion,distinction,encourage without
+recognition,respect,encourage
+recognition,distinction,encourage without
+interdependence,respect,encourage
+interdependence,distinction,encourage without
+people,respect,encourage
+people,distinction,encourage without
+respect,human right,for
+language,religion,or
+religion,language,or
+world,recognition,encourage
+interdependence,recognition,encourage
+progressive appropriate development,recognition,encourage
+term,recognition,encourage
+people,recognition,encourage
+agreement,recognition,encourage
+recognition,interdependence,of
+interdependence,people,of
+people,world,of
+social economic matter,equal treatment,ensure
+member,equal treatment,ensure
+unite nation,equal treatment,ensure
+progressive appropriate development,equal treatment,ensure
+term,equal treatment,ensure
+agreement,equal treatment,ensure
+equal treatment,social economic matter,in
+equal treatment,member,for
+member,unite nation,of
+equal treatment,latter,for
+equal treatment,prejudice,without
+equal treatment,attainment,to
+latter,administration,in
+administration,justice,of
+attainment,foregoing objective,of
+provision,article,of
+article,mean,place by
+trusteeship,mean,place by
+system,mean,place by
+such territory,mean,place by
+follow category,mean,place by
+trusteeship,mean,place by
+agreement,mean,place by
+territory,mean,place by
+mandate,mean,place by
+territory,mean,place by
+enemy,mean,place by
+state,mean,place by
+result,mean,place by
+world,mean,place by
+second war,mean,place by
+territory,mean,place by
+system,mean,place by
+responsible state,mean,place by
+their administration,mean,place by
+system,such territory,apply to
+system,follow category,apply in
+mean,territory,of
+enemy,territory,hold under
+state,territory,hold under
+result,territory,hold under
+world,territory,hold under
+second war,territory,hold under
+territory,territory,hold under
+system,territory,hold under
+mean,territory,hold under
+responsible state,territory,hold under
+their administration,territory,hold under
+mandate,territory,hold under
+enemy,state,detach from
+enemy,result,detach as
+world,state,detach from
+world,result,detach as
+second war,state,detach from
+second war,result,detach as
+territory,state,detach from
+territory,result,detach as
+system,state,detach from
+system,result,detach as
+mean,state,detach from
+mean,result,detach as
+responsible state,state,detach from
+responsible state,result,detach as
+their administration,state,detach from
+their administration,result,detach as
+territory,state,detach from
+territory,result,detach as
+result,second war,of
+result,territory,of
+second war,territory,and
+territory,second war,and
+result,system,place under
+result,responsible state,place by
+second war,system,place under
+second war,responsible state,place by
+territory,system,place under
+territory,responsible state,place by
+mean,system,place under
+mean,responsible state,place by
+their administration,system,place under
+their administration,responsible state,place by
+territory,system,place under
+territory,responsible state,place by
+matter,subsequent agreement,for
+matter,system,bring under
+subsequent agreement,system,bring under
+territory,system,bring under
+foregoing category,system,bring under
+trusteeship,system,bring under
+term,system,bring under
+territory,foregoing category,in
+sovereign equality,respect,base on
+article,respect,base on
+trusteeship,respect,base on
+system,respect,base on
+territory,respect,base on
+member,respect,base on
+nation,respect,base on
+unite relationship,respect,base on
+principle,respect,base on
+system,territory,apply to
+member,unite relationship,of
+respect,principle,for
+principle,sovereign equality,of
+term,trusteeship,of
+mandatory power,system,place under
+term,system,place under
+case,system,place under
+trusteeship,system,place under
+territory,system,place under
+territory,system,place under
+mandate,system,place under
+member,system,place under
+trusteeship,system,place under
+unite nation,system,place under
+alteration,system,place under
+amendment,system,place under
+article,system,place under
+state,system,place under
+mandatory power,state,agree by
+term,state,agree by
+case,state,agree by
+trusteeship,state,agree by
+territory,state,agree by
+mandate,state,agree by
+member,state,agree by
+unite nation,state,agree by
+alteration,state,agree by
+amendment,state,agree by
+article,state,agree by
+alteration,amendment,or
+amendment,alteration,or
+term,mandatory power,concern including
+term,case,concern in
+trusteeship,mandatory power,concern including
+trusteeship,case,concern in
+territory,mandatory power,concern including
+territory,case,concern in
+mandate,mandatory power,concern including
+mandate,case,concern in
+member,mandatory power,concern including
+member,case,concern in
+unite nation,mandatory power,concern including
+unite nation,case,concern in
+state,mandatory power,concern including
+state,case,concern in
+state,mandatory power,include
+term,mandatory power,include
+trusteeship,mandatory power,include
+case,territory,of
+term,mandate,hold under
+term,member,hold by
+case,mandate,hold under
+case,member,hold by
+trusteeship,mandate,hold under
+trusteeship,member,hold by
+territory,mandate,hold under
+territory,member,hold by
+unite nation,mandate,hold under
+unite nation,member,hold by
+state,mandate,hold under
+state,member,hold by
+member,unite nation,of
+term,article,provide in
+trusteeship,article,provide in
+article,individual agreement,agree in
+nothing,individual agreement,agree in
+chapter,individual agreement,agree in
+trusteeship,individual agreement,agree in
+article,individual agreement,agree in
+placing,individual agreement,agree in
+territory,individual agreement,agree in
+trusteeship,individual agreement,agree in
+system,individual agreement,agree in
+such agreement,individual agreement,agree in
+article,territory,make under
+article,system,make under
+individual agreement,territory,make under
+individual agreement,system,make under
+article,territory,make under
+article,system,make under
+placing,territory,make under
+placing,system,make under
+trusteeship,territory,make under
+trusteeship,system,make under
+such agreement,nothing,conclude
+such agreement,chapter,conclude in
+right,people,of
+right,term,of
+right,state,of
+state,people,or
+people,state,or
+state,term,or
+term,state,or
+people,term,conj
+term,people,conj
+people,exist international instrument,of
+term,exist international instrument,of
+state,exist international instrument,of
+exist international instrument,member,to
+member,unite nation,of
+paragraph,article,of
+trusteeship,ground,give
+system,ground,give
+article,ground,give
+delay,ground,give
+postponement,ground,give
+negotiation,ground,give
+conclusion,ground,give
+agreement,ground,give
+other territory,ground,give
+ground,postponement,for
+ground,delay,for
+delay,postponement,or
+postponement,delay,or
+postponement,negotiation,of
+postponement,conclusion,of
+delay,negotiation,of
+delay,conclusion,of
+negotiation,conclusion,and
+conclusion,negotiation,and
+negotiation,agreement,of
+conclusion,agreement,of
+other territory,system,under
+other territory,article,provide in
+article,term,include
+trust,authority,designate
+territory,authority,designate
+term,authority,designate
+administration,authority,designate
+authority,administration,exercise
+territory,administration,exercise
+trust,administration,exercise
+term,administration,exercise
+administration,territory,of
+such authority,organization,call
+such authority,state,call
+state,organization,or
+organization,state,or
+prejudice,agreement,designate in
+article,agreement,designate in
+special agreement,agreement,designate in
+agreement,agreement,designate in
+trusteeship,agreement,designate in
+article,agreement,designate in
+strategic area,agreement,designate in
+area,agreement,designate in
+part,agreement,designate in
+trust,agreement,designate in
+territory,agreement,designate in
+agreement,agreement,designate in
+strategic area,area,or
+area,strategic area,or
+prejudice,part,include
+special agreement,part,include
+agreement,part,include
+article,part,include
+agreement,part,include
+strategic area,part,include
+area,part,include
+trust,part,include
+territory,part,include
+agreement,part,include
+part,territory,of
+agreement,prejudice,apply without
+agreement,special agreement,apply to
+agreement,agreement,apply to
+special agreement,agreement,or
+agreement,special agreement,or
+special agreement,article,make under
+agreement,article,make under
+agreement,article,make under
+strategic area,article,make under
+area,article,make under
+part,article,make under
+territory,article,make under
+function,unite nation,of
+article,strategic area,relate to
+function,strategic area,relate to
+unite nation,strategic area,relate to
+approval,strategic area,relate to
+term,strategic area,relate to
+trusteeship,strategic area,relate to
+agreement,strategic area,relate to
+strategic area,approval,including
+article,approval,include
+function,approval,include
+unite nation,approval,include
+strategic area,approval,include
+term,approval,include
+trusteeship,approval,include
+agreement,approval,include
+approval,term,of
+term,agreement,of
+article,council,exercise by
+security,council,exercise by
+alteration,council,exercise by
+amendment,council,exercise by
+alteration,amendment,or
+amendment,alteration,or
+basic objective,article,set in
+people,strategic area,of
+council,provision,subject to
+provision,agreement,of
+unite nation,prejudice,avail without
+unite nation,consideration,avail to
+trusteeship,prejudice,avail without
+trusteeship,consideration,avail to
+system,prejudice,avail without
+system,consideration,avail to
+political economic social matter,prejudice,avail without
+political economic social matter,consideration,avail to
+security,prejudice,avail without
+security,consideration,avail to
+strategic area,prejudice,avail without
+strategic area,consideration,avail to
+assistance,prejudice,avail without
+assistance,consideration,avail to
+trusteeship,prejudice,avail without
+trusteeship,consideration,avail to
+council,prejudice,avail without
+council,consideration,avail to
+function,prejudice,avail without
+function,consideration,avail to
+assistance,council,of
+unite nation,function,perform
+unite nation,system,perform under
+trusteeship,function,perform
+trusteeship,system,perform under
+political economic social matter,function,perform
+political economic social matter,system,perform under
+strategic area,function,perform
+strategic area,system,perform under
+assistance,function,perform
+assistance,system,perform under
+function,unite nation,of
+assistance,political economic social matter,relate to
+assistance,strategic area,relate in
+system,political economic social matter,relate to
+system,strategic area,relate in
+duty,administer authority,of
+territory,part,play its
+part,maintenance,in
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+administer authority,end,make to
+administer authority,use,make
+use,facility,of
+use,assistance,of
+facility,assistance,and
+assistance,facility,and
+assistance,territory,from
+regard,obligation,carry
+regard,council,carry towards
+administer authority,obligation,carry
+administer authority,council,carry towards
+use,obligation,carry
+use,council,carry towards
+local defence,obligation,carry
+local defence,council,carry towards
+facility,obligation,carry
+facility,council,carry towards
+maintenance,obligation,carry
+maintenance,council,carry towards
+assistance,obligation,carry
+assistance,council,carry towards
+law,obligation,carry
+law,council,carry towards
+order,obligation,carry
+order,council,carry towards
+trust,obligation,carry
+trust,council,carry towards
+territory,obligation,carry
+territory,council,carry towards
+security,obligation,carry
+security,council,carry towards
+use,regard,undertake in
+use,administer authority,undertake by
+use,territory,undertake within
+local defence,regard,undertake in
+local defence,administer authority,undertake by
+local defence,territory,undertake within
+maintenance,regard,undertake in
+maintenance,administer authority,undertake by
+maintenance,territory,undertake within
+facility,regard,undertake in
+facility,administer authority,undertake by
+facility,territory,undertake within
+law,regard,undertake in
+law,administer authority,undertake by
+law,territory,undertake within
+assistance,regard,undertake in
+assistance,administer authority,undertake by
+assistance,territory,undertake within
+order,regard,undertake in
+order,administer authority,undertake by
+order,territory,undertake within
+trust,regard,undertake in
+trust,administer authority,undertake by
+trust,territory,undertake within
+council,regard,undertake in
+council,administer authority,undertake by
+council,territory,undertake within
+local defence,order,and
+order,local defence,and
+local defence,maintenance,and
+maintenance,local defence,and
+order,maintenance,conj
+maintenance,order,conj
+maintenance,law,of
+article,regard,with
+function,unite nation,of
+regard,agreement,to
+agreement,area,for
+article,approval,include
+alteration,approval,include
+amendment,approval,include
+regard,approval,include
+general assembly,approval,include
+agreement,approval,include
+area,approval,include
+term,approval,include
+trusteeship,approval,include
+agreement,approval,include
+approval,term,of
+term,agreement,of
+article,general assembly,exercise by
+alteration,general assembly,exercise by
+amendment,general assembly,exercise by
+regard,general assembly,exercise by
+agreement,general assembly,exercise by
+area,general assembly,exercise by
+approval,general assembly,exercise by
+alteration,amendment,or
+amendment,alteration,or
+council,general assembly,assist
+general assembly,authority,operate under
+council,authority,operate under
+authority,general assembly,of
+xiii,follow member,consist of
+council,follow member,consist of
+follow member,unite nation,of
+administer territory,member,of
+follow member,name,mention by
+follow member,article,mention in
+administer territory,name,mention by
+administer territory,article,mention in
+member,name,mention by
+member,article,mention in
+member,name,mention by
+member,article,mention in
+total number,territory,administer
+member,territory,administer
+trusteeship,territory,administer
+council,territory,administer
+trust,territory,administer
+member,territory,administer
+many other member,territory,administer
+follow member,territory,administer
+unite nation,territory,administer
+threeyear,territory,administer
+term,territory,administer
+trust,territory,administer
+territory,territory,administer
+member,territory,administer
+general assembly,territory,administer
+follow member,term,elect for
+follow member,general assembly,elect by
+threeyear,term,elect for
+threeyear,general assembly,elect by
+member,term,elect for
+member,general assembly,elect by
+many other member,term,elect for
+many other member,general assembly,elect by
+total number,member,divide between
+member,member,divide between
+trusteeship,member,divide between
+council,member,divide between
+follow member,member,divide between
+unite nation,member,divide between
+trust,member,divide between
+territory,member,divide between
+member,member,divide between
+total number,member,of
+member,council,of
+member,unite nation,of
+member,territory,administer
+unite nation,territory,administer
+follow member,territory,administer
+trust,territory,administer
+member,territory,administer
+member,qualify person,designate
+member,council,of
+function,article,and
+article,function,and
+report,petition,accept
+function,administer authority,submit by
+article,administer authority,submit by
+authority,administer authority,submit by
+council,administer authority,submit by
+report,administer authority,submit by
+function,administer authority,examine with
+consultation,administer authority,examine with
+article,administer authority,examine with
+authority,administer authority,examine with
+council,administer authority,examine with
+conformity,periodic visit,provide for
+function,periodic visit,provide for
+term,periodic visit,provide for
+article,periodic visit,provide for
+trusteeship,periodic visit,provide for
+agreement,periodic visit,provide for
+authority,periodic visit,provide for
+council,periodic visit,provide for
+trust,periodic visit,provide for
+respective territory,periodic visit,provide for
+time,periodic visit,provide for
+administer authority,periodic visit,provide for
+action,periodic visit,provide for
+periodic visit,respective territory,to
+periodic visit,time,at
+function,administer authority,agree with
+article,administer authority,agree with
+periodic visit,administer authority,agree with
+authority,administer authority,agree with
+council,administer authority,agree with
+time,administer authority,agree with
+function,action,take
+function,conformity,take in
+term,action,take
+term,conformity,take in
+article,action,take
+article,conformity,take in
+trusteeship,action,take
+trusteeship,conformity,take in
+agreement,action,take
+agreement,conformity,take in
+authority,action,take
+authority,conformity,take in
+council,action,take
+council,conformity,take in
+conformity,term,with
+term,agreement,of
+article,annual report,make
+trusteeship,annual report,make
+council,annual report,make
+questionnaire,annual report,make
+political economic social advancement,annual report,make
+inhabitant,annual report,make
+trust,annual report,make
+territory,annual report,make
+administer authority,annual report,make
+trust,annual report,make
+territory,annual report,make
+competence,annual report,make
+general assembly,annual report,make
+general assembly,annual report,make
+basis,annual report,make
+such questionnaire,annual report,make
+council,questionnaire,formulate
+council,political economic social advancement,formulate on
+council,administer authority,formulate on
+political economic social advancement,administer authority,and
+administer authority,political economic social advancement,and
+political economic social advancement,inhabitant,of
+administer authority,inhabitant,of
+inhabitant,territory,of
+administer authority,territory,for
+territory,competence,within
+competence,general assembly,of
+annual report,general assembly,to
+annual report,basis,upon
+basis,such questionnaire,of
+member,vote,have
+member,council,of
+decision,majority,make by
+trusteeship,majority,make by
+council,majority,make by
+member,majority,make by
+present,majority,make by
+voting,majority,make by
+decision,council,of
+majority,voting,of
+majority,present,of
+present,voting,and
+voting,present,and
+council,own rule,adopt its
+own rule,procedure,of
+own rule,method,including
+article,method,include
+own rule,method,include
+president,method,include
+rule,accordance,require in
+provision,accordance,require in
+meeting,accordance,require in
+request,accordance,require in
+majority,accordance,require in
+member,accordance,require in
+rule,provision,include
+meeting,provision,include
+request,provision,include
+majority,provision,include
+member,provision,include
+meeting,request,on
+request,majority,of
+assistance,economic council,of
+regard,matter,to
+international court,justice,of
+principal judicial organ,unite nation,of
+article,justice,of
+annex statute,accordance,function in
+statute,accordance,function in
+permanent court,accordance,function in
+international justice,accordance,function in
+integral part,accordance,function in
+present charter,accordance,function in
+accordance,annex statute,with
+annex statute,statute,base upon
+permanent court,statute,base upon
+accordance,statute,base upon
+international justice,statute,base upon
+statute,permanent court,of
+permanent court,international justice,of
+present charter,integral part,form
+integral part,present charter,of
+ipso,statute,to
+member,unite nation,of
+statute,international court,of
+international court,justice,of
+party,statute,to
+party,condition,on
+member,unite nation,of
+statute,international court,of
+international court,justice,of
+condition,case,determine in
+condition,general assembly,determine by
+condition,recommendation,determine upon
+council,case,determine in
+council,general assembly,determine by
+council,recommendation,determine upon
+security,case,determine in
+security,general assembly,determine by
+security,recommendation,determine upon
+party,case,determine in
+party,general assembly,determine by
+party,recommendation,determine upon
+recommendation,council,of
+member,unite nation,of
+international court,decision,comply with
+justice,decision,comply with
+party,decision,comply with
+case,decision,comply with
+decision,international court,of
+decision,case,in
+international court,justice,of
+party,case,to
+make,court,render by
+necessary recommendation,court,render by
+measure,court,render by
+judgment,court,render by
+effect,court,render by
+judgment,court,render by
+other party,court,render by
+recourse,court,render by
+security,court,render by
+council,court,render by
+other party,recourse,have
+other party,council,have to
+make,necessary recommendation,deem
+measure,necessary recommendation,deem
+judgment,necessary recommendation,deem
+effect,necessary recommendation,deem
+judgment,necessary recommendation,deem
+council,necessary recommendation,deem
+judgment,measure,decide
+judgment,measure,decide
+effect,measure,decide
+council,measure,decide
+judgment,effect,give
+judgment,judgment,give to
+measure,effect,give
+measure,judgment,give to
+council,effect,give
+council,judgment,give to
+nothing,member,prevent
+nothing,present charter,in
+member,unite nation,of
+difference,solution,entrust
+other tribunal,solution,entrust
+virtue,solution,entrust
+agreement,solution,entrust
+existence,solution,entrust
+difference,other tribunal,to
+difference,virtue,by
+virtue,agreement,of
+agreement,existence,in
+article,international court,request
+council,international court,request
+article,council,or
+council,article,or
+international court,justice,of
+legal question,advisory opinion,give
+advisory opinion,legal question,on
+other organ,advisory opinion,request
+other organ,legal question,request on
+other organ,specialized agency,of
+other organ,unite nation,of
+unite nation,specialized agency,and
+specialized agency,unite nation,and
+specialized agency,time,authorize at
+specialized agency,general assembly,authorize by
+other organ,time,authorize at
+other organ,general assembly,authorize by
+unite nation,time,authorize at
+unite nation,general assembly,authorize by
+advisory opinion,court,of
+legal question,scope,arise within
+their activity,scope,arise within
+scope,their activity,of
+article,xv,require
+secretariat,secretarygeneral,comprise
+secretariat,such staff,comprise
+secretariat,organization,comprise as
+secretarygeneral,such staff,and
+such staff,secretarygeneral,and
+council,general assembly,appoint by
+council,recommendation,appoint upon
+secretarygeneral,general assembly,appoint by
+secretarygeneral,recommendation,appoint upon
+security,general assembly,appoint by
+security,recommendation,appoint upon
+recommendation,council,of
+chief administrative officer,organization,of
+secretarygeneral,article,act
+secretarygeneral,capacity,act in
+secretarygeneral,meeting,act in
+meeting,general assembly,of
+general assembly,council,of
+council,economic council,of
+organ,such other function,perform
+secretarygeneral,annual report,make
+secretarygeneral,general assembly,make to
+secretarygeneral,work,make on
+work,organization,of
+article,attention,bring to
+attention,council,of
+opinion,maintenance,threaten
+maintenance,international peace,of
+maintenance,security,of
+international peace,security,and
+security,international peace,and
+article,performance,in
+secretarygeneral,staff,and
+staff,secretarygeneral,and
+article,instruction,receive
+article,government,receive from
+performance,instruction,receive
+performance,government,receive from
+duty,instruction,receive
+duty,government,receive from
+other external authority,instruction,receive
+other external authority,government,receive from
+organization,instruction,receive
+organization,government,receive from
+their position,action,refrain from
+organization,action,refrain from
+international official,action,refrain from
+organization,their position,reflect on
+action,their position,reflect on
+international official,their position,reflect on
+member,unite nation,of
+discharge,international character,respect
+responsibility,international character,respect
+responsibility,international character,respect
+secretarygeneral,international character,respect
+staff,international character,respect
+international character,responsibility,of
+responsibility,secretarygeneral,of
+responsibility,staff,of
+secretarygeneral,staff,and
+staff,secretarygeneral,and
+article,secretarygeneral,appoint by
+article,regulation,appoint under
+staff,secretarygeneral,appoint by
+staff,regulation,appoint under
+general assembly,secretarygeneral,appoint by
+general assembly,regulation,appoint under
+regulation,general assembly,establish by
+appropriate staff,economic council,assign to
+trusteeship,economic council,assign to
+council,economic council,assign to
+other organ,economic council,assign to
+unite nation,economic council,assign to
+unite nation,other organ,require to
+economic council,other organ,require to
+council,other organ,require to
+other organ,unite nation,of
+staff,part,form
+part,secretariat,of
+paramount consideration,employment,in
+employment,staff,of
+determination,condition,of
+condition,service,of
+integrity,high standard,secure
+efficiency,high standard,secure
+necessity,high standard,secure
+competence,high standard,secure
+high standard,integrity,of
+high standard,competence,of
+competence,integrity,and
+integrity,competence,and
+due regard,importance,pay to
+wide geographical basis,importance,pay to
+staff,importance,pay to
+importance,staff,recruit
+importance,wide geographical basis,recruit on
+miscellaneous article,international agreement,and
+international agreement,miscellaneous article,and
+member,unite nation,of
+xvi,secretariat,register with
+miscellaneous article,secretariat,register with
+international agreement,secretariat,register with
+present charter,secretariat,register with
+force,secretariat,register with
+present charter,force,come into
+party,treaty,invoke
+party,agreement,invoke
+party,organ,invoke before
+party,international agreement,to
+party,such treaty,to
+such treaty,international agreement,or
+international agreement,such treaty,or
+party,accordance,register in
+party,provision,register with
+such treaty,accordance,register in
+such treaty,provision,register with
+international agreement,accordance,register in
+international agreement,provision,register with
+paragraph,accordance,register in
+paragraph,provision,register with
+article,accordance,register in
+article,provision,register with
+provision,paragraph,of
+paragraph,article,of
+treaty,agreement,or
+agreement,treaty,or
+organ,unite nation,of
+obligation,other international agreement,under
+article,event,in
+article,present charter,under
+event,conflict,of
+conflict,obligation,between
+obligation,member,of
+member,unite nation,of
+organization,article,enjoy
+organization,territory,enjoy in
+function,fulfilment,and
+fulfilment,function,and
+fulfilment,its purpose,of
+organization,article,enjoy
+organization,territory,enjoy in
+such privilege,immunity,and
+immunity,such privilege,and
+fulfilment,its purpose,of
+representative,such privilege,enjoy
+representative,immunity,enjoy
+representative,official,of
+representative,member,of
+member,official,and
+official,member,and
+official,unite nation,of
+member,unite nation,of
+official,organization,of
+member,organization,of
+such privilege,immunity,and
+immunity,such privilege,and
+independent exercise,their function,of
+connection,organization,with
+general assembly,recommendation,make
+general assembly,view,make with
+application,detail,determine
+view,detail,determine
+paragraph,detail,determine
+article,detail,determine
+detail,application,of
+application,paragraph,of
+paragraph,article,of
+unite nation,convention,propose
+unite nation,member,propose to
+unite nation,purpose,propose for
+member,unite nation,of
+such special agreement,force,come into
+xvii,force,come into
+transitional pend article,force,come into
+force,such special agreement,of
+xvii,opinion,enable in
+xvii,other member,enable requires with
+xvii,view,enable requires with
+declaration,opinion,enable in
+declaration,other member,enable requires with
+declaration,view,enable requires with
+transitional pend article,opinion,enable in
+transitional pend article,other member,enable requires with
+transitional pend article,view,enable requires with
+occasion,opinion,enable in
+occasion,other member,enable requires with
+occasion,view,enable requires with
+unite nation,opinion,enable in
+unite nation,other member,enable requires with
+unite nation,view,enable requires with
+such joint action,opinion,enable in
+such joint action,other member,enable requires with
+such joint action,view,enable requires with
+behalf,opinion,enable in
+behalf,other member,enable requires with
+behalf,view,enable requires with
+security,opinion,enable in
+security,other member,enable requires with
+security,view,enable requires with
+council,opinion,enable in
+council,other member,enable requires with
+council,view,enable requires with
+organization,opinion,enable in
+organization,other member,enable requires with
+organization,view,enable requires with
+exercise,opinion,enable in
+exercise,other member,enable requires with
+exercise,view,enable requires with
+purpose,opinion,enable in
+purpose,other member,enable requires with
+purpose,view,enable requires with
+responsibility,opinion,enable in
+responsibility,other member,enable requires with
+responsibility,view,enable requires with
+article,opinion,enable in
+article,other member,enable requires with
+article,view,enable requires with
+international peace,opinion,enable in
+international peace,other member,enable requires with
+international peace,view,enable requires with
+security,opinion,enable in
+security,other member,enable requires with
+security,view,enable requires with
+party,opinion,enable in
+party,other member,enable requires with
+party,view,enable requires with
+fournation,opinion,enable in
+fournation,other member,enable requires with
+fournation,view,enable requires with
+declaration,opinion,enable in
+declaration,other member,enable requires with
+declaration,view,enable requires with
+Moscow,opinion,enable in
+Moscow,other member,enable requires with
+Moscow,view,enable requires with
+October,opinion,enable in
+October,other member,enable requires with
+October,view,enable requires with
+france,opinion,enable in
+france,other member,enable requires with
+france,view,enable requires with
+accordance,opinion,enable in
+accordance,other member,enable requires with
+accordance,view,enable requires with
+provision,opinion,enable in
+provision,other member,enable requires with
+provision,view,enable requires with
+paragraph,opinion,enable in
+paragraph,other member,enable requires with
+paragraph,view,enable requires with
+opinion,council,of
+xvii,exercise,begin
+declaration,exercise,begin
+responsibility,exercise,begin
+transitional pend article,exercise,begin
+article,exercise,begin
+occasion,exercise,begin
+party,exercise,begin
+fournation,exercise,begin
+declaration,exercise,begin
+Moscow,exercise,begin
+October,exercise,begin
+france,exercise,begin
+accordance,exercise,begin
+provision,exercise,begin
+paragraph,exercise,begin
+responsibility,article,under
+party,declaration,to
+October,france,and
+france,October,and
+provision,paragraph,of
+paragraph,declaration,of
+xvii,other member,require with
+xvii,view,require with
+purpose,other member,require with
+purpose,view,require with
+transitional pend article,other member,require with
+transitional pend article,view,require with
+international peace,other member,require with
+international peace,view,require with
+security,other member,require with
+security,view,require with
+unite nation,other member,require with
+unite nation,view,require with
+such joint action,other member,require with
+such joint action,view,require with
+behalf,other member,require with
+behalf,view,require with
+organization,other member,require with
+organization,view,require with
+other member,unite nation,of
+view,such joint action,to
+such joint action,behalf,on
+behalf,organization,of
+xvii,international peace,maintain
+xvii,security,maintain
+purpose,international peace,maintain
+purpose,security,maintain
+transitional pend article,international peace,maintain
+transitional pend article,security,maintain
+international peace,security,and
+security,international peace,and
+nothing,present charter,in
+present charter,action,preclude
+result,action,preclude
+war,action,preclude
+government,action,preclude
+relation,action,preclude
+responsibility,action,preclude
+state,action,preclude
+such action,action,preclude
+world,action,preclude
+second war,action,preclude
+enemy,action,preclude
+signatory,action,preclude
+action,relation,in
+relation,state,to
+enemy,second war,during
+enemy,signatory,of
+enemy,present charter,to
+present charter,result,authorize as
+present charter,government,authorize by
+war,result,authorize as
+war,government,authorize by
+action,result,authorize as
+action,government,authorize by
+relation,result,authorize as
+relation,government,authorize by
+responsibility,result,authorize as
+responsibility,government,authorize by
+state,result,authorize as
+state,government,authorize by
+such action,result,authorize as
+such action,government,authorize by
+enemy,result,authorize as
+enemy,government,authorize by
+result,war,of
+present charter,responsibility,have
+action,responsibility,have
+relation,responsibility,have
+government,responsibility,have
+state,responsibility,have
+such action,responsibility,have
+enemy,responsibility,have
+responsibility,such action,for
+amendment,force,come into
+amendment,member,come for
+amendment,present charter,to
+member,unite nation,of
+third,vote,adopt by
+security,vote,adopt by
+member,vote,adopt by
+article,vote,adopt by
+council,vote,adopt by
+general assembly,vote,adopt by
+accordance,vote,adopt by
+respective constitutional process,vote,adopt by
+third,vote,adopt by
+member,vote,adopt by
+unite nation,vote,adopt by
+permanent member,vote,adopt by
+vote,third,of
+third,member,of
+member,general assembly,of
+security,accordance,ratify in
+security,respective constitutional process,ratify with
+security,third,ratify by
+council,accordance,ratify in
+council,respective constitutional process,ratify with
+council,third,ratify by
+article,accordance,ratify in
+article,respective constitutional process,ratify with
+article,third,ratify by
+member,accordance,ratify in
+member,respective constitutional process,ratify with
+member,third,ratify by
+unite nation,accordance,ratify in
+unite nation,respective constitutional process,ratify with
+unite nation,third,ratify by
+permanent member,accordance,ratify in
+permanent member,respective constitutional process,ratify with
+permanent member,third,ratify by
+third,member,of
+third,permanent member,including
+member,unite nation,of
+council,permanent member,include
+security,permanent member,include
+third,permanent member,include
+article,permanent member,include
+permanent member,council,of
+article,date,hold at
+article,place,hold at
+twothird,date,hold at
+twothird,place,hold at
+vote,date,hold at
+vote,place,hold at
+general conference,date,hold at
+general conference,place,hold at
+member,date,hold at
+member,place,hold at
+member,date,hold at
+member,place,hold at
+general assembly,date,hold at
+general assembly,place,hold at
+unite nation,date,hold at
+unite nation,place,hold at
+vote,date,hold at
+vote,place,hold at
+purpose,date,hold at
+purpose,place,hold at
+member,date,hold at
+member,place,hold at
+present charter,date,hold at
+present charter,place,hold at
+security,date,hold at
+security,place,hold at
+council,date,hold at
+council,place,hold at
+article,purpose,for
+general conference,member,of
+member,unite nation,of
+article,present charter,review
+purpose,present charter,review
+date,place,and
+place,date,and
+twothird,vote,fix by
+member,vote,fix by
+general assembly,vote,fix by
+vote,vote,fix by
+member,vote,fix by
+security,vote,fix by
+council,vote,fix by
+date,vote,fix by
+place,vote,fix by
+vote,member,of
+member,general assembly,of
+vote,member,of
+member,council,of
+member,vote,have
+member,unite nation,of
+vote,conference,in
+alteration,effect,take
+alteration,present charter,of
+alteration,vote,recommend by
+twothird,vote,recommend by
+present charter,vote,recommend by
+conference,vote,recommend by
+vote,conference,of
+member,accordance,ratify in
+member,respective constitutional process,ratify with
+member,third,ratify by
+unite nation,accordance,ratify in
+unite nation,respective constitutional process,ratify with
+unite nation,third,ratify by
+permanent member,accordance,ratify in
+permanent member,respective constitutional process,ratify with
+permanent member,third,ratify by
+security,accordance,ratify in
+security,respective constitutional process,ratify with
+security,third,ratify by
+council,accordance,ratify in
+council,respective constitutional process,ratify with
+council,third,ratify by
+third,member,of
+third,permanent member,including
+member,unite nation,of
+council,permanent member,include
+security,permanent member,include
+third,permanent member,include
+permanent member,council,of
+conference,tenth annual session,hold before
+tenth annual session,general assembly,of
+conference,force,come into
+general assembly,force,come into
+present charter,force,come into
+vote,force,come into
+agenda,force,come into
+session,force,come into
+member,force,come into
+security,force,come into
+council,force,come into
+general assembly,force,come into
+conference,force,come into
+majority,force,come into
+vote,force,come into
+proposal,force,come into
+member,force,come into
+force,present charter,of
+proposal,conference,and
+conference,proposal,and
+conference,agenda,place on
+session,agenda,place on
+general assembly,agenda,place on
+conference,agenda,place on
+proposal,agenda,place on
+agenda,session,of
+session,general assembly,of
+general assembly,vote,decide by
+vote,vote,decide by
+member,vote,decide by
+security,vote,decide by
+council,vote,decide by
+majority,vote,decide by
+member,vote,decide by
+vote,member,of
+member,general assembly,of
+vote,member,of
+member,council,of
+chapter,state,ratify by
+xix,state,ratify by
+ratification,state,ratify by
+signature,state,ratify by
+article,state,ratify by
+present charter,state,ratify by
+signatory,state,ratify by
+accordance,state,ratify by
+respective constitutional process,state,ratify by
+ratification,article,and
+article,ratification,and
+state,accordance,in
+organization,government,deposit with
+ratification,government,deposit with
+unite state,government,deposit with
+america,government,deposit with
+signatory,government,deposit with
+state,government,deposit with
+deposit,government,deposit with
+secretarygeneral,government,deposit with
+government,unite state,of
+unite state,america,of
+organization,state,notify
+government,state,notify
+unite state,state,notify
+america,state,notify
+signatory,state,notify
+deposit,state,notify
+secretarygeneral,state,notify
+state,deposit,of
+secretarygeneral,organization,of
+present charter,force,come into
+present charter,deposit,come upon
+present charter,unite kingdom,come by
+present charter,union,come by
+present charter,republic,come by
+deposit,ratification,of
+republic,union,conj
+union,republic,conj
+republic,unite kingdom,conj
+unite kingdom,republic,conj
+union,unite kingdom,conj
+unite kingdom,union,conj
+unite kingdom,france,of
+union,france,of
+republic,france,of
+union,unite kingdom,conj
+unite kingdom,union,conj
+unite kingdom,soviet socialist republic,of
+union,soviet socialist republic,of
+unite kingdom,northern ireland,of
+unite kingdom,unite state,of
+unite kingdom,great britain,of
+great britain,northern ireland,and
+northern ireland,great britain,and
+great britain,unite state,and
+unite state,great britain,and
+northern ireland,unite state,conj
+unite state,northern ireland,conj
+unite state,america,of
+majority,other state,of
+protocol,government,draw by
+ratification,government,draw by
+unite state,government,draw by
+america,government,draw by
+copy,government,draw by
+signatory,government,draw by
+state,government,draw by
+protocol,ratification,of
+government,unite state,of
+unite state,america,of
+unite state,copy,communicate
+unite state,state,communicate to
+america,copy,communicate
+america,state,communicate to
+signatory,copy,communicate
+signatory,state,communicate to
+government,copy,communicate
+government,state,communicate to
+original member,unite nation,of
+original member,date,on
+signatory,present charter,to
+signatory,force,come into
+original member,force,come into
+present charter,force,come into
+date,deposit,of
+article,archives,deposit in
+america,archives,deposit in
+present charter,archives,deposit in
+French,archives,deposit in
+Chinese Russian English,archives,deposit in
+Spanish text,archives,deposit in
+government,archives,deposit in
+unite state,archives,deposit in
+Chinese Russian English,Spanish text,and
+Spanish text,Chinese Russian English,and
+archives,government,of
+government,unite state,of
+unite state,america,of
+signatory,government,transmit by
+signatory,government,transmit to
+other state,government,transmit by
+other state,government,transmit to
+copy,government,transmit by
+copy,government,transmit to
+government,other state,of
+representative,faith,sign in
+representative,present charter,sign
+representative,government,of
+government,unite nation,of
+twentysixth,city,do at
+day,city,do at
+fortyfive,city,do at
+san francisco,city,do at
+city,san francisco,of
+day,fortyfive,and
+fortyfive,day,and
+note,general assembly,adopt by
+note,December,adopt on
+force,general assembly,adopt by
+force,December,adopt on
+amendment,general assembly,adopt by
+amendment,December,adopt on
+article,general assembly,adopt by
+article,December,adopt on
+amendment,general assembly,adopt by
+amendment,December,adopt on
+article,general assembly,adopt by
+article,December,adopt on
+charter,general assembly,adopt by
+charter,December,adopt on
+note,amendment,on
+note,article,to
+amendment,amendment,to
+further amendment,general assembly,adopt by
+further amendment,December,adopt on
+force,general assembly,adopt by
+force,December,adopt on
+article,general assembly,adopt by
+article,December,adopt on
+September,general assembly,adopt by
+September,December,adopt on
+further amendment,article,to
+amendment,force,come into
+amendment,June,come on
+amendment,article,to
+amendment,general assembly,adopt by
+amendment,December,adopt on
+article,general assembly,adopt by
+article,December,adopt on
+amendment,membership,enlarge
+amendment,eleven,enlarge from
+amendment,article,to
+membership,council,of
+affirmative vote,affirmative vote,make by
+member,affirmative vote,make by
+decision,affirmative vote,make by
+security,affirmative vote,make by
+council,affirmative vote,make by
+concur vote,affirmative vote,make by
+procedural matter,affirmative vote,make by
+permanent member,affirmative vote,make by
+security,affirmative vote,make by
+council,affirmative vote,make by
+member,affirmative vote,make by
+other matter,affirmative vote,make by
+decision,council,of
+decision,procedural matter,on
+affirmative vote,member,of
+affirmative vote,member,of
+permanent member,concur vote,include
+security,concur vote,include
+council,concur vote,include
+concur vote,permanent member,of
+permanent member,council,of
+amendment,article,to
+membership,force,enter into
+amendment,force,enter into
+article,force,enter into
+economic council,force,enter into
+amendment,membership,enlarge
+article,membership,enlarge
+economic council,membership,enlarge
+membership,economic council,of
+subsequent amendment,article,to
+subsequent amendment,force,enter into
+subsequent amendment,September,enter on
+article,force,enter into
+article,September,enter on
+membership,force,enter into
+membership,September,enter on
+council,force,enter into
+council,September,enter on
+twentyseven,force,enter into
+twentyseven,September,enter on
+fiftyfour,force,enter into
+fiftyfour,September,enter on
+subsequent amendment,membership,increase
+subsequent amendment,twentyseven,increase from
+subsequent amendment,fiftyfour,increase to
+council,membership,increase
+council,twentyseven,increase from
+council,fiftyfour,increase to
+article,membership,increase
+article,twentyseven,increase from
+article,fiftyfour,increase to
+membership,council,of
+amendment,article,to
+amendment,first paragraph,relate to
+article,first paragraph,relate to
+article,first paragraph,relate to
+first paragraph,article,of
+security,date,hold at
+security,place,hold at
+council,date,hold at
+council,place,hold at
+twothird,date,hold at
+twothird,place,hold at
+vote,date,hold at
+vote,place,hold at
+member,date,hold at
+member,place,hold at
+general conference,date,hold at
+general conference,place,hold at
+general assembly,date,hold at
+general assembly,place,hold at
+member,date,hold at
+member,place,hold at
+state,date,hold at
+state,place,hold at
+vote,date,hold at
+vote,place,hold at
+purpose,date,hold at
+purpose,place,hold at
+member,date,hold at
+member,place,hold at
+charter,date,hold at
+charter,place,hold at
+general conference,state,of
+general conference,purpose,for
+purpose,charter,review
+general conference,charter,review
+date,place,and
+place,date,and
+security,vote,fix by
+council,vote,fix by
+date,vote,fix by
+place,vote,fix by
+twothird,vote,fix by
+member,vote,fix by
+general assembly,vote,fix by
+vote,vote,fix by
+member,vote,fix by
+vote,member,of
+member,general assembly,of
+vote,member,of
+paragraph,original form,retain in
+security,original form,retain in
+council,original form,retain in
+article,original form,retain in
+consideration,original form,retain in
+review,original form,retain in
+possible conference,original form,retain in
+tenth regular session,original form,retain in
+general assembly,original form,retain in
+reference,original form,retain in
+vote,original form,retain in
+member,original form,retain in
+security,original form,retain in
+council,original form,retain in
+paragraph,original form,retain in
+general assembly,original form,retain in
+tenth regular session,original form,retain in
+paragraph,article,of
+paragraph,tenth regular session,during
+paragraph,consideration,deal with
+article,consideration,deal with
+review,consideration,deal with
+possible conference,consideration,deal with
+consideration,possible conference,of
+tenth regular session,general assembly,of
+reference,vote,to
+vote,member,of
+member,council,of
+reference,general assembly,act by
+reference,tenth regular session,act at
+council,general assembly,act by
+council,tenth regular session,act at
+security,general assembly,act by
+security,tenth regular session,act at
+vote,general assembly,act by
+vote,tenth regular session,act at
+member,general assembly,act by
+member,tenth regular session,act at
+paragraph,general assembly,act by
+paragraph,tenth regular session,act at
+original form,general assembly,act by
+original form,tenth regular session,act at
