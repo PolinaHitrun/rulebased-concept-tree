@@ -1,7 +1,9 @@
-# text = Я дал книгу сестре.
+# text = Я дал толстую книгу младшей сестре.
 1	Я	я	P-1-snn	P-1-snn	_	2	огранич	_	_
 2	дал	дать	Vmis-sma-p	Vmis-sma-p	_	0	ROOT	_	_
-3	книгу	книга	Ncfsan	Ncfsan	_	4	огранич	_	_
-4	сестре	сестра	Ncfsdy	Ncfsdy	_	2	предл	_	_
-5	.	.	SENT	SENT	_	4	PUNC	_	_
+3	толстую	толстый	Afpfsaf	Afpfsaf	_	4	огранич	_	_
+4	книгу	книга	Ncfsan	Ncfsan	_	5	огранич	_	_
+5	младшей	младший	Afpfsdf	Afpfsdf	_	2	предик	_	_
+6	сестре	сестра	Ncfsdy	Ncfsdy	_	5	предл	_	_
+7	.	.	SENT	SENT	_	6	PUNC	_	_
 

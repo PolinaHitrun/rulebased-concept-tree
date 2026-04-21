@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # раскомментировать при первом запуске
     # nltk.download("punkt_tab") 
 
-    text = 'Я дал книгу сестре.'
+    text = 'Я дал толстую книгу младшей сестре.'
     lang = 'ru'
     
     sentences = sent_tokenize(text)

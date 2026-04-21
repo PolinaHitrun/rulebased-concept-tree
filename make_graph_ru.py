@@ -96,22 +96,25 @@ def build_noun_concept(token_id, tokens):
         child = tokens[child_id]
         deprel = (getattr(child, "deprel", "") or "").lower()
 
-        # Прилагательные
-        if deprel == "amod":
+        # Include adjectival modifiers (robustly)
+        if deprel == "amod" or child.xpos.upper().startswith("A"):
             concept_tokens.append(child)
 
-        # Детерминаторы (всё, некоторые и т.п.)
+        # Determiners
         elif deprel == "det":
             concept_tokens.append(child)
 
-        # Числительные
+        # Numerals
         elif deprel == "nummod":
             concept_tokens.append(child)
 
-        # Наречия, модифицирующие прилагательные (самые интересные)
+        # Adverbs modifying adjectives
         elif deprel == "advmod":
             head_of_child = tokens.get(getattr(child, "head", None))
-            if head_of_child and (getattr(head_of_child, "deprel", "") or "").lower() == "amod":
+            if head_of_child and (
+                (getattr(head_of_child, "deprel", "") or "").lower() == "amod"
+                or head_of_child.xpos.upper().startswith("A")
+            ):
                 concept_tokens.append(child)
 
     # сортировка по id (строковые id вида 0_5 тоже корректно сортируются)
