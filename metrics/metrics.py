@@ -237,7 +237,6 @@ def calculate_mtld(lemmas: list, lang='ru', threshold=0.72):
     def count_factors(words):
         if not words: return 0
         factors = 0
-        ttr_sum = 1.0
         types = set()
         tokens = 0
         for w in words:
