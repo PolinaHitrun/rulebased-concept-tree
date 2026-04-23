@@ -8,6 +8,7 @@ import re
 from nltk.stem import WordNetLemmatizer
 import csv
 import os
+import math
 
 
 def calculate_metrics(graph: Graph) -> Dict[str, float]:
@@ -21,6 +22,7 @@ def calculate_metrics(graph: Graph) -> Dict[str, float]:
         A dictionary containing the calculated metrics.
     """
     G = graph.convert_to_networkx()
+    # G = nx.Graph(G)  # Convert to undirected graph
     largest_cc = max(nx.connected_components(G), key=len)
     G_giant = G.subgraph(largest_cc).copy()
     metrics = {
@@ -28,8 +30,6 @@ def calculate_metrics(graph: Graph) -> Dict[str, float]:
         "num_vertices": len(graph.vertices),
         "num_edges": len(graph.edges),
         "average_degree": (2 * len(graph.edges)) / len(graph.vertices) if graph.vertices else 0,
-        # "average_in_degree": sum(dict(G.in_degree()).values()) / len(graph.vertices) if graph.vertices else 0,
-        # "average_out_degree": sum(dict(G.out_degree()).values()) / len(graph.vertices) if graph.vertices else 0,
         "density": (2 * len(graph.edges)) / (len(graph.vertices) * (len(graph.vertices) - 1)) if graph.vertices else 0,
         # other metrics
         "average_clustering_coefficient": nx.average_clustering(G) if graph.vertices else 0,
@@ -209,7 +209,7 @@ def get_lemmas(text, lang='ru') -> list:
         return [lemmatizer.lemmatize(w) for w in tokens]
     
 # Metrics
-def average_word_length(text: str) -> float:
+def average_word_length(words: list) -> float:
     """
     Calculate the average word length in the given corpus.
     Args:
@@ -217,23 +217,23 @@ def average_word_length(text: str) -> float:
     Returns:
         The average word length in the corpus.
     """
-    words = get_tokens(text)
+    # words = get_tokens(text)
     if not words:
         return 0
     total_length = sum(len(word) for word in words)
     return total_length / len(words)
 
 
-def calculate_ttr(text, lang='ru') -> float:
-    lemmas = get_lemmas(text, lang)
+def calculate_ttr(lemmas: list, lang='ru') -> float:
+    # lemmas = get_lemmas(text, lang)
     if not lemmas: 
         return 0
     return len(set(lemmas)) / len(lemmas)
 
 
-def calculate_mtld(text, lang='ru', threshold=0.72):
+def calculate_mtld(lemmas: list, lang='ru', threshold=0.72):
     """Упрощенная реализация MTLD (расчет среднего фактора выживания лексем)"""
-    lemmas = get_lemmas(text, lang)
+    # lemmas = get_lemmas(text, lang)
     def count_factors(words):
         if not words: return 0
         factors = 0
@@ -257,12 +257,6 @@ def calculate_mtld(text, lang='ru', threshold=0.72):
     return (forward + backward) / 2
 
 
-def average_word_length(text):
-    words = get_tokens(text)
-    if not words: return 0
-    return sum(len(w) for w in words) / len(words)
-
-
 def syllables_count(text, language='ru'):
     if language == 'ru':
         vowels = "аеёиоуыэюя"
@@ -271,7 +265,7 @@ def syllables_count(text, language='ru'):
     return len([char for char in text.lower() if char in vowels])
 
 
-def average_syllables_per_word(text, language='ru'):
+def average_syllables_per_word(text: str, language='ru') -> float:
     words = get_tokens(text)
     if not words: return 0
     return syllables_count(text, language) / len(words)
@@ -283,9 +277,8 @@ with open(DATA_FILE_PATH, 'r', encoding='utf-8') as f:
         next(reader)
         freq_dict = {row[0]: float(row[2]) for row in reader}
 
-
-def calculate_t_score(text):
-    lemmas = get_lemmas(text)
+def calculate_t_score(lemmas: list):
+    # lemmas = get_lemmas(text)
     bigrams_counts = {}
     unigrams_counts = {}
     N = len(lemmas)
@@ -302,4 +295,52 @@ def calculate_t_score(text):
         exp = ((freq_dict.get(w1, 0.1) / (10 ** 6)) * (freq_dict.get(w2, 0.1) / (10 ** 6))) * N
         # Formula for T-score
         t_scores[(w1, w2)] = (obs - exp) / obs ** 0.5 if obs > 0 else 0
-    return t_scores
+    # average top-30 t-scores
+    t_scores = dict(sorted(t_scores.items(), key=lambda x: x[1], reverse=True)[:30])
+    avg = sum(t_scores.values()) / len(t_scores) if t_scores else 0
+    return avg
+
+def calculate_mi(lemmas: list):
+    # lemmas = get_lemmas(text)
+    bigrams_counts = {}
+    unigrams_counts = {}
+    N = len(lemmas)
+    
+    for i in range(len(lemmas) - 1):
+        w1, w2 = lemmas[i], lemmas[i + 1]
+        bigrams_counts[(w1, w2)] = bigrams_counts.get((w1, w2), 0) + 1
+        unigrams_counts[w1] = unigrams_counts.get(w1, 0) + 1
+    unigrams_counts[lemmas[-1]] = unigrams_counts.get(lemmas[-1], 0) + 1
+    
+    mi_scores = {}
+    for (w1, w2), obs in bigrams_counts.items():
+        p_w1 = freq_dict.get(w1, 0.1) / (10 ** 6)
+        p_w2 = freq_dict.get(w2, 0.1) / (10 ** 6)
+        p_w1_w2 = obs / N
+        mi_scores[(w1, w2)] = math.log(p_w1_w2 / (p_w1 * p_w2)) if p_w1 > 0 and p_w2 > 0 and p_w1_w2 > 0 else 0
+    # average top-30 MI scores
+    mi_scores = dict(sorted(mi_scores.items(), key=lambda x: x[1], reverse=True)[:30])
+    avg = sum(mi_scores.values()) / len(mi_scores) if mi_scores else 0
+    return avg
+
+def calculate_logdice(lemmas: list):
+    # lemmas = get_lemmas(text)
+    bigrams_counts = {}
+    unigrams_counts = {}
+    N = len(lemmas)
+    
+    for i in range(len(lemmas) - 1):
+        w1, w2 = lemmas[i], lemmas[i + 1]
+        bigrams_counts[(w1, w2)] = bigrams_counts.get((w1, w2), 0) + 1
+        unigrams_counts[w1] = unigrams_counts.get(w1, 0) + 1
+    unigrams_counts[lemmas[-1]] = unigrams_counts.get(lemmas[-1], 0) + 1
+    
+    logdice_scores = {}
+    for (w1, w2), obs in bigrams_counts.items():
+        f_w1 = freq_dict.get(w1, 0.1)
+        f_w2 = freq_dict.get(w2, 0.1)
+        logdice_scores[(w1, w2)] = 14 + math.log2((2 * obs) / (f_w1 + f_w2)) if f_w1 > 0 and f_w2 > 0 else 0
+    # average top-30 LogDice scores
+    logdice_scores = dict(sorted(logdice_scores.items(), key=lambda x: x[1], reverse=True)[:30])
+    avg = sum(logdice_scores.values()) / len(logdice_scores) if logdice_scores else 0
+    return avg

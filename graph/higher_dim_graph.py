@@ -172,14 +172,14 @@ class Graph:
         return (f"Graph(\n\tvertices={list(self.vertices.values())},\n"
                 f"\tedges={self.edges}\n)")
     
-    def convert_to_networkx(self) -> nx.DiGraph:
+    def convert_to_networkx(self) -> nx.Graph:
         """
-        Convert the graph to a NetworkX directed graph.
+        Convert the graph to a NetworkX undirected graph.
 
         Returns:
-            A NetworkX DiGraph representing the same structure as this Graph.
+            A NetworkX Graph representing the same structure as this Graph.
         """
-        G = nx.DiGraph()
+        G = nx.Graph()
 
         # Add nodes (vertices)
         for concept in self.vertices.keys():
