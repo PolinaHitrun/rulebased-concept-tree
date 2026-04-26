@@ -51,6 +51,7 @@ if __name__ == "__main__":
         print("\nResolved sentences:")
         for sent in resolved_sentences:
             print(sent.text)
+    
     print('building graph...')
     # Строим граф
     if lang == 'en':
